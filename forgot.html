@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Forgotten Password</title>
+	<style type="text/css">
+		#header{
+			background: #3c5994;
+			margin: -32px;
+			height: 110px;
+
+		}
+		h1{
+			color: white;
+			font-size: 2.7em;
+			position: absolute;
+			width: 180px;
+			height: 85px;
+			left: 181px;
+			top:3px;
+			
+		}
+		
+		form{
+			background: white;
+			width: 610px;
+			height: 275px;
+			margin-top: 110px;
+			margin-left: 360px;
+			text-align: center;
+			padding-top: 30px;
+		}
+		body{
+			background: #e9ebee;
+		}
+		.ep{
+			width: 284px;
+			height: 22px;
+			line-height: 16px;
+			padding: 5px 8px;
+		}
+		#log{
+			width: 135px;
+			height: 45px;
+			margin-left: -5px;
+			background: #4267b2;
+			color: white;
+			border: none;
+			border-radius: 2px;
+		}
+		.bt{
+			text-decoration: none;
+			color: #3c5994;
+			margin: 5px;
+		}
+		footer{
+			background:white;
+			height: 100px;
+			text-align: center;
+			margin-top: 75px;
+		}
+
+	</style>
+</head>
+<body>
+	<div id="header">
+		<h1>facebook</h1>
+		
+	</div>
+	<form>
+		<h2>Find Your Account</h2><hr>
+		<p>Please enter your email address or phone number to search for your account</p>
+		<input type="text" name="email_or_phone" placeholder="Email address or phone number" class="ep">
+		<br><br>
+		
+		<input type="submit" name="submit" value="Search" id="log" onclick="show()">
+		<br><br>
+		
+	</form>
+	<footer>
+		<p>English UK</p>
+		<p>Facebook &copy; 2019</p>
+	</footer>
+</body>
+<script>
+	function show(){
+		alert("An confirmation email is send to change your password");
+	}
+</script>
+</html>
