@@ -1,134 +1,130 @@
-<html>
-	<head>
-		<title>Facebook</title>
-		<style>
-body{
-	margin:0;
-	padding:0;
-	background:linear-gradient(white, #D3D8E8);
-	font-family:Helvetica, Arial, sans-serif;
-}
-.header
-{
-	background-color:rgb(59, 89, 152);
-	height: 12.2%;
-	width:100%;
-	font-family:tahoma;
-	border: 1px solid darkblue;
-}
-.right
-{
-	width:45%;
-	position:absolute;
-	top:16%;
-	left:56%;
-}
-.left
-{	width:55%;
-	position:absolute;
-	left:0;
-}
-.image{
-	position:relative;
-	left:200px;
-	}
-.registration_form
-{
-background-color:white;
-border: 1px solid rgb(189, 199, 216);
-border-radius:5px;
-font-family:Helvetica, Arial, sans-serif;
-font-size:18px;
-font-weight:400;
-outline-color:rgb(77, 144, 254);
-padding-bottom:8px;
-padding-top:8px;
-padding-left:10px;
-padding-right:10px;
-margin:6px;
-}
-select{
-	background-color:rgb(221, 221, 221);
-	border:1px solid rgb(189, 199, 216);
-	font-family:Helvetica, Arial, sans-serif;
-	font-size:13px;
-	font-weight:400;
-	height:30px;
-	padding:5px;
-	width:56px;
-	margin:0;
-}
-#birthday_help
-{
-	color:rgb(54, 88, 153);
-	font-family:Helvetica, Arial, sans-serif;
-	font-size:11px;
-	text-decoration-color:rgb(54, 88, 153);
-	width:150px;
-	display:inline-block;
-	text-decoration:none;
-}
-.gender
-{
-	color:rgb(29, 33, 41);
-	font-family:Helvetica, Arial, sans-serif;
-	font-size:18px;
-	font-weight:400;
-	padding-left:3px;
-	padding-right:10px;
-	margin-top:30px;
-}
-.terms_and_conditions
-{
-	color:rgb(119, 119, 119);
-	display:block;
-	font-family:Helvetica, Arial, sans-serif;
-	font-size:11px;
-	margin-top:11px;
-	margin-bottom:11px;
-	width:316px;
-}
-#submit
-{	font-size:18px;	
-	background-color:rgb(105, 167, 78);
-	border:1px solid rgb(59, 110, 34);
-	color:white;
-	font-family:Freight Sans Bold", Helvetica, Arial, sans-serif;	padding:20px;	width:194px;	text-align:center;	font-weight:700;	margin-bottom:10px;	margin-top:10px;	text-shadow:rgba(0, 0, 0, 0.5) 0px 1px 2px;	border-radius:5px;	height:39px;}		</style>
-	</head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Login</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+</head>
 <body>
-  <div class="header">
-   <span style="font-size: 45px; position:absolute; left:180px; color:white; top:3.5%;  "> <b> facebook</b> </span>		
-   <span style="position:absolute; right:155px; bottom:50px; color:white; top:2%; font-size:12px;font-family: Helvetica, Arial, sans-serif">Already an User? </span>
-    <div style="position:absolute; right:175px; top:5%;">
-      <button type="submit" name="submit" style="background-color:#fff; height: 22px; color:#4267b2; border:1px solid darkblue; border-radius: 2px;"> <a href="login.html" style="text-decoration: none;"><b>Log In</b></a></button><br>
-    </div>
-  </div>
-  <div class="left">
-	<span  style="color:rgb(14, 56, 95); font-size:20px; font-weight:700; width:300px;	word-spacing:-1;display:block; position:relative;  left:200px; margin:2%; ">Facebook helps you connect and share with the people in your life.</span>
-	<img class="image" src="images/friends.png"/>
- </div>
-  <div class="right">
-    <span style="color:#333; font-size:36px; font-family:Helvetica, Arial, sans-serif; font-weight:700;" >Create an account</span><br><br>
-    <span style="color:#1d2129; font-size:19px; font-family:Helvetica, Arial, sans-serif;">It's free and always will be.</span>	<br><br>
-<form>
-    <input class="registration_form" type="text" name="firstname" placeholder="First Name"style="width:180px;"></input>
-    <input class="registration_form" type="text" name="lastname" placeholder="Last Name" style="width:180px;"></input>
-    <input class="registration_form" type="text" name="mobile_or_email" placeholder="Mobile number or email address"style="width:377px;"></input>
-    <input class="registration_form" type="text" name="spassword" placeholder="New Password"style="width:377px;"></input><br><br>
-    <span style="color:#1d2129; font-size:19px; font-family:Helvetica, Arial, sans-serif;">Birthday</span><br>
-    <input type="date" name="dob">
-    <a id="birthday_help" href="#">why i need to provide my birthday?</a><br><BR>
-    <input type="radio" name="gender" value="male"><label class="gender">Male</label></input>
-    <input type="radio" name="gender" value="female"><label class="gender">Female</label></input><br>
-     <p class="terms_and_conditions">
-		By clicking Create an account, you agree to our Terms and confirm that you have read our Data Policy, including our cokiee
-                Policy. You may receive SMS message notifications from Facebook and can opt out at any time.
-	</p><br>
-     <button type="submit" name="submit" id="submit">Create an account</button><br>
- </form>
-     <span style="font-family:Helvetica, Arial, sans-serif; color:rgb(102, 102, 102); font-size:13px;">Create a Page for a celebrity, band or business. </span>
-  </div>
-  <div class="footer">
-  </div>
+	
+	<div class="limiter">
+		<div class="container-login100" style="background: linear-gradient(to bottom right,rgb(73,96,206) 10%,rgb(123,146,253) 90%);">
+			<div class="wrap-login100 p-l-55 p-r-55 p-t-30 p-b-30">
+				<form class="login100-form validate-form">
+
+					<img style="display: block;
+  margin-left: auto;
+  margin-right: auto;
+  " src="images/logo1.png">
+
+					<span class="login100-form-title p-t-30 p-b-40">
+						LOGIN
+					</span>
+
+					
+
+					<div class="wrap-input100 validate-input m-b-23" data-validate = "Username is required">
+						<span class="label-input100">Username</span>
+						<input class="input100" type="text" name="username" placeholder="Enter username">
+						<span class="focus-input100" data-symbol="&#xf206;"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate="Password is required">
+						<span class="label-input100">Password</span>
+						<input class="input100" type="password" name="pass" placeholder="Enter password">
+						<span class="focus-input100" data-symbol="&#xf190;"></span>
+					</div>
+					
+					<div class="text-right p-t-20 p-b-30">
+						<a href="#">
+							Forgot password?
+						</a>
+					</div>
+					
+					<div class="container-login100-form-btn">
+						<div class="wrap-login100-form-btn">
+							<div class="login100-form-bgbtn"></div>
+							<button class="login100-form-btn">
+								Login
+							</button>
+						</div>
+					</div>
+
+					<div class="txt1 text-center p-t-30 p-b-20">
+						<span>
+							Or Login Using
+						</span>
+					</div>
+
+					<div class="flex-c-m">
+						<a href="#" class="login100-social-item bg1">
+							<i class="fa fa-facebook"></i>
+						</a>
+
+						<a href="#" class="login100-social-item bg2">
+							<i class="fa fa-linkedin"></i>
+						</a>
+
+						<a href="#" class="login100-social-item bg3">
+							<i class="fa fa-google"></i>
+						</a>
+					</div>
+
+					<div class="flex-col-c p-t-25">
+						<span class="txt1 p-b-17">
+							Don't have an account?
+						</span>
+
+						<a href="#" class="txt2">
+							Sign Up
+						</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+
+	<div id="dropDownSelect1"></div>
+	
+<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+
 </body>
 </html>
