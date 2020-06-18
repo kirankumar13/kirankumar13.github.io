@@ -119,7 +119,8 @@ body {
 
 .open-book article *:not(.chapter-title):not(hr):not(dl) {
     margin: 0 auto;
-    max-width: 28.125em;
+    max-width: 34em;
+    text-align: justify;
 }
 
 .open-book article p {
