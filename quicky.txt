@@ -1,0 +1,30 @@
+<h2 style="color: #f55c7f;background: lavenderblush;">Problem</h2>
+
+
+<h3 style="color: #e0214d;">Analysis</h3>
+
+
+<p style="color: #e0214d;">
+                	
+				</p>
+
+<p style="color: #f55c7f;background: lavenderblush;"><b>
+
+				</b></p>
+
+
+<h3 style="color: #e0214d;">Stop & Consider</h3>
+                <p>
+                	<i>What if the leftmost digit were the check digit? How would it be separated?</i>
+                </p>
+
+
+<p>
+                	<span style="color: #e0214d;"><b>Input:</b></span> Get the identification number from the user by (a) prompting the user and (b) reading the value.
+                </p>
+                <p>
+                	<span style="color: #e0214d;"><b>Process:</b></span> Determine if the identification number is valid.
+                </p>
+                <p>
+                	<span style="color: #e0214d;"><b>Output:</b></span> If the number is valid, print an appropriate message; if it is invalid, print an appropriate message.
+                </p>
