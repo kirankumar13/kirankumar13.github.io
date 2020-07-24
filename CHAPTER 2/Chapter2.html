@@ -1,0 +1,1374 @@
+
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>Chapter 2</title>
+</head>
+<body>
+<div id="wrapper">
+    <div id="container">
+
+        <section class="open-book">
+            <header>
+                <h1>Chapter 2</h1>
+                <h6>Durk Jan de Bruin</h6>
+            </header>
+            <article>
+                <h2 class="chapter-title">BANNERS WITH CLASS</h2>
+
+                <div>
+                	<img src="chapter2.png" style="width: 100%">
+                </div>
+                
+                
+                <p>
+                    Getting the word out in Egypt: Banners have been popular from ancient times. Imagine the frustration of early banner writers when they made an error. On-line banners are much easier to correct.
+                </p>
+                <p>
+                    From ancient times banners have proclaimed events and advertised opportunities. Computers allow individuals to create personalized banners of varied sizes and styles. This program prints block versions of letters in user-specified sizes. It can be altered to create banners with such messages as PYTHON or NOT or POT.
+                </p>
+                
+                <h2 style="color: #f55c7f; background: lavenderblush;">Problem Statement</h2>
+                <p>
+                    Write a Python program that reads letters supplied by the user and prints them down the screen in a block format. The program should first prompt the user for a value—the letter size—that specifies the number of printed lines and columns that will be used to print each letter. After reading the letter size, the program should prompt the user for six letters. Finally, it should read and print the six letters on the terminal screen in a block format.
+                </p>
+                <p>
+                    You may assume that the user will provide a letter size value between 5 and 24, and that he or she will provide only letters. For example, here is how the program might work. The user input is indicated in boldface.
+                </p>
+                              
+                
+                <p style="font:16px  Courier New;margin-left: 0px;">
+                    Type a size for the letters between 5 and 24? 9 <br>
+                    Type six letters chosen from PYTHON: POT
+                </p>
+                <p>
+                	* * * * * * * * * <br>
+                	* * * * * * * * * <br>
+                	<span>* *</span><span style="margin-left: 65px;">* *</span> <br> 
+                	<span>* *</span><span style="margin-left: 65px;">* *</span> <br>
+                	* * * * * * * * * <br>
+                	* * * * * * * * * <br>
+                	<span>* *</span><br>
+                	<span>* *</span><br>
+                	<span>* *</span><br>
+                </p>
+                <p>
+                	* * * * * * * * * <br>
+                	* * * * * * * * * <br>
+                	* *<span style="margin-left: 65px;">* *</span><br>
+                	* *<span style="margin-left: 65px;">* *</span> <br>
+                	* *<span style="margin-left: 65px;">* *</span> <br>
+                	* *<span style="margin-left: 65px;">* *</span> <br>
+                	* *<span style="margin-left: 65px;">* *</span> <br>
+                	* * * * * * * * * <br>
+                	* * * * * * * * * <br>
+                </p>
+                <p>
+                	(Block version of T is then printed.)
+                </p>
+                <p>
+                    The program should be easy to modify, to add more letters and eventually to print banners. 
+                    <br>
+                    Assume also that this program is being written as part of a collection of programs intended to display letters on a variety of output devices (terminal screens, printers, or plotters). Thus, instead of printing with print function, the program should make calls to three functions, DrawBar, DrawIndentedBar, and DrawTwoBars, to create the letters. The parameters for these functions include the number of lines—the height—and the number of columns—the width—needed to draw the corresponding figure. Here are descriptions of the functions. 
+
+                </p>
+                <ul>
+                	<li>DrawBar, given height and width values, prints a bar composed of asterisks of the specified height and width. Its heading is</li>
+                </ul>
+                <p style="font:16px Courier New;margin-left: 60px;">
+                	def DrawBar(height, width):
+                </p>
+                
+                <p style="margin-left: 40px;">
+                    A sample call,
+                </p>
+                <p style="font:16px Courier New;margin-left: 60px;">
+                    DrawBar(3, 5);
+                </p>
+                <p style="margin-left: 40px;">
+                    would produce the following output.     
+                </p>    
+                <p style="font:16px Courier New;margin-left: 60px;">
+                    * * * * * <br>
+                    * * * * * <br>
+                    * * * * * <br>
+                </p>  
+                <ul>
+                	<li>
+                    DrawIndentedBar, given values for height, width, and the number of columns to indent, prints a bar indented by the specified amount. Its heading is    
+                </li>
+                </ul>          
+                  
+                <p style="font:16px  Courier New;margin-left: 60px;">
+                    def DrawIndentedBar(height, width, indentAmt):
+                </p>
+                <p style="margin-left: 40px;">
+                    A sample call,
+                </p>
+                <p style="font:16px  Courier New;margin-left: 60px;">
+                    DrawIndentedBar(3, 5, 8);
+                </p>
+                <p style="margin-left: 40px;">
+                    would produce the following output. (Eight blanks precede each line of asterisks.)
+                </p>
+                <p style="font:16px  Courier New;margin-left: 60px;">
+                    * * * * * <br>
+                    * * * * * <br>
+                    * * * * * <br>
+                </p>
+                <ul>
+                	<li>
+                    DrawTwoBars, given values for height, width, and amount of separation, prints two bars of the specified height and width, separated by the specified number of columns. Its heading is
+                </li>
+                </ul>
+                
+                <p style="font:16px  Courier New;margin-left: 60px;">
+                    def DrawTwoBars (height, width, separation):
+                </p>
+                <p style="margin-left: 40px;">
+                    A sample call,
+                </p>
+                <p style="font:16px  Courier New;margin-left: 60px;">
+                    DrawTwoBars(3, 5, 8);
+                </p>
+                <p style="margin-left: 40px;">
+                    would produce the following output. (Eight blanks separate each sequence of asterisks.)    
+                </p>
+
+                <p style="font:16px  Courier New;margin-left: 60px;">
+                    * * * * *<span style="margin-left: 65px;">* * * * *</span> <br>
+                    * * * * *<span style="margin-left: 65px;">* * * * *</span> <br>
+                    * * * * *<span style="margin-left: 65px;">* * * * *</span> <br>
+                </p>
+                <p>
+                    You may choose how to use these functions to print attractive-looking letters.
+                </p>
+
+            </article>
+            <footer>
+                <ol id="page-numbers">
+                    <li>1</li>
+                    <li>2</li>
+                </ol>
+            </footer>
+        </section>
+
+
+        <section class="open-book" style="margin-top: 50px;">
+            <header>
+                <h1>Chapter 2</h1>
+                <h6>Durk Jan de Bruin</h6>
+            </header>
+            <article>
+                
+
+
+                <h3 style="color: #e0214d;">Reflection</h3>
+                <p>
+                    2.1 Which of the following is more attractive to you? Briefly explain.
+                </p>
+                <div style="width: 100%;text-align: center;">
+                	<img src="a.png">
+                </div>
+                <h3 style="color: #e0214d;">Reflection</h3>
+                <p>
+                    2.2 Design block versions of the letters P, Y, T and H for letter size 9. Keep track of the decisions you make.
+                </p>
+
+
+                <h3 style="color: #e0214d;">Analysis</h3>
+                <p>
+                    2.3 What other letters can be drawn using the functions Drawbar, DrawIndentedBar, and DrawTwoBars?
+                </p>
+                <h3 style="color: #e0214d;">Analysis</h3>
+                <p>
+                    2.4 Name five letters that cannot be drawn easily using Drawbar, DrawIndentedBar, and DrawTwoBars. What extra functions would be needed to draw these letters?
+                </p>
+                <h3 style="color: #e0214d;">Application</h3>
+                <p>
+                    2.5 Write a sentence composed completely of words made out of the letters P, Y, T, H, O and N.
+                </p>  
+                <br>
+                <h2 style="color: #f55c7f;background: lavenderblush;">Preparation</h2>
+                <p> 
+                    The reader is expected to be familiar with the for statement and the input, print functions. This case study introduces the use of functions and the if statements.
+                </p>
+               	<br>
+                <h2 style="color: #f55c7f;background: lavenderblush;">Initial Design Steps</h2>
+                <h3 style="color: #e0214d;">How should one start solving this problem?</h3>
+                <p>
+                   As in <i>Check That Number!</i> this solution involves breaking or <b>decomposing</b> the problem into smaller subproblems, figuring out solutions for the smaller problems, and putting the solutions together. 
+                </p>
+
+	            <h3 style="color: #e0214d;">Stop &amp; Predict</h3>
+	            <p>
+	            <i>
+	                What are the main subproblems that will need to be solved?
+	            </i>
+	            </p>
+	            <p>
+	                One set of subproblems focuses on the letters: first figure out how to draw each letter and then combine the solutions for the letters. This does not sound much easier than the original problem.
+	                <br>
+	                Another set of subproblems focuses on what has to be done to design each letter: read the size, read the letter, draw the letter, and so on. This sounds a little easier than the original problem.
+	                <br>
+	                A good way to approach a solution is to design <b>top-down</b>, from the least detailed part of the program to the most detailed. This would involve starting at the main program, then designing the functions that the main program calls, and so on. The top-down approach is usually preferred because it is easier to keep track of the structure of the program and how its parts fit together.
+	            </p>
+	            <h3 style="color: #e0214d;">What are the big steps for the top-down design of the program?</h3>
+	            <p>
+	                Often a problem statement provides the main steps in the top-down design of the solution.
+	            </p>
+	            <h3 style="color: #e0214d;">Stop &amp; Predict</h3>
+	            <p>
+	                <i>
+	                	What steps are given in the problem description for Banners With CLASS.
+	                </i>
+	            </p>
+	            <p>
+	                The problem statement for Banners With CLASS lists three steps: ask for and read a number saying how large the letters should be drawn, ask for six letters, and read and draw the letters.
+	            </p>
+	            <h3 style="color: #e0214d;">What decomposition of these steps makes sense?</h3>
+	            <p>
+	                The problem statement suggests three big steps for the decomposition. However, these steps are not really parallel. One deals with the letter size and two deal with the letters. We decide to start with two steps: one dealing with the letter size, the other with the letters themselves. Asking for letters goes with reading and printing them in the same way that asking for the letter size goes with reading it. We outline the high-level decomposition as follows:
+	                <p style="font:16px  Courier New;">block letter program:</p>
+	                <p style="margin-left: 30px;font:16px  Courier New;">ask the user for the letter size, then read it;</p>
+	                <p style="margin-left: 30px;font:16px  Courier New;">ask the user for the letters, and read and draw them.</p>
+	                <p>We will gradually expand the points in the outline to more closely approximate Python code.</p>
+	            </p>
+	            <h3 style="color: #e0214d;">What quantities need names?</h3>
+	            <p>
+	                Assigning names to quantities used in a program as soon as they are identified helps keep them straight and also makes it easier to talk about the problem solution. The best name for a quantity is one that describes it well. Thus, we will represent the letter size in a variable and call it letterSize .   
+	            </p>
+	            <h3 style="color: #e0214d;">How does the program ask for and read a value for letterSize?</h3>
+	            <p>
+	                As in <i>Check That Number!</i> we group the two tasks of asking for and reading a value for letterSize. The program should print a prompt like "Enter a size for the letters between 5 and 24." and then use a Python input statement to store the answer typed by the user.
+	            </p>
+
+            	</article>
+            <footer>
+                <ol id="page-numbers">
+                    <li>3</li>
+                    <li>4</li>
+                </ol>
+            </footer>
+        </section>
+
+        <section class="open-book">
+            <header>
+                <h1>Chapter 2</h1>
+                <h6>Durk Jan de Bruin</h6>
+            </header>
+            <article>
+                
+	            <h3 style="color: #e0214d;">Stop &amp; Help</h3>
+	            <p>
+	            <i>
+	                Will a letter drawn in 24 lines fit on your terminal screen? What is the size of the largest letter that will fit?
+	            </i>
+	            </p>
+	            <h3 style="color: #e0214d;">How does the program ask for, read, and draw the letters?</h3>
+	            <p>
+	                What steps are involved in asking for, reading, and drawing the letters? We continue to describe big steps and to postpone the details.
+	            </p>
+	            <h3 style="color: #e0214d;">Stop & Predict</h3>
+	            <p>
+	            <i>
+	                How can the task of drawing the letters be divided into steps just like those selected forgetting the letter size?
+	            </i>
+	            </p>
+	            <p>
+	                This task can be split into the same sort of steps used to ask for and read the letter size. One step "asks for," and the other "reads and draws." An outline of the decomposition so far appears below.
+	            </p>
+	            <p style="font:16px  Courier New;">
+	                block letter program:
+	            </p>
+	            <p style="margin-left: 30px;font:16px  Courier New;">
+	            	ask the user for the letter size, and read it;
+	            </p>
+	            <p style="margin-left: 60px;font:16px  Courier New;">
+	            	ask for the letter size;
+	            </p>
+	            <p style="margin-left: 60px;font:16px  Courier New;">
+	            	read the letter size;
+	            </p>
+	            <p style="margin-left: 30px;font:16px  Courier New;">
+	            	ask the user for the letters, and read and draw them;
+	            </p>
+	            <p style="margin-left: 60px;font:16px  Courier New;">
+	            	ask the user for the letters;
+	            </p>
+	            <p style="margin-left: 60px;font:16px  Courier New;">
+	                read and draw them;
+	            </p>
+	            <h3 style="color: #e0214d;">How is the task of reading and drawing the letters decomposed?</h3>
+	            <p> 
+	                There are two choices for decomposing the task of reading and drawing the letters. One is to read all six characters and then print the block versions of all six characters. We'll call this the "read all, print all" decomposition. Another decomposition is to read a letter, print it, read another letter, print it, and so on until all the letters are printed. We'll call this the "read one, print one" decomposition. In pseudocode these options look like this:
+	            </p>
+	            <p>
+	            	"Read all, print all:"
+	            </p>
+	            <p style="font:16px  Courier New;">
+	                read all six letters;
+	            </p>
+	            <p style="font:16px  Courier New;">
+	                print the block versions of all six letters;
+	            </p>
+	            <p>
+	            	"Read one, print one:"
+	            </p>
+	            <p style="font:16px  Courier New;">
+	                do the following six times:
+	            </p>
+	            <p style="font:16px  Courier New;margin-left: 30px;">
+	                read a letter;
+	            </p>
+	            <p style="font:16px  Courier New;margin-left: 30px;">
+	                print the block versions of the letter;
+	            </p>
+	            <p>
+	            	These decompositions are outlined below.
+	            </p>
+	            <p style="margin-left: 30px;">
+	            	The "read all, print all" decomposition:
+	            </p>
+	            <p style="margin-left: 60px;font:16px  Courier New;">
+	            	read and draw the letters
+	            </p>
+	            <p style="margin-left: 90px;font:16px  Courier New;">
+	            	read all six letters
+	            </p>
+	            <p style="margin-left: 120px;font:16px  Courier New;">
+	            	do the following six times: read a letter
+	            </p>
+  
+	            <p style="margin-left: 90px;font:16px  Courier New;">
+	                 draw all six letters
+	            </p>
+	            <p style="margin-left: 120px;font:16px  Courier New;">
+	                do the following for each letter read: draw the letter
+	            </p>
+	            <p>
+	            	The "read one, print one" decomposition: 
+	            </p>
+	            <p style="margin-left: 30px;font:16px  Courier New;">
+	            	read and draw the letters
+	            </p>
+	            <p style="margin-left: 60px;font:16px  Courier New;">
+	            	do the following six times:
+	            </p>
+	            <p style="margin-left: 90px;font:16px  Courier New;">
+	            	read a letter;
+	            </p>
+	            <p style="margin-left: 90px;font:16px  Courier New;">
+	            	draw the letter;
+	            </p>
+
+	            <h3 style="color: #e0214d;">What templates do these decompositions use?</h3>
+	            <p>
+	                The first decomposition employs a template that appeared in <i>Check That Number!</i> and will appear again and again. The "read all, print all" decomposition uses the "input, process, output" template:
+	            </p>
+	            <p style="font: 16px Courier New;">
+         	        input a value or set of values; <br>
+         	        process the value(s); <br>
+         	        output the value(s).
+         	    </p>
+         	    <p>
+	                The "read one, print one" decomposition uses a variation of the "input, process, output" template that inputs, processes, and outputs one item at a time:
+	            </p>
+	            <p style="font: 16px Courier New;">
+	                read a single value, process it, and output results until there aren't any more values to read.
+	            </p>
+	            <p>
+	                The "read all, print all" decomposition deals with the input values as a "batch." The "read one, print one" decomposition deals with them item by item.
+	            </p>
+	            <h3 style="color: #e0214d;">What other factors affect the choice of decomposition?</h3>
+	            <p>
+	                Factors that influence the choice of decomposition include the ease of implementing the solution and the chance of making errors. In Check That Number! we chose bulk processing. In the first two solutions to that problem, there was only one piece of information to handle, the integer identification number. In the third solution, four-character variables were used to store the digits of the input number; while this approach simplified the rest of the program, using four separate variables was somewhat clumsy.
+	            </p>
+	            <p>
+	                The problem of clumsiness arises with the "read all, print all" decomposition here. How will the letters be stored while they are being drawn? We would have to use six-character variables; this is even clumsier than four, and keeping track of six variables would probably be a source of errors.
+	            </p>
+	            <h3 style="color: #e0214d;">How does the programming environment affect the choice of decomposition?</h3>
+	            <p>
+	                A system consideration may affect the choice of decomposition. Some Python programming environments read a character and send it to the program immediately after the character is typed (<b>immediate input</b>), while others wait for the user to type a carriage return before sending any of the characters on the line to the program. If the programming environment uses immediate input, it is possible to get the output mixed up on the screen with the characters being typed by the user.
+	            </p>
+
+	            <h3 style="color: #e0214d;">Stop &amp; Help</h3>
+	            <p>
+	            <i>
+	        
+	                Which input method does your system use?
+	            </i>
+	            </p>
+	            <h3 style="color: #e0214d;">Stop &amp; Predict</h3>
+
+	            <p>
+	            <i>
+	                For systems with immediate input, which decomposition is best? For systems without immediate input, which decomposition is best? Why?
+	            </i>
+	            </p>
+          
+            </article>
+            <footer>
+                <ol id="page-numbers">
+                    <li>5</li>
+                    <li>6</li>
+                </ol>
+            </footer>
+        </section>
+
+
+        <section class="open-book" style="margin-top: 50px;">
+            <header>
+                <h1>Chapter 2</h1>
+                <h6>Durk Jan de Bruin</h6>
+            </header>
+            <article>
+            	
+	            
+	            <h3 style="color: #e0214d;">Which decomposition will be used in this solution?</h3>
+
+	            <p>
+	                To avoid the clumsiness of storing six different character values at once, we will choose the "read one, print one" decomposition. This may cause problems in an environment where immediate input is used, since a block letter may get printed before the remaining letters are input.
+	            </p>
+	            <h3 style="color: #e0214d;">What progress has been made on the solution so far?</h3>
+	            <p>
+	                Progress so far is outlined below.
+	            </p>
+	            <p style="font:16px  Courier New;">
+	                block letter program:<br>
+	                <p style="margin-left: 30px;font:16px  Courier New;">ask the user for the letter size, and read it; </p>
+	                <p style="margin-left: 60px;font:16px  Courier New;">ask for the letter size; </p>
+	                <p style="margin-left: 60px;font:16px  Courier New;">read the letter size; </p>
+	                <p style="margin-left: 30px;font:16px  Courier New;">ask the user for the letters, and read and draw them; </p>
+	                <p style="margin-left: 60px;font:16px  Courier New;">ask the user for the letters; </p>
+	                <p style="margin-left: 60px;font:16px  Courier New;">read and draw them; </p>
+	                <p style="margin-left: 90px;font:16px  Courier New;">do the following six times: </p> 
+	                <p style="margin-left: 120px;font:16px  Courier New;">read a letter; </p>
+	                <p style="margin-left: 120px;font:16px  Courier New;">draw the letter;</p>
+	            </p>
+	            <h3 style="color: #e0214d;">Stop &amp; Predict</h3>
+	            <p>
+	            <i>
+	                What Python construct will carry out the ''do six times'" action?
+	            </i>
+	            </p>
+	            <p>
+	                The main program has the following outline:
+	            </p>
+
+
+	            <p style="font:16px Courier New;margin-left: 0px;">
+	                request letterSize from the user <br>
+					ask the user for six letters <br>
+					for letterNum in range(6): <br>
+						<span style="margin-left: 30px;">read a letter</span> <br>
+					draw the letter in block form
+	         	</p>
+
+				<p>
+				    We have introduced a variable called letterNum along with a for statement to implement the "do six times" step in the decomposition. In general, a for loop is the easiest way to code the action of "doing something a specified number of times."
+				</p>
+				<h3 style="color: #e0214d;">What are ways to decompose the "draw the letter" task?</h3>
+				<p>
+					For the "draw the letter" task, we again identify big steps and postpone the details. Recall that the program must be able to draw six letters: P, Y, T, H, O and N.
+				</p>
+				<p>
+					One step is to figure out which of the six letters the user has entered, so as to produce a block P when the user types P, a block Y when the user types Y, and so on. Thus, the decomposition will have to include a test to determine which letter has been entered.
+				</p>
+				<p>
+					Another step is to print the letter. One decomposition is letter by letter. In this approach, the letter is treated as a unit. The letter-by-letter approach reflects the purpose of the program which is to print block letters. The pseudocode decomposition for the letter-by-letter approach is
+				</p>
+
+				<p style="font:16px Courier New;margin-left: 0px;">
+					if the letter is P, draw a block P;<br>
+					if the letter is Y, draw a block Y;<br>
+					if the letter is T, draw a block T;<br> 
+					if the letter is H, draw a block H;<br>
+					if the letter is O, draw a block O.<br>
+					if the letter is N, draw a block N.<br>
+
+				</p>
+				<p>
+				    Another decomposition is line by line. In this approach the lines are treated as units. The line-by-line approach takes advantage of similarities among the letters. The pseudocode decomposition for the line-by-line approach is 
+				</p>
+				<p style="font:16px Courier New;margin-left: 0px;">
+					draw the first line or component of the letter, whatever it is; <br>
+					draw the second line or component of the letter, whatever it is; <br>
+
+					draw the last line or component of the letter, whatever it is.
+				</p>
+				<h3 style="color: #e0214d;">Stop & Predict</h3>
+				<p>
+					<i>
+					Which approach is best: letter by letter or line by line? Why?
+					</i>
+				</p>
+				<h3 style="color: #e0214d;">Which decomposition makes sense for this problem?</h3>
+				<p>
+				    To choose between these alternatives it is useful to consider the purpose of the program, the ways in which it is likely to be modified, the implementation of the solution, and the chance of making errors.
+				</p>
+				<p>
+				    We already mentioned that the letter-by-letter approach is closer to the purpose of the program. It is likely, knowing what we know about the alphabet, that our program will eventually be modified to add the capability of drawing other letters. The problem statement suggested that that will be the case. It will be easier to add the code to draw another letter if the program is already organized around letters rather than in some other way. 
+				</p>
+				<p>
+				    Furthermore, a decomposition around lines or components is likely to be complicated. The number of lines used to draw a letter is input by the user and therefore not known in advance. The number of components is known in advance, but it varies greatly among letters. A program organized around components is likely to be harder to keep track of, and therefore it is more likely to contain errors.
+				</p>
+				<p>
+				    Thus, we choose the letter-by-letter decomposition.
+				</p>
+				<h3 style="color: #e0214d;">How is each letter handled separately?</h3>
+				<p>
+				    A Python function will draw each letter: DrawP to draw a P, DrawY to draw an Y, and so on. Each function needs to know how big its letter should be, so letterSize should be passed to each one as a value parameter.
+				</p>
+				<h3 style="color: #e0214d;">How does the program decide which letter function to call?</h3>
+				<p>
+				    There are only five possibilities for letters. Since each possibility is a single character, the if statement is most appropriate for selecting among the letter-drawing functions. A descriptive name for the character variable that holds a letter is letter. This yields the following pseudocode:
+				</p>
+				<p style="font:16px Courier New;margin-left: 0px;">
+								
+					if letter == 'P': <br>
+						<span style="margin-left: 30px;">DrawP(letterSize)</span> <br>
+					if letter == 'Y': <br>
+						<span style="margin-left: 30px;">DrawY(letterSize)</span> <br>
+					if letter == 'T': <br>
+						<span style="margin-left: 30px;">DrawT(letterSize)</span> <br>
+					if letter == 'H': <br>
+						<span style="margin-left: 30px;">DrawH(letterSize)</span> <br>
+					if letter == 'O': <br>
+						<span style="margin-left: 30px;">DrawO(letterSize)</span> <br>
+					if letter == 'N': <br>
+						<span style="margin-left: 30px;">DrawN(letterSize)</span>
+					
+				</p>
+				<h3 style="color: #e0214d;">How is the main program coded in Python?</h3>
+				<p>
+					The main program, with some refinement, now looks like this.
+				</p>
+				<p style="font:16px Courier New;margin-left: 0px;">
+					letterSize = int(input('Enter a size for the letters between 5 and 24:')) <br> 
+					print('Type six letters, chosen from PYTHON: ') <br>
+					for letterNum in range(6): <br>
+						<span style="margin-left: 30px;">letter = input()</span><br> 
+
+
+					if letter == 'P': <br>
+						<span style="margin-left: 30px;">DrawP(letterSize)</span> <br>
+					if letter == 'Y': <br>
+						<span style="margin-left: 30px;">DrawY(letterSize)</span> <br>
+					if letter == 'T': <br>
+						<span style="margin-left: 30px;">DrawT(letterSize)</span> <br>
+					if letter == 'H': <br>
+						<span style="margin-left: 30px;">DrawH(letterSize)</span> <br>
+					if letter == 'O': <br>
+						<span style="margin-left: 30px;">DrawO(letterSize)</span> <br>
+					if letter == 'N': <br>
+						<span style="margin-left: 30px;">DrawN(letterSize)</span>
+				</p>
+
+</article>
+            <footer>
+                <ol id="page-numbers">
+                    <li>7</li>
+                    <li>8</li>
+                </ol>
+            </footer>
+        </section>
+
+        <section class="open-book">
+            <header>
+                <h1>Chapter 2</h1>
+                <h6>Durk Jan de Bruin</h6>
+            </header>
+            <article>
+                
+				<h3 style="color: #e0214d;">Analysis</h3>
+				<p>
+					2.6 In the decompositions considered so far, the task of reading the letters was grouped with the task of drawing the letters rather than with the task of asking for them. Would grouping the actions of prompting for and reading the letters fit better into the "read all, print all" approach or the "read one, print one" approach? Explain.
+				</p>
+				<h3 style="color: #e0214d;">Reflection</h3>
+				<p>
+				    2.7 An outline was used as an aid to keep track of details in the design. What aids have you used to keep track of details in solving a complex problem.
+				</p>
+    			<h3 style="color: #e0214d;">Application</h3>
+				<p>
+				    2.8 Design a program that will allow you to determine whether or not the Python environment in which it is run uses immediate input.
+				</p>
+
+        		<h3 style="color: #e0214d;">Application</h3>
+				<p>
+				    2.9 Use a case statement to generate pseudocode for the line-by-line decomposition or for the component-by-component decomposition.
+				</p>
+				<br>
+				<h2 style="color: #f55c7f;background: lavenderblush;">Designing the Letters</h2>
+
+				<h3 style="color: #e0214d;">What will the letters look like?</h3>
+			    <p>
+			        The problem statement says that the letters will have the same number of rows (lines) as columns, and that they will have bars, indented bars, and bar pairs. It says to design "attractive" letters.
+			    </p>
+			    <h3 style="color: #e0214d;">Stop &amp; Predict</h3>
+		        <p>
+		        <i>
+		            What is a good way to figure out the characteristics of attractive letters?
+		            
+		        </i>
+		        <p>
+		        	To figure out what a letter will look like, we select a typical letter and try some options. The problem statement provides the letter A as an example, so we start with it.
+		        </p>
+		        <p>
+		        	The A shown in the problem statement has a top bar, a pair of bars (the "walls" of the A), another bar, and a longer pair of bars (the "legs" of the A). These components of the letter vary in size depending on letterSize. To determine how they vary, we construct these samples:
+		    	</p>
+		    	<div>
+                	<img src="size.png" style="width: 100%">
+                </div>
+    			<h3 style="color: #e0214d;">Stop & Help</h3>
+		        <p>
+		            <i>
+		                Draw the letter S in sizes 5 to 11.
+		            </i>
+		        </p>
+        		<h3 style="color: #e0214d;">Stop &amp; Help</h3>
+	            <p>
+	                <i>
+	                Figure out the dimensions for the letters S and C. What is the smallest size possible for the letter S? Why?
+	            </i>
+	        	</p>
+	        	<h3 style="color: #e0214d;">How are the dimensions for the letter A determined?</h3>
+	        	<p>
+	                We note that the first two components of the letter A are about half of the letter, the bar size is about one quarter of the letter, and the width of each leg is the same as the bar height. These dimensions are shown in the below Table.
+	            </p>
+	            <h3 style="text-align: center;">Dimensions for various sizes of the letter A</h3>
+	            <table style="font: 17px 'Calibri', sans-serif;color: black;">
+	            	<th style="text-align: center;">Size of letter</th>
+	            	<th style="text-align: center;">Height of both bars</th>
+	            	<th style="text-align: center;">Height of walls</th>
+	            	<th style="text-align: center;">Width of walls, legs</th>
+	            	<th style="text-align: center;">Height of legs</th>
+
+	            	<tr>
+	            		<td style="text-align: center;">5</td>
+	            		<td style="text-align: center;">1</td>
+	            		<td style="text-align: center;">1</td>
+	            		<td style="text-align: center;">1</td>
+	            		<td style="text-align: center;">2</td>
+	            	</tr>
+	            	<tr>
+	            		<td style="text-align: center;">6</td>
+	            		<td style="text-align: center;">1</td>
+	            		<td style="text-align: center;">2</td>
+	            		<td style="text-align: center;">1</td>
+	            		<td style="text-align: center;">2</td>
+	            	</tr>
+	            	<tr>
+	            		<td style="text-align: center;">7</td>
+	            		<td style="text-align: center;">1</td>
+	            		<td style="text-align: center;">2</td>
+	            		<td style="text-align: center;">1</td>
+	            		<td style="text-align: center;">3</td>
+	            	</tr>
+	            	<tr>
+	            		<td style="text-align: center;">8</td>
+	            		<td style="text-align: center;">2</td>
+	            		<td style="text-align: center;">2</td>
+	            		<td style="text-align: center;">2</td>
+	            		<td style="text-align: center;">2</td>
+	            	</tr>
+	            	<tr>
+	            		<td style="text-align: center;">9</td>
+	            		<td style="text-align: center;">2</td>
+	            		<td style="text-align: center;">2</td>
+	            		<td style="text-align: center;">2</td>
+	            		<td style="text-align: center;">3</td>
+	            	</tr>
+	            	<tr>
+	            		<td style="text-align: center;">10</td>
+	            		<td style="text-align: center;">2</td>
+	            		<td style="text-align: center;">3</td>
+	            		<td style="text-align: center;">2</td>
+	            		<td style="text-align: center;">3</td>
+	            	</tr>
+	            	<tr>
+	            		<td style="text-align: center;">11</td>
+	            		<td style="text-align: center;">2</td>
+	            		<td style="text-align: center;">3</td>
+	            		<td style="text-align: center;">2</td>
+	            		<td style="text-align: center;">4</td>
+	            	</tr>
+	            </table>
+
+        
+            </article>
+            <footer>
+                <ol id="page-numbers">
+                    <li>9</li>
+                    <li>10</li>
+                </ol>
+            </footer>
+        </section>
+
+
+        <section class="open-book" style="margin-top: 50px;">
+            <header>
+                <h1>Chapter 2</h1>
+                <h6>Durk Jan de Bruin</h6>
+            </header>
+            <article>
+             	<h3 style="color: #e0214d;">How are the dimensions represented in Python?</h3>
+	            <p>
+	                In Python, we choose a variable for each quantity. Values for the dimensions for the letter A can be computed in terms of letterSize as follows:
+	            </p>
+
+				<p style="font:16px Courier New;margin-left: 0px;">
+				    topHalfHeight = letterSize / 2 <br>
+					barHeight = letterSize / 4 <br>
+					wallHeight = topHalfHeight - barHeight <br>
+					wallWidth = barHeight <br>
+					legHeight = letterSize - topHalfHeight - barHeight <br>
+					legWidth = barHeight
+				</p>
+				<h3 style="color: #e0214d;">Stop &amp; Help</h3>
+			    <p>
+			        <i>
+			    		Compute the dimensions for each part of the letter S.
+					</i>
+				</p>
+				<h3 style="color: #e0214d;">How do these dimensions apply to drawing an A?</h3>
+			    <p>
+			        The problem statement requires that the letters be drawn using the DrawBar, DrawIndentedBar, and DrawTwoBars functions. One way to decompose the drawing of the letter is to draw each line individually with these functions. Loops that draw the components of the A are shown below.
+			    </p>
+			    <br>
+				<p style="font:16px Courier New;margin-left: 0px;">
+					for lineNum in range(0, barHeight): <br>
+						<span style="margin-left: 30px;">draw a line with height = 1 and width = letterSize </span><br>
+					for lineNum in range(0, wallHeight): <br>
+						<span style="margin-left: 30px;">draw two bars with height = 1, width = wallWidth, and letterSize - 2 * wallWidth columns in between </span><br>
+					for lineNum in range(0, barHeight): <br>
+						<span style="margin-left: 30px;">draw a line with height = 1 and width = letterSize </span><br>
+					for lineNum in range(0, legHeight): <br>
+						<span style="margin-left: 30px;">draw two bars with height = 1, width = wallWidth, and letterSize - 2 * wallWidth columns in between</span>
+				</p>
+				<h3 style="color: #e0214d;">Stop &amp; Help</h3>
+				<p>
+				    <i>
+				    	Write loops using code and pseudocode to draw the components of the letter S.
+					</i>
+				</p>
+				<h3 style="color: #e0214d;"&get;>Must loops be used to draw the letter?</h3>
+			    <p>
+			        Each loop, however, can be rewritten as a single call to DrawBar or DrawTwoBars, since each of the two functions can take an arbitrary height value as an argument. This yields the following code:
+			    </p>
+
+				<p style="font:16px Courier New;margin-left: 0px;">
+				    DrawBar(barHeight, letterSize) <br>
+					DrawTwoBars(wallHeight, wallWidth, letterSize - 2 * wallWidth) <br>
+					DrawBar(barHeight, letterSize) <br>
+					DrawTwoBars(legHeight, legWidth, letterSize - 2 * legWidth)
+				</p>
+				<h3 style="color: #e0214d;">Stop &amp; Help</h3>
+				<p>
+			        <i>
+			            Convert the loops for DrawS into calls to functions.
+			        </i>
+			    </p>
+
+				<h3 style="color: #e0214d;">What will DrawBar look like in Python?</h3>
+			    <p>
+			        DrawBar is also yet to be written. A "bar" is just a rectangle of asterisks. This sounds like a nested loop: each iteration of the outer loop prints a single line, and each iteration of the inner loop prints a single asterisk on the line. Here's the code.
+			    </p>
+
+				<p style="font:16px Courier New;margin-left: 0px;">
+				    def DrawBar(height, width): <br>
+				    lineNum = 0 <br>
+				    colNum = 0 <br>
+				    for lineNum in range(height): <br>
+				        <span style="margin-left: 30px;">for colNum in range(width): </span><br>
+				            <span style="margin-left: 60px;">print('*', end='') </span><br>
+				        <span style="margin-left: 30px;">print('\n')</span>
+				</p>
+				<p>
+				    The functions for DrawIndentedBar and DrawTwoBars are similar. The differences are in the printing of characters on each line; the body of the outer loop must contain additional code to print the blanks for indenting or the blanks between bars. Here is the code for DrawIndentedBar; the extra for statement (boxed) is the main addition.
+				</p>
+
+				<p style="font:16px Courier New;margin-left: 0px;">
+				    def DrawIndentedBar(height, width, indentAmt): <br>
+					BLANK = ' ' <br>
+					lineNum = 0, colNum = 0 <br>
+					for lineNum in range(0, height): <br>
+						<span style="margin-left: 30px;"># draw a line of the bar</span> <br> 
+						<span style="margin-left: 30px;">for colNum in range(0, indentAmt):</span> <br>
+							<span style="margin-left: 60px;">print(BLANK, end = " ") </span><br>
+						<span style="margin-left: 30px;">for colNum in range(0, width): </span><br>
+							<span style="margin-left: 30px;">print('*', end= " ") </span><br>
+						print('\n')
+				</p>
+				<p>
+				    For ease of understanding, the new inner loop was intentionally written to be similar to the old one, even though Python allows a shorthand way to write sequences of blanks. The constant BLANK is used to avoid any confusion between the blank character and other nonprinting characters.
+				</p>
+				<h3 style="color: #e0214d;">Stop &amp; Help</h3>
+				<p>
+				<i>
+				    Code the DrawTwoBars function in Python.
+				</i>
+				</p>
+				<h3 style="color: #e0214d;">What does DrawA look like in Python?</h3>
+				<p>
+				    Substituting calls to functions for the pseudocode results in the following DrawA function:
+				</p>
+				<p style="font:16px Courier New;margin-left: 0px;">
+					def DrawA(letterSize): <br>
+						<span style="margin-left: 30px;">topHalfHeight, barHeight, wallHeight, wallWidth, legHeight, legWidth = 0 </span> <br>
+						<span style="margin-left: 30px;">barHeight = letterSize / 4 </span><br>
+						<span style="margin-left: 30px;">topHalfHeight = letterSize / 2 </span><br>
+						<span style="margin-left: 30px;">wallHeight = topHalfHeight - barHeight </span><br>
+						<span style="margin-left: 30px;">wallWidth = barHeight </span><br>
+						<span style="margin-left: 30px;">legHeight = letterSize - topHalfHeight - barHeight </span><br> 
+						<span style="margin-left: 30px;">legWidth = barHeight </span><br>
+						<span style="margin-left: 30px;">DrawBar(barHeight, letterSize) </span><br>
+						<span style="margin-left: 30px;">DrawTwoBars(wallHeight, wallWidth, letterSize - 2 * wallWidth) </span><br>
+						<span style="margin-left: 30px;">DrawBar(barHeight, letterSize) </span><br>
+						<span style="margin-left: 30px;">DrawTwoBars(legHeight, legWidth, letterSize - 2 * legWidth) </span><br>
+
+				</p>
+				<h3 style="color: #e0214d;">Stop &amp; Help</h3>
+				<p>
+				<i>
+				    Code the DrawP function in Python.
+				</i>
+				</p>
+				<h3 style="color: #e0214d;">Modification</h3>
+				<p>
+					2.10 Redesign the A so that the walls are always longer than the legs.
+				</p>
+				<h3 style="color: #e0214d;">Analysis</h3>
+				<p>
+					2.11 DrawIndentedBar contains the loop
+				</p>
+				<p style="font:16px Courier New;margin-left: 0px;">
+					for colNum in range(0, width): <br>
+						<span style="margin-left: 30px;">print('*', end = " ")</span>
+				</p>
+				<p>
+					Why can’t that loop be rewritten as a single write statement?
+				</p>
+				<h3 style="color: #e0214d;">Reflection</h3>
+				<p>
+					2.12 What makes letters attractive? What might a programmer do to make the letters even more attractive? Why is it difficult to figure out how to make letters attractive?
+				</p>
+				<h3 style="color: #e0214d;">Analysis</h3>
+				<p>
+					2.13 A proposal is made to code DrawA as follows, so that the height of the walls is the same as the height of the legs:
+				</p>
+				<p style="font:16px Courier New;margin-left: 0px;">
+					wallHeight = letterSize / 4 <br>
+					legHeight = wallHeight <br>
+					barHeight = (letterSize - wallHeight - legHeight) / 2 <br>
+					wallWidth = barHeight <br>
+					legWidth = barHeight <br>
+					DrawBar(barHeight, letterSize) <br>
+					DrawTwoBars(wallHeight, wallWidth, letterSize - 2 * wallWidth) <br> 
+					DrawBar(barHeight, letterSize) <br>
+					DrawTwoBars(legHeight, legWidth, letterSize - 2 * legWidth)
+				</p>
+				<p>
+					Evaluate this proposal.
+				</p>
+				<br>
+				<h2 style="color: #f55c7f;background: lavenderblush;">Development</h2>
+
+				<h3 style="color: #e0214d;">How should the program be assembled?</h3>
+			    <p>
+			        The program is now designed and must be <b>developed</b>, that is, turned into a program that runs. Once assembled, it will be a relatively large program: five letter-drawing functions, plus three shape-drawing functions. If it were typed in and tested all at once, and produced incorrect output, it could be difficult to localize the source of the errors. <b>Incremental development</b>—coding and testing the designed program piece by piece, in isolation—is a good development strategy. It allows us to debug the pieces of the program without having bugs from the various pieces interfere with each other.
+			    </p>
+				
+                
+            </article>
+            <footer>
+                <ol id="page-numbers">
+                    <li>11</li>
+                    <li>12</li>
+                </ol>
+            </footer>
+        </section>
+
+        <section class="open-book">
+            <header>
+                <h1>Chapter 2</h1>
+                <h6>Durk Jan de Bruin</h6>
+            </header>
+            <article>
+            	<h3 style="color: #e0214d;">How can incremental development be applied to this problem?</h3>
+			    <p>
+			        Incremental development is often done in a <b>bottom-up</b> fashion, that is, testing and debugging the lowest-level subprograms, then those that call them, and so forth. This is best shown in a call diagram:
+			    </p>
+			    <div>
+                	<img src="calldia.png" style="width: 100%">
+                </div>
+            	<p>
+			        The "nodes" in this diagram are the functions in the program, with the more abstract functions—those involving less detail—drawn at the top of the diagram. A line is drawn from one function to another if the first function calls the second.
+			    </p>
+			    <p>
+			        In the call diagram above, each level corresponds to a level of detail. The second level represents letters. The third level represents shapes. A well organized program has a call diagram in which the levels of abstraction can be easily separated.
+			    </p>
+			    <p>
+			        It is clear from the call diagram that DrawBar is an important function. All the letter-drawing functions call it. Thus, it makes sense to test DrawBar by itself, to get as much evidence as possible that it works correctly, before adding the routines that call it.
+			    </p>
+			    <p>
+			         In general, a bottom-up approach to development starts with routines at the bottom of the call diagram—those called by more abstract functions. These routines are tested and debugged in isolation before being combined with routines that depend on them. This is analogous to the process of building a house or a bridge; one wants to know that the foundation is secure before adding the walls, girders, and so on to it.
+			    </p>
+				<h3 style="color: #e0214d;">What extra code should be written to help test the functions?</h3>
+			    <p>
+			    Extra code must typically be written to test a function like DrawBar in isolation from the rest of the program. This involves a <b>driver program</b>; whose sole purpose is to provide a convenient way to test a function. Such a program in this case might ask the user for a height and a width, and call DrawBar with the input values, as follows:
+				</p>
+				<p style="font:16px Courier New;margin-left: 0px;">
+				    height, width = 0 <br>
+					print('Type a height and a width:') <br>
+					height = int(input())<br>
+					width = int(input()) <br>
+					print('12345678901234567890\n') <br>
+					DrawBar(height, width)
+				</p>
+				<p>
+				    This program would then be run several times to gather evidence that DrawBar works as intended. Note the output of a line containing column numbers. This makes it even easier for us to see whether the program's output is correct or incorrect. (We included this output for the same reason we included debugging output in Check That Number!)
+				</p>
+				<p>
+				     The amount of code we test and debug for each increment varies depending on our experience with the programming constructs and templates we are using. Since the idea is to make bug-finding easy, however, each increment should be small enough to be able to pin down any errors immediately. For this problem, it makes sense to test and debug the shape drawing functions first, then add each letter-drawing function one by one.
+				</p>
+				<P>
+				    Thus, by starting with the DrawBar, DrawTwoBars, and Drawlndentedbar functions, we can code and test DrawA. (DrawlndentedBar perhaps could be delayed.) Once these are running, we can add DrawP. Once these are running, we can add the routines for the other letters and test the whole program. The Python Code section contains the result.
+				</p>
+				<h3 style="color: #e0214d;">What tests provide the best evidence that the program works?</h3>
+			    <p>
+			        In general, test data should be sufficient at least to exercise all statements in the program. One problem with this program is that exercising each statement in the program isn't enough; the statements interact in complicated ways. Referring to Table 2.1, we see that we can get a reasonable picture of the program's correctness only by testing a group of at least four values, one for each possible value of letterSize % 4.
+			    </p>
+			    <p>
+					We tested each letter in sizes 5 through 11, the cases in our table. Some of the letters looked weird because the horizontal spacing differed from the vertical spacing on the terminal screen; adjacent characters on a line are closer together than adjacent characters on different lines. We fixed the ratios to get more attractive letters.
+			    </p>
+				<h3 style="color: #e0214d;">Stop &amp; Help</h3>
+			    <p>
+			        <i>
+			            Generate test data for the rest of the letter-drawing functions.
+			        </i>
+			    </p>
+    			<h3 style="color: #e0214d;">Debugging</h3>
+		        <p>
+		            2.14 Suppose that, after you type in the program just described, it prints an A as shown on the right. Which function most likely contains the bug? Explain.
+		        </p>
+		        <h3 style="color: #e0214d;">Testing</h3>
+		        <p>
+		            2.15 Describe how to get DrawC running after DrawA without finishing the program.
+		        </p>
+		        <br>
+				<h2 style="color: #f55c7f;background: lavenderblush;">Outline of Design and Development Questions</h2>
+				<p>
+				    These questions summarize the main points of the commentary.
+				</p>
+
+				<h3 style="color: #e0214d;">Initial Design Steps</h3>
+				<p>
+					How should one start solving this problem? <br>
+					What are the big steps for the top-down design of the program? <br> 
+					What decomposition of these steps makes sense? <br>
+					What quantities need names? <br>
+					How does the program ask for and read a value for letterSize? <br>
+					How does the program ask for, read, and draw the letters? <br>
+					How is the task of reading and drawing the letters decomposed? <br>
+					What templates do these decompositions use? <br>
+					What other factors affect the choice of decomposition? <br>
+					How does the programming environment affect the choice of decomposition? <br>
+					Which decomposition will be used in this solution? <br>
+					What progress has been made on the solution so far? <br>
+					What are ways to decompose the "draw the letter" task? <br>
+					Which decomposition makes sense for this problem? <br>
+					How is each letter handled separately? <br>
+					How does the program decide which letter function to call? <br>
+					How is the main program coded in Python?
+				</p>
+				<h3 style="color: #e0214d;">Designing the Letters</h3>
+				<p> 
+					What will the letters look like? <br>
+					How are the dimensions for the letter A determined? <br>
+					How are the dimensions represented in Python? <br>
+					How do these dimensions apply to drawing an A? <br>
+					Must loops be used to draw the letter? <br>
+					What will DrawBar look like in Python? <br>
+					What does DrawA look like in Python?
+				</p>
+				
+
+     </article>
+            <footer>
+                <ol id="page-numbers">
+                    <li>13</li>
+                    <li>14</li>
+                </ol>
+            </footer>
+        </section>
+
+
+        <section class="open-book" style="margin-top: 50px;">
+            <header>
+                <h1>Chapter 2</h1>
+                <h6>Durk Jan de Bruin</h6>
+            </header>
+            <article>
+            	<h3 style="color: #e0214d;">Development</h3>
+				<p>
+					How should the program be assembled? <br>
+					How can incremental development be applied to this problem? <br>
+					What extra code should be written to help test the functions? <br>
+					What tests provide the best evidence that the program works? <br>
+				</p>
+				<br>
+				<h2 style="color: #f55c7f;background: lavenderblush;">Programmers' Summary</h2>
+				<p>
+				    Banners With CLASS presents a single program to print block letters, designed using stepwise refinement. It involves several levels of decomposition:
+				</p>
+				<ul>
+					<li>
+						the main program, which reads a letter size, then repeatedly reads a letter and calls the appropriate function to draw it
+					</li>
+					<li>
+						the letter-drawing functions, which combine calls to shape-drawing functions to draw the various letter components
+					</li>
+					<li>
+						the shape-drawing functions, which print asterisks in various rectangular patterns 
+					</li>
+				     
+				</ul>
+				<p>
+
+				    The solution also involves two choices of decomposition. The first choice is to solve the problem of reading and drawing the letters: should they all be read first, then drawn, or should they be handled letter by letter by reading, then drawing, then reading, then drawing, and so on? We decided to handle the letters one by one, to avoid the clumsiness of managing six variables. (This choice would cause problems, however, in a Python environment that provides only the facility for immediate input, that is, input without waiting for a carriage return.) 
+				</p>
+				<p>
+				    The second choice comes when deciding how to decompose the task of drawing letters: should decomposition be in terms of letters, or lines of output, or components of letters? The important concern here is ease of understanding and modification; since the program's purpose is to print letters, it should be organized around functions that deal with letters.
+				</p>
+				<p>
+
+				    Designing individual letters involves some planning on paper. Sample letters are sketched out, a table made of the dimensions of their components (applying the Multiple Representations principle), and code inferred from the table. The / operator shows up again—Check That Number! uses it also—in computing the dimensions.
+				</p>
+				<p>
+				    
+				    Banners With CLASS illustrates the power of the Divide and Conquer principle. The program sounds difficult at first, but by dividing it into pieces and implementing each piece it turns out that the solution is just a sequence of templates that are either familiar or similar to familiar templates.
+				</p>
+				<p>
+
+				    Three templates likely to be of use in future programming are introduced. One is a variant of "input, process, output," namely "input one, process one" to do item-by-item processing. Another, "select from alternatives," is used to decide which function to call to draw the letter just read. Finally, the template of "do something a specified number of times" is used to design the functions to draw components of each letter.
+				</p>
+				<p>
+
+				    The Banners With CLASS program is much larger than any of the Check That Number! programs, and, once designed, must be put together carefully. The strategy of <b>incremental development</b> is used to test and debug it. The increments are chosen from the <b>call diagram</b> illustrating how the functions call one another: the bottom-level functions are tested first, then the functions that call them, added one by one. 
+				</p>
+				<p>
+				    
+				    <b>Driver programs</b> are used early in the development process to provide values for testing the functions. Applying the Persecution Complex principle as in the Check That Number! programs, the test programs used here include debugging output to allow easy detection of errors in the code. 
+				</p>
+				<p>
+				    Compared to the Check That Number! 'provide, this program is easier to test since the output is displayed directly on the screen, requiring fewer hand calculations. Design of test data requires somewhat more thought, however. The relative sizes of letter components vary with the overall letter size, and a sufficient set of test data must include examples of all possible patterns.
+				</p>
+				<br>
+				<h2 style="color: #f55c7f;background: lavenderblush;">Making Sense of Banners With CLASS</h2>
+  				<h3 style="color: #e0214d;">Debugging</h3>
+			  	<p>
+					2.16 Suppose a "friend" of yours who often deletes lines from programs
+					used the Banners With CLASS program three times. Each time you got the program back, it had a different bug. Where would you look for these bugs?
+					
+			    </p>
+			    <ul>
+			    	<li>
+			    		Every time a letter was input, the program printed block versions of P, Y, T, H, O, N.
+					
+			    	</li>
+			    	<li>
+			    		The block version of the letter T was too short.
+					
+			    	</li>
+			    	<li>
+			    		The letter H had a space in it.
+			    	</li>
+			    </ul>
+
+				<h3 style="color: #e0214d;">Modification</h3>
+				<p>
+			        2.17 Design block versions of the letters T, H ans N. Compare your versions with those produced by the Banners With CLASS program. Explain how yours differ. Change the Banners With CLASS program to produce letters your way.
+			    </p>
+			    <h3 style="color: #e0214d;">Application</h3>
+		        <p>
+		            2.18 Design and test functions to print the block digits 0 through 9.
+		        </p>
+        		<h3 style="color: #e0214d;">Application</h3>            
+        		<p>
+                	2.19 Suppose the Banners With CLASS program were going to run on a terminal where the columns were close together but the lines were far apart. What would be necessary to get the program to produce attractive block letters? Implement your idea.
+            	</p>
+        		<h3 style="color: #e0214d;">Application</h3>
+				<p>
+				    2.20 Write a function to draw a block letter E on a terminal with columns close together and lines far apart.
+				</p>
+				<h3 style="color: #e0214d;">Analysis</h3>
+			    <p>
+			        2.21 Suppose a version of Python allowed the user to move the print cursor anywhere on the screen. How would this add to the power of the Banners With CLASS program. What new primitives (functions like DrawBar, Draw LandR, etc.) would be useful.
+			    </p>
+
+            </article>
+            <footer>
+                <ol id="page-numbers">
+                    <li>15</li>
+                    <li>16</li>
+                </ol>
+            </footer>
+        </section>
+
+        <section class="open-book">
+            <header>
+                <h1>Chapter 2</h1>
+                <h6>Durk Jan de Bruin</h6>
+            </header>
+            <article>
+            	
+                 <h3 style="color: #e0214d;">Application</h3>
+                <p>
+                    2.22 Modify the Banners With CLASS program so that it prints a word of any length. The program should ask the user for the length and then print the word.
+                </p>
+				<h3 style="color: #e0214d;">Application</h3>
+			    <p>
+			        2.23 Modify the Banners With CLASS program so that it will print a series of words rather than just one word. The program should keep asking the user for words until the user enters the letter E (for end). Design a banner using words that can be written with the letters P, Y, T, H, O and N and print the banner. An example might be "PYTHON NOT POT."
+			    </p>
+			    <h3 style="color: #e0214d;">Reflection</h3>
+		        <p>
+		            2.24 Compare your design and development decisions to those described in the commentary. What, if anything, would you do differently?
+		        </p>
+		        <h3 style="color: #e0214d;">Reflection</h3>
+	            <p>
+	                2.25 What problems in a program other than bugs might incremental development help detect?
+	                
+	            </p>
+	            <h3 style="color: #e0214d;">Reflection</h3>
+	            <p>
+	                2.26 What ideas in the Banners With CLASS solution will you use in designing future programs? What ideas seem wrong or unnecessary for designing programs in the future?
+	            </p>
+	            <br>
+	            <h2 style="color: #f55c7f;background: lavenderblush;">Linking to Previous Case Studies</h2>
+ 				<h3 style="color: #e0214d;">Reflection</h3>
+			    <p>
+			       2.27 Compare the design process for Banners With CLASS and Check That Number! What techniques were successful for both?
+			    </p>
+			    <h3 style="color: #e0214d;">Analysis</h3>
+		        <p>
+		            2.28 Compare the use of the "input, process, output" template (programming pattern) in Banners With CLASS and Check That Number! Explain why templates are helpful.
+		            
+		        </p>
+		        <h3 style="color: #e0214d;">Modification</h3>
+	            <p>
+	              2.29  Rewrite the character variable version of the Check That Number! program to ask the user how many digits the identification number is supposed to contain, and then to read and process the specified number of digits. (The last digit read will then be the check digit.)
+	            </p>
+	            <br>
+	            <h2 style="color: #f55c7f;background: lavenderblush;">Complete Banners With CLASS Program</h2>
+	            <p style="font:16px Courier New;margin-left: 0px;">
+	            	<br>
+	                # This program asks the user for letters and the size to draw the letters, then prints the letters in block style down the page. <br><br>
+
+					letterSize = 0 <br>
+					letterNum = 0 <br>
+					letter = ''<br><br>
+					# Draw a bar of the given height and width.<br><br>
+
+					def DrawBar(height, width): <br>
+					    <span style="margin-left: 30px;">lineNum = 0</span><br>
+					    <span style="margin-left: 30px;">colNum = 0</span><br>
+					    <span style="margin-left: 30px;">for lineNum in range(height):</span><br>
+					        <span style="margin-left: 60px;">for colNum in range(width):</span><br>
+					            <span style="margin-left: 90px;">print('*', end='')</span><br>
+					        <span style="margin-left: 60px;">print('\n')</span><br><br>
+
+					# Draw two bars of the given height and width, separated by the given amount. The thickness of each portion is about 1/4 of the width.<br><br>
+
+					def DrawTwoBars (height, width, separation): <br>
+					    <span style="margin-left: 30px;">BLANK = ' '</span><br>
+					    <span style="margin-left: 30px;">lineNum = 0</span><br>
+					    <span style="margin-left: 30px;">colNum = 0 </span><br><br>
+					    <span style="margin-left: 30px;"># Draw Two Bars</span><br><br>
+					    <span style="margin-left: 30px;">for lineNum in range(0, height):</span><br>
+					        <span style="margin-left: 60px;">for colNum in range(0, width):</span><br>
+					            <span style="margin-left: 90px;">print('*', end='')</span><br>
+					        <span style="margin-left: 60px;">for colNum in range(0, separation):</span><br>
+					            <span style="margin-left: 90px;">print(BLANK, end='')</span><br>
+					        <span style="margin-left: 60px;">for colNum in range(0, width):</span><br>
+					            <span style="margin-left: 90px;">print('*', end='')</span><br>
+					        <span style="margin-left: 60px;">print('\n')</span><br><br>
+
+					# Draw an indented bar of the given height and width, indented by the given amount. The thickness of the right side is about 1/4 of the width.<br><br>
+
+					def DrawIndentedBar(height, width, indentAmt): <br>
+					    <span style="margin-left: 30px;">BLANK = ' ' </span><br> 
+					    <span style="margin-left: 30px;">lineNum, colNum = 0 </span><br>
+					    <span style="margin-left: 30px;">for lineNum in range(0, height): </span><br>
+						<span style="margin-left: 30px;"># draw a line of the bar </span><br>
+						<span style="margin-left: 30px;">for colNum in range(0, indentAmt):</span><br>
+						    <span style="margin-left: 60px;">print(BLANK, end='')</span><br>
+						<span style="margin-left: 30px;">for colNum in range(0, width):</span><br>
+						    <span style="margin-left: 60px;">print('*', end='')</span><br>
+						<span style="margin-left: 30px;">print('\n')</span><span style="margin-left: 30px;"><br>
+
+	            </p>
+
+            </article>
+            <footer>
+                <ol id="page-numbers">
+                    <li>17</li>
+                    <li>18</li>
+                </ol>
+            </footer>
+        </section>
+
+
+        <section class="open-book" style="margin-top: 50px;">
+            <header>
+                <h1>Chapter 2</h1>
+                <h6>Durk Jan de Bruin</h6>
+            </header>
+            <article>
+                <p style="font:16px Courier New;margin-left: 0px;">
+                    # Draw a block P of the given size. The top bar should be roughly 1/4 of the P's height, and the middle bar should be at the top of the bottom half. <br><br>
+
+					def DrawP(letterSize):<br> 
+					    <span style="margin-left: 30px;">topHalfHeight = 0</span><br>
+					    <span style="margin-left: 30px;">barHeight = </span><br>
+					    <span style="margin-left: 30px;">wallHeight = </span><br>
+					    <span style="margin-left: 30px;">legHeight = 0</span><br>
+					    <span style="margin-left: 30px;">wallWidth =0</span><br>
+					    <span style="margin-left: 30px;">legWidth = 0 </span><br><br>
+
+					    <span style="margin-left: 30px;"># each bar should be around 1/4 of the P </span><br><br>
+					    <span style="margin-left: 30px;">barHeight = letterSize // 4</span><br>
+					    <span style="margin-left: 30px;">topHalfHeight  = letterSize // 2</span><br><br>
+					    <span style="margin-left: 30px;"># stuff that isn't bar is "walls" of the P </span><br><br>
+					    <span style="margin-left: 30px;">wallHeight = topHalfHeight - barHeight</span><br> 
+					    <span style="margin-left: 30px;">wallWidth = barHeight</span><br>
+					    <span style="margin-left: 30px;">legHeight = letterSize - topHalfHeight - barHeight</span><br> 
+					    <span style="margin-left: 30px;">legWidth = barHeight</span><br>
+					    <span style="margin-left: 30px;">DrawBar(barHeight, letterSize)</span><br>
+					    <span style="margin-left: 30px;">DrawTwoBars(wallHeight, wallWidth, letterSize - 2 * wallWidth)</span><br> 
+					    <span style="margin-left: 30px;">DrawBar(barHeight, letterSize)</span><br>
+					    <span style="margin-left: 30px;">DrawBar(legHeight, legWidth) </span><br><br>
+
+					# Draw a block Y of the given size. The top bar should be roughly 1/4 of the Y's height and the middle bar should be at the top of the bottom half.<br><br>
+
+					def DrawY(letterSize):<br>
+						<span style="margin-left: 30px;">topHalfHeight = 0</span> <br>
+					    <span style="margin-left: 30px;">barHeight = 0</span><br>
+					    <span style="margin-left: 30px;">wallHeight = 0</span><br>
+					    <span style="margin-left: 30px;">legHeight = 0</span><br>
+					    <span style="margin-left: 30px;">wallWidth =0</span><br>
+					    <span style="margin-left: 30px;">legWidth = 0 </span><br><br>
+
+					    <span style="margin-left: 30px;"># each bar should be around 1/4 of the P </span><br>
+					    <span style="margin-left: 30px;">barHeight = letterSize // 4</span><br>
+					    <span style="margin-left: 30px;">topHalfHeight  = letterSize // 2</span><br>
+					    <span style="margin-left: 30px;"># stuff that isn't bar is "walls" of the P</span><br> 
+					    <span style="margin-left: 30px;">wallHeight = topHalfHeight - barHeight </span><br>
+					    <span style="margin-left: 30px;">wallWidth = barHeight</span><br>
+					    <span style="margin-left: 30px;">legHeight = letterSize - topHalfHeight - barHeight </span><br>
+					    <span style="margin-left: 30px;">legWidth = barHeight</span><br>
+					    <span style="margin-left: 30px;">wallindent = letterSize // 2</span><br>
+					    <span style="margin-left: 30px;">DrawTwoBars(topHalfHeight, wallWidth, letterSize - 2 * wallWidth) </span><br>
+					    <span style="margin-left: 30px;">DrawBar(barHeight, letterSize)</span><br>
+					    <span style="margin-left: 30px;">DrawIndentedBar(legHeight, legWidth, wallindent)</span><br><br>
+
+					# Draw a block T of the given size. The bars should be roughly 1/4 of the T 's height, with the middle bar roughly at the middle (slightly above if necessary).<br><br>
+
+					def DrawT(letterSize):<br>
+						<span style="margin-left: 30px;">barHeight = 0</span><br>
+					    <span style="margin-left: 30px;">barHeight = letterSize // 4</span><br>
+					    <span style="margin-left: 30px;">wallindent = (letterSize // 2)</span><br>
+					    <span style="margin-left: 30px;">DrawBar(barHeight, letterSize)</span><br>
+					    <span style="margin-left: 30px;">legHeight = letterSize - barHeight</span><br>
+					    <span style="margin-left: 30px;">legWidth = barHeight</span><br>
+					    <span style="margin-left: 30px;">DrawIndentedBar(legHeight, legWidth, wallindent)</span><br><br>
+
+					# Draw a block H of the given size. The top and bottom bars should be roughly 1/4 of the H's height.<br><br>
+
+					def DrawH(letterSize):<br>
+						<span style="margin-left: 30px;">topHalfHeight = 0</span> <br>
+					    <span style="margin-left: 30px;">barHeight = 0</span><br>
+					    <span style="margin-left: 30px;">wallHeight = 0</span><br>
+					    <span style="margin-left: 30px;">legHeight = 0</span><br>
+					    <span style="margin-left: 30px;">wallWidth =0</span><br>
+					    <span style="margin-left: 30px;">legWidth = 0 </span><br>
+					    <span style="margin-left: 30px;"># each bar should be around 1/4 of the P </span><br>
+					    <span style="margin-left: 30px;">barHeight = letterSize // 4</span><br>
+					    <span style="margin-left: 30px;">topHalfHeight  = letterSize // 2</span><br>
+					    <span style="margin-left: 30px;"># stuff that isn't bar is "walls" of the P </span><br>
+					    <span style="margin-left: 30px;">wallHeight = topHalfHeight - barHeight </span><br>
+					    <span style="margin-left: 30px;">wallWidth = barHeight</span><br>
+					    <span style="margin-left: 30px;">legHeight = letterSize - topHalfHeight - barHeight </span><br>
+					    <span style="margin-left: 30px;">legWidth = barHeight</span><br>
+					    <span style="margin-left: 30px;">DrawTwoBars(topHalfHeight, wallWidth, letterSize - 2 * wallWidth) </span><br>
+					    <span style="margin-left: 30px;">DrawBar(barHeight, letterSize)</span><br>
+					    <span style="margin-left: 30px;">DrawTwoBars(legHeight, legWidth, letterSize - 2 * wallWidth)</span><br><br>
+
+					# Draw a block O of the given size. The bottom bar should be roughly 1/ 4 of the O's height.<br><br>
+
+					def DrawO(letterSize):<br>
+						<span style="margin-left: 30px;">barHeight = 0</span><br>
+					    <span style="margin-left: 30px;">middleHeight = 0</span><br>
+					    <span style="margin-left: 30px;">wallWidth = 0</span><br>
+					    <span style="margin-left: 30px;">barHeight = letterSize // 4</span><br>
+					    <span style="margin-left: 30px;">middleHeight = letterSize - barHeight - barHeight</span><br>
+					    <span style="margin-left: 30px;">legWidth = barHeight</span><br>
+					    <span style="margin-left: 30px;">wallWidth = barHeight</span><br>
+					    <span style="margin-left: 30px;">DrawBar(barHeight, letterSize)</span><br>
+					    <span style="margin-left: 30px;">DrawTwoBars(middleHeight, legWidth, letterSize - 2 * wallWidth)</span><br>
+					    <span style="margin-left: 30px;">DrawBar(barHeight, letterSize)</span><br><br>
+
+					# Draw a block N of the given size. The top and bottom bars should be roughly 1/4 of the N's height.<br><br>
+
+					def DrawN(letterSize):<br>
+						<span style="margin-left: 30px;">topHalfHeight = 0</span> <br>
+					    <span style="margin-left: 30px;">barHeight = 0</span><br>
+					    <span style="margin-left: 30px;">wallHeight = 0</span><br>
+					    <span style="margin-left: 30px;">legHeight = 0</span><br>
+					    <span style="margin-left: 30px;">wallWidth =0</span><br>
+					    <span style="margin-left: 30px;">legWidth = 0 </span><br>
+					    <span style="margin-left: 30px;">barHeight = 1</span><br>
+					    <span style="margin-left: 30px;">topHalfHeight  = letterSize // 2</span><br>
+					    <span style="margin-left: 30px;">wallHeight = topHalfHeight - barHeight</span><br> 
+					    <span style="margin-left: 30px;">wallWidth = barHeight</span><br>
+					    <span style="margin-left: 30px;">legHeight = letterSize - topHalfHeight - barHeight </span><br>
+					    <span style="margin-left: 30px;">legWidth = barHeight</span><br>
+					    <span style="margin-left: 30px;">indentamt = 6 </span><br>
+					    <span style="margin-left: 30px;">DrawBar(barHeight, letterSize)</span><br>
+					    <span style="margin-left: 30px;">DrawTwoBars(letterSize, legWidth, letterSize - 2 * wallWidth)</span><br>
+					    <span style="margin-left: 30px;">DrawIndentedBar(barHeight, letterSize,indentamt)</span><br><br>
+
+					# main program<br><br>
+
+					letterSize = int(input('Enter a size for the letters between 5 and 24:'))<br> 
+					print('Type six letters, chosen from PYTHON: ') <br> 
+					for letterNum in range(6): <br>
+						<span style="margin-left: 30px;">letter = input() </span><br>
+						<span style="margin-left: 30px;">if letter == 'P' or letter == 'p':</span><br>
+							<span style="margin-left: 60px;">DrawP(letterSize)</span><br>
+						<span style="margin-left: 30px;">if letter == 'Y' or letter == 'y':</span><br>
+							<span style="margin-left: 60px;">DrawY(letterSize)</span><br>
+						<span style="margin-left: 30px;">if letter == 'T' or letter == 't':</span><br>
+							<span style="margin-left: 60px;">DrawT(letterSize)</span><br>
+						<span style="margin-left: 30px;">if letter == 'H' or letter == 'h':</span><br>
+							<span style="margin-left: 60px;">DrawH(letterSize)</span><br>
+						<span style="margin-left: 30px;">if letter == 'O' or letter == 'o':</span><br>
+							<span style="margin-left: 60px;">DrawO(letterSize)</span><br>
+						<span style="margin-left: 30px;">if letter == 'N' or letter == 'n':</span><br>
+							<span style="margin-left: 60px;">DrawN(letterSize)</span><br>
+												
+ 				</p>
+
+
+
+            </article>
+            <footer>
+                <ol id="page-numbers">
+                    <li>19</li>
+                    <li>20</li>
+                </ol>
+            </footer>
+        </section>
+    </div>
+</div>
+
+</body></html>

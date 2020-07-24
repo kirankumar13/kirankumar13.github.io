@@ -1,0 +1,1071 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>Chapter 4</title>
+</head>
+<body>
+<div id="wrapper">
+    <div id="container">
+
+        <section class="open-book">
+            <header>
+                <h1>Chapter 4</h1>
+                <h6>Durk Jan de Bruin</h6>
+            </header>
+            <article>
+                <h2 class="chapter-title">Roman Calculator Construction</h2>
+
+                <div>
+                	<img src="roman.png" style="width: 100%">
+                </div>
+                
+                
+                <p>
+                    The Roman calculator described in this case study would really have helped the ancient Romans who depended on this sort of calendar.
+                </p>
+                <p>
+                  Calculators have revolutionized mathematics, making hand computation of square roots obsolete. This program will control a calculator that takes a Roman numeral and converts it to its decimal equivalent.
+                </p><br>
+                <h2 style="color: #f55c7f;background: lavenderblush;">Problem Statement</h2>   
+                <p>
+                    Write and test a program that reads a Roman numeral expressed in Roman digits and prints the corresponding decimal value.
+                </p>
+                
+                
+                <p>
+                    The program should assume that the input consists of 
+                    <img src="calc.png" style="float: right;width: 20%;margin-left: 15px;">
+                    one line, containing (only) a legal Roman numeral less than 3999. For testing purposes, the program should prompt for input and print the output. Assume that the tested program, with input and output function calls appropriately replaced, will become the processor for a Roman numeral translator. The translator will resemble a calculator and is pictured on the right.
+               </p><br>
+               <h2 style="color: #f55c7f;background: lavenderblush;">Description of Roman Numerals</h2>   
+                <p>
+                      Values less than 3999 in the Roman numeral system are written using "digits" whose decimal equivalents are given in the table. (Additional conventions for writing values larger than 3999 are not discussed here. See, for instance, The World of Mathematics, by J. R. Newman, Simon and Schuster, 1956, for further information.)
+                </p>
+                <table style="color: black;width: 60%;">
+                  <tr>
+                    <th style="text-align: center;">Roman digit</th>
+                    <th style="text-align: center;">Decimal equivalent</th>
+                  </tr>
+                  <tr>
+                    <td style="text-align: center;">M</td>
+                    <td style="text-align: center;">1000</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align: center;">D</td>
+                    <td style="text-align: center;">500</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align: center;">C</td>
+                    <td style="text-align: center;">100</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align: center;">L</td>
+                    <td style="text-align: center;">50</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align: center;">X</td>
+                    <td style="text-align: center;">10</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align: center;">V</td>
+                    <td style="text-align: center;">5</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align: center;">I</td>
+                    <td style="text-align: center;">1</td>
+                  </tr>
+                </table>
+                <p>
+                  Roman numerals are composed using the following rules.
+                </p>
+
+                <p>
+                    <i>Digit order:</i> Roman digits are written in nonascending order, and digit values are added to produce the represented value, except for prefixes as
+                    mentioned below.
+                </p>
+                <p>
+                    <i>Number of occurrences:</i> No more than three occurrences of M, C, X, or I may appear consecutively, and no more than one D, L, or V may appear at all.
+                </p>
+                <p>
+                    <i>Prefixes:</i> The digits C, X, and I can be used as prefixes, and their value is then subtracted from rather than added to the value being accumulated, as follows:
+                </p>
+                <p>
+                    One C may prefix an M or a D to represent 900 or 400; the prefixed M is written after the other M's, as in MMMCM. The digits following the
+                    M or D represent a value no more than 99.
+                </p>
+                <p>
+                    One X may prefix a C or an L to represent 90 or 40; the prefixed C is written after the other C's. The digits following the C or L represent a
+                    value no more than 9.
+                </p>
+                <p>
+                    One I may prefix an X or a V to represent 9 or 4. The prefixed digit must appear at the end of the numeral.
+                </p>
+                <p>
+                    Some examples:
+                </p>
+                <table style="color: black;width: 60%;">
+                  <tr>
+                    <th style="text-align: center;">Decimal number</th>
+                    <th style="text-align: center;">Roman numeral</th>
+                  </tr>
+                  <tr>
+                    <td style="text-align: center;">1987</td>
+                    <td style="text-align: center;">MCMLXXXVII</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align: center;">1999</td>
+                    <td style="text-align: center;">MCMXCIX</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align: center;">339</td>
+                    <td style="text-align: center;">CCCXXXIX</td>
+                  </tr>
+                </table>
+
+                <h3 style="color: #e0214d;">Analysis</h3>
+                <p>
+                    4.1 What is the decimal value of each of the following Roman numeral values: MCMLII, MMCDV, CXGIX?
+                </p>
+                <h3 style="color: #e0214d;">Analysis</h3>
+                <p>
+                    4.2 How is each of the following decimal values written using Roman numerals: 1988, 1000, 1349?
+                </p>
+                 <h3 style="color: #e0214d;">Analysis</h3>
+                 <p>
+                     4.3 For each of the following, determine its value if it's a legal Roman numeral, or describe which of the rules listed in the problem statement that it violates: XMICVC, XLIX, IIX, XIXIV.
+                 </p>
+                 
+              </article>
+            <footer>
+                <ol id="page-numbers">
+                    <li>1</li>
+                    <li>2</li>
+                </ol>
+            </footer>
+        </section>
+
+
+        <section class="open-book" style="margin-top: 50px;">
+            <header>
+                <h1>Chapter 4</h1>
+                <h6>Durk Jan de Bruin</h6>
+            </header>
+            <article>
+                
+                 <h2 style="color: #f55c7f;background: lavenderblush;">Preparation</h2>
+                 <p>
+                     The reader is expected to be familiar with one-dimensional arrays, functions, and if statements. This case study introduces parameters, the while statement, a char array indexed by integers, and an integer array indexed by characters.
+                 </p> <br>
+                 <h2 style="color: #f55c7f;background: lavenderblush;">Preliminary Planning</h2>
+                 <h3 style="color: #e0214d;">What should the program do?</h3>
+                 <p>
+                     The program should read in the "digits" of a Roman numeral and store them somehow, then compute the corresponding decimal value and print it out. The computation seems to be the hardest part of the solution, since input and output are easy.
+                 </p>
+                 <h3 style="color: #e0214d;">What problems have decompositions similar to this one?</h3>
+                 <p>
+                     The decomposition sounds similar to those in previous case studies. Two templates seem possible for processing the Roman digits. One, used in Banners With CLASS and The Calendar Shop is "read one, process one":
+                 </p>
+                 <p style="font:16px 'Courier New';">
+                     read a value and process it until there aren't any more values
+                  </p>
+                  <p>
+                     The "values" here are the Roman digits; "processing" a digit means incorporating it into the decimal value we're building. This template yields a "digit-by-digit" approach, as illustrated in the pseudocode below.
+                 </p>
+                 <p style="font:16px 'Courier New';">
+                     read and translate the Roman numeral, by doing the following until <br>
+                     there are no more Roman digits:<br>
+                      read a Roman digit; <br>
+                      translate and accumulate the digit;<br>
+                       print the result.<br>
+                 </p>
+                 <p>
+                     Another template, used in <i>Check That Number!</i> was
+                 </p>
+                 <p style="font:16px 'Courier New';">
+                     input a value or sequence of values;<br>
+                      process the value(s); <br>
+                      output the result.<br>
+                 </p>
+                 <p>
+                     This template yields an "entire-numeral" approach since all the Roman digits are input before they are translated. Here is the pseudocode:
+                 </p>
+                 <p style="font:16px 'Courier New';">
+                     read all the Roman digits;<br>
+                     translate the Roman numeral to decimal;<br>
+                     print the result.<br>
+                 </p>
+                  <h3 style="color: #e0214d;">Stop & Predict</h3>
+                  <p>
+                      <i>
+                          What operations will these two decompositions have in common?
+                      </i>
+                  </p>
+                   <h3 style="color: #e0214d;">How should the information used in the program be represented?</h3>
+                   <p>
+                       Either approach involves reading in the Roman digits and writing out a decimal value. The Roman digits M, D, C, L, X, V, and I are letters, which we'll represent as character values. We'll represent the corresponding decimal value as an integer.
+                   </p>
+                   <h3 style="color: #e0214d;">How can Roman digits be translated into decimal digits?</h3>
+                   <p>
+                       In either approach, we need to translate the individual Roman digits into their decimal equivalents. Thus, M becomes 1000, D becomes 500, and so on. A function is more appropriate because it's intended for the situation where a single value is being returned. The function takes a character argument and returns an integer. An informative name is DecimalTrans. DecimalTrans is easy to design, so we will postpone working on it until later.
+                 </p>
+                  <h3 style="color: #e0214d;">Reflection</h3>
+                  <p>
+                      4.4 Does the digit-by-digit or the entire-numeral approach sound easier to design and develop? Why?
+                  </p>
+                   <h3 style="color: #e0214d;">Application, Reflection</h3>
+                   <p>
+                       4.5 Describe another problem whose solution involves a choice between (a) processing information incrementally and (b) collecting all the information before starting to process it. Which approach seems more productive in everyday problems? What are weaknesses of the two approaches?                   
+                   </p>
+
+                  <br>
+                   <h2 style="color: #f55c7f;background: lavenderblush;">Digit-by-Digit Approach</h2>
+
+                  <h3 style="color: #e0214d;">What sort of loop will the digit-by-digit approach use?</h3>                           
+                  
+                  <p>
+                      The Banners With CLASS program used a for loop to read and process its input, since it knew how much input to expect. For this problem, the number of Roman digits the input will contain is not known, and thus a for loop is inappropriate.
+                  </p>
+                   <h3 style="color: #e0214d;">Stop & Predict</h3>  
+                   <p>
+                       <i>
+                           What kind of loop will be appropriate for reading and processing Roman digits? 
+                       </i>
+                   </p>
+                   <p>
+                       A while loop handles situations where the number of iterations cannot be specified in advance. The body of a while loop is executed 0 or more times, and a test for whether or not to continue occurs before each iteration.
+                   </p>
+                   <p>
+                       The problem statement guarantees that the input Roman numeral is legal that is, it has at least one digit. Also, the condition for exiting the loop reaching the end of the line—is somewhat easier to state than the condition for continuing the loop. Thus we choose to code the loop using while. If the program were required to worry about empty input lines or other errors, we would use different loop instead.
+                   </p>
+                   <p>
+                       The problem statement suggests that the loop will be adding up values determined by the input, so it will look something like the following:
+                   </p>
+                   <p style="font:16px 'Courier New';">
+                       ask the user for a Roman numeral;<br>
+                       initialize a "sum" variable to 0;<br>
+                        repeat the following:<br>
+
+                         read a Roman digit;<br>
+
+                         add the decimal value of the Roman digit into the sum; <br>
+
+                         until the end of the line is encountered.<br>
+
+                   </p>
+                   <p>
+                       The pseudocode can easily be converted to Python. A variable of type char called romanDigit stores each Roman digit. An integer variable sum accumulates the sum.
+                   </p>
+                    <h3 style="color: #e0214d;">Stop & Predict</h3>
+                    <p>
+                        <i>
+                            What modifications are needed to make this loop work?
+                        </i>
+                    </p>
+            </article>
+            <footer>
+                <ol id="page-numbers">
+                    <li>3</li>
+                    <li>4</li>
+                </ol>
+            </footer>
+        </section>
+
+        <section class="open-book">
+            <header>
+                <h1>Chapter 4</h1>
+                <h6>Durk Jan de Bruin</h6>
+            </header>
+            <article>
+                 
+                  
+                    <h3 style="color: #e0214d;">How can prefixes be handled?</h3>
+                    <p>
+                        This loop does not handle prefixes (the C in GMXI or the I in IV). Prefixes must be subtracted from the decimal value being accumulated. A prefix cannot be detected until the character it prefixes has been processed.
+                    </p>
+                    <p>
+                        The loop could be modified to check, after reading a digit, whether that digit might be a prefix, and then to immediately read the next digit. This program would probably be confusing and hard to debug.
+                    </p>
+                     <h3 style="color: #e0214d;">Stop & Consider</h3>
+                     <p>
+                         <i>
+                             What cases must be handled within a loop that tries to read a prefix and the prefixed digit in the same iteration?
+                         </i>
+                     </p>
+                     <p>
+                         To be understandable, a loop should be written to do exactly one thing. In this situation, a good solution is a loop that reads exactly one character in each iteration.
+                     </p>
+                     <p>
+                         To figure out how the loop should work, we try solving the problem by hand, by "playing computer" on the input CXIV. (Remember that the loop processes one Roman digit at a time.) The loop initializes sum to 0, reads C, and adds 100 to sum. Then it reads X, and adds 10 to sum. Next it reads I, and adds 1 to sum. sum now contains 111, the correct decimal value for CXI. Next the loop reads V. To get the right answer of 114 in sum, the program should first add 5, the value for V (sum now contains 116), then subtract the value for I after undoing the previous addition (which incorrectly added the value for I into sum).
+                     </p>
+                     <p>
+                         Doing this requires that the loop keep track of the Roman digit previously read as well as the one currently being processed. We use a char variable called prevDigit to hold potential prefixes.
+                     </p>
+                     <h3 style="color: #e0214d;">What is the precise definition of the loop action?</h3>
+                     <p>
+                         The action of the loop body can be concisely described as adjusting the value of sum to account for the most recently read Roman digit. Thus, at the end of every iteration sum will contain the decimal value of the Roman digits read so far. (We include the description as a comment in the code.)<br>
+                         The resulting code looks like this:
+                     </p>
+                     <p style="font:16px 'Courier New';">
+                        # Read each Roman digit, and adjust the value of sum to account for it. At the end of each iteration, the value in sum will be the decimal value of all the Roman digits read so far. If the previous Roman digit is a prefix--i.e. its value is less than the value of the current Roman digit--we have to undo it along with adding in the value of the current digit. <br><br>
+
+                        romanDigit = input() <br>
+                        if DecimalTrans(romanDigit) <= DecimalTrans(prevDigit): <br>
+                          <span style="margin-left: 30px;">sum = sum + DecimalTrans(romanDigit)</span><br>
+                        else: <br>
+                          <span style="margin-left: 30px;">sum = sum + DecimalTrans(romanDigit) </span><br>
+                          <span style="margin-left: 30px;">- DecimalTrans(prevDigit) - DecimalTrans(prevDigit)</span><br>
+                        prevDigit = romanDigit 
+                    </p>
+                    <h3 style="color: #e0214d;">What code must precede and follow the loop?</h3>
+                    <p>
+                        In order to get a value to translate, the program must prompt the user for input before the loop and print the translated value after the loop. Before entering the loop, the program also needs to initialize prevDigit and sum. A common way to do this is to separate the first iteration of the loop, as follows:
+                    </p>
+                    <p style="font:16px 'Courier New';">
+                        romanDigit = input('Type a Roman numeral followed by RETURN: ') <br>
+                        sum = DecimalTrans(romanDigit) <br>
+                        prevDigit = romanDigit <br>
+                        # (the loop follows here) 
+                    </p>   
+                       <h3 style="color: #e0214d;">Stop & Predict</h3> 
+                       <p>
+                           <i>
+                               What changes in the loop are necessitated by separating the first iteration?
+                           </i>
+                       </p>
+                       <p>
+                           Since the input is assumed to be correct, there will always be at least one Roman digit to read in the initialization code. However, by separating the first iteration, we invalidate the assumption that there will always be at least one digit to read within the loop itself We need to recode the repeat loop as a while loop:
+                       </p>
+                       <p style="font:16px 'Courier New';">
+                       while True: <br>
+                          <span style="margin-left: 30px;">romanDigit = input()</span> <br>
+                          <span style="margin-left: 30px;">if DecimalTrans(romanDigit)<=DecimalTrans(prevDigit): </span><br>
+                            <span style="margin-left: 60px;">sum = sum + DecimalTrans(romanDigit) </span><br>
+                          <span style="margin-left: 30px;">else:</span><br>
+                            <span style="margin-left: 60px;">sum = sum + DecimalTrans(romanDigit) </span><br>
+                            <span style="margin-left: 60px;">- DecimalTrans(prevDigit)-DecimalTrans(prevDigit)</span><br>
+                          <span style="margin-left: 30px;">prevDigit = romanDigit </span>
+                    </p>
+                    <p>
+                        The pattern represented in the while loop involves reading values and processing them until all the values have been read. This seems to be a pattern that will appear over and over again.
+                    </p>
+                    <p>
+                        A more concise way to initialize sum is the following:
+                    </p>
+                    <p style="font:16px 'Courier New';">
+                        prevDigit = input('Type a Roman numeral followed by RETURN: ') <br>
+                        sum = DecimalTrans(prevDigit) <br>
+                        while True: ... <br>
+                    </p>
+                    <h3 style="color: #e0214d;">Stop & Help</h3> 
+                    <p>
+                        Why doesn't romanDigit need to appear in an assignment statement in the ''concise" initialization code?
+                    </p>  
+                    <h3 style="color: #e0214d;">How should DecimalTrans be written?</h3>
+            <p>
+                Recall that DecimalTrans is a function that takes a character as argument and returns an integer. Code for selecting from alternatives and processing the alternative selected is similar to that used in The Calendar Shop program. This application of the template should select a character from M, D, C, L, X, V, and I. Here's the code:
+            </p>            
+
+            </article>
+            <footer>
+                <ol id="page-numbers">
+                    <li>5</li>
+                    <li>6</li>
+                </ol>
+            </footer>
+        </section>
+
+
+        <section class="open-book" style="margin-top: 50px;">
+            <header>
+                <h1>Chapter 4</h1>
+                <h6>Durk Jan de Bruin</h6>
+            </header>
+            <article>
+                <p style="font:16px 'Courier New';">
+                    def DecimalTrans(romanDigit): <br>
+                        <span style="margin-left: 30px;">if romanDigit == 'M':</span><br>
+                          <span style="margin-left: 60px;">DecimalTrans = 1000</span><br>
+                        <span style="margin-left: 30px;">if romanDigit == 'D':</span><br>
+                          <span style="margin-left: 60px;">DecimalTrans = 500</span><br>
+                        <span style="margin-left: 30px;">if romanDigit == 'C':</span><br>
+                          <span style="margin-left: 60px;">DecimalTrans = 100</span><br>
+                        <span style="margin-left: 30px;">if romanDigit == 'L':</span><br>
+                          <span style="margin-left: 60px;">DecimalTrans = 50</span><br>
+                        <span style="margin-left: 30px;">if romanDigit == 'X':</span><br>
+                          <span style="margin-left: 60px;">DecimalTrans = 10</span><br>
+                        <span style="margin-left: 30px;">if romanDigit == 'V':</span><br>
+                          <span style="margin-left: 60px;">DecimalTrans = 5</span><br>
+                        <span style="margin-left: 30px;">if romanDigit == 'I':</span><br>
+                          <span style="margin-left: 60px;">DecimalTrans = 1</span><br>
+                        <span style="margin-left: 30px;">return DecimalTrans</span>
+               </p>
+                <h3 style="color: #e0214d;">Can the code be simplified?</h3>
+                <p>
+                    Reviewing the rest of the code before we type it in, we notice that we can shorten the loop by saving the values returned by DecimalTrans(romanDigit) and DecimalTrans(prevDigit) rather than recomputing them. We define two more variables, currentValue and prevValue, for this purpose. The first program in the Python Code section results.
+                </p>
+                <h3 style="color: #e0214d;">Stop & Predict</h3>
+                <p>
+                    <i>
+                        What are important test cases for this program?
+                    </i>
+                </p>
+                 <h3 style="color: #e0214d;">How should the program be tested?</h3>
+                 <p>
+                     As in The Calendar Shop, test data should be chosen using both the glass-box and the black-box approaches. The glass box approach suggests values that cause every statement to be executed, and that cause the loop to execute as few and as many times as possible.
+                 </p>
+
+                 <h3 style="color: #e0214d;">Stop & Help</h3>
+                 <p>
+                     <i>
+                         Produce a set of test data that causes every statement in the digit-by-digit program to be executed, and that causes the loop to be repeated as few and as many times as possible.
+                     </i>
+                 </p>   
+                 <p>
+                     The black-box approach yields a more extensive set of test data. It suggests easy as well as trickier cases, and typical as well as extreme cases. Easy cases include single digits and groups of digits without prefixes. Typical cases include combinations with prefixes. Extreme cases include Roman numerals that are as short as possible, and that start with a prefix.
+                 </p>
+
+
+                 <h3 style="color: #e0214d;">Stop & Help</h3>
+                 <p>
+                     <i>
+                         Produce a set of test data that will test the digit-by-digit program.
+                     </i>
+                 </p>
+                 <h3 style="color: #e0214d;">Stop & Consider</h3>
+                 <p>
+                     <i>
+                         Should a Roman numeral that ends with a prefix be tested as another boundary case? Why or why not?
+                     </i>
+                 </p>
+                  <h3 style="color: #e0214d;">How can the process of testing be simplified?</h3>
+                  <p>
+                      Running the program once for each test case is inefficient. Testing will be more convenient if, when the program is run, it keeps processing values rather than processing just one. Thus, we add a main program with a loop that asks for, reads, and converts a Roman numeral each time through. (We'll take out the loop for the final program.) We package these actions into a function called ConvertRoman. The following main program results:
+                    </p>
+                   <p style="font:16px 'Courier New';">
+                      # main program <br>
+                      while True: <br>
+                        <span style="margin-left: 30px;">ConvertRoman</span>
+                 </p>
+                  <h3 style="color: #e0214d;">Stop & Help</h3>
+                  <p>
+                      <i>
+                          The main program above contains an infinite loop. How do you interrupt a program running in your programming environment?
+                      </i>
+                  </p>
+                  <p>
+                      The loop could instead include a statement to ask if we wish to continue testing. This would require us to enter both a Roman numeral and an answer to the "continue?" prompt each time through the loop, however.
+                  </p>
+                   <h3 style="color: #e0214d;">What bugs were encountered?</h3>
+                   <p>
+                       In the actual tests of this program, we had a bug. The program converted the first Roman numeral correctly, then crashed in the if statement in DecimalTrans. We had forgotten the print at the end of Convert Roman, so the end-of-line character was read as a blank and assumed to be part of a Roman numeral.
+                   </p>
+                   <h3 style="color: #e0214d;">Debugging</h3>
+                   <p>
+                       4.6 Suppose the program gave a negative value for the outcome. Where would you look for the error?
+                   </p>
+                    <h3 style="color: #e0214d;">Debugging</h3>
+                    <p>
+                        4.7  One of your fellow programmers, while reading the digit-by-digit version of the program, accidentally changes a line. The modified result apparently ignores prefixes instead of handling them correctly. Thus XL is evaluated as 50, XLIV as 55, and so on. What line was changed, and how?
+                    </p>
+                     <h3 style="color: #e0214d;">Reflection</h3>
+                     <p>
+                         4.8 What bugs would you expect to encounter using the digit-by-digit approach?
+                     </p>
+                     <h3 style="color: #e0214d;">Modification</h3>
+                     <p>
+                         4.9 Rewrite the while not '\n' loop as a for loop preceded by an if statement.
+                     </p>
+
+                      <h3 style="color: #e0214d;">Modification</h3>
+                      <p>
+                          4.10 Rewrite the loop in the main program to ask the user whether or not to continue, and to continue only if the character 'y' is entered.
+                      </p>
+                      <h3 style="color: #e0214d;">Modification,Reflection</h3>
+                      <p>
+                          4.11 Rewrite the function DecimalTrans using a sequence of if...else statements. Why is the original version clearer than the rewritten version?
+                      </p>
+                      <h3 style="color: #e0214d;">Analysis</h3>
+                      <p>
+                          4.12 What will occur if a non-Roman digit is sent to DecimalTrans?
+                      </p>
+
+            </article>
+            <footer>
+                <ol id="page-numbers">
+                    <li>7</li>
+                    <li>8</li>
+                </ol>
+            </footer>
+        </section>
+
+        <section class="open-book">
+            <header>
+                <h1>Chapter 4</h1>
+                <h6>Durk Jan de Bruin</h6>
+            </header>
+            <article>
+                
+                    <h2 style="color: #f55c7f;background: lavenderblush;">Entire-Numeral Solution</h2> 
+                    <h3 style="color: #e0214d;">What does the entire numeral solution involve?</h3>
+                    <p>
+                        The entire-numeral approach separates the input, the processing, and the output.
+                    </p>
+                    <p>
+                        The input step stores the Roman numeral by reading its digits into an array of characters. We define a type called StringType to use to store the input and will use a function called ReadRoman to do the input.
+                    </p>
+                    <p>
+                        The process step translates the Roman numeral to a decimal value. Since the process step produces a single result the decimal value of the Roman numeral we use a function called DecimalValue.
+                    </p>
+                    <p>
+                        The output step prints the result. A function called PrintDecimal will do the output.
+                    </p>
+                     <h3 style="color: #e0214d;">How is the array declared?</h3>
+                     <p>
+                         Declaring an array involves specifying the type of the array and the size of the array. Arrays of characters are typically called strings, so we define a type called StringType to store the characters. We use a constant, MAXSTRLEN, to define the size of the array. By using a constant we can change the size of the array easily if necessary.
+                     </p>
+                     <h3 style="color: #e0214d;">Stop & Help</h3>
+                     <p>
+                         <i>
+                             What is the longest possible legal Roman numeral that represents a value less than 3999? Based on this information, assign a value to MAXSTRLEN.
+                         </i>
+                     </p>
+
+                     <h3 style="color: #e0214d;">Stop & Consider</h3>
+                     <p>
+                         <i>
+                             What is the longest possible Roman numeral that uses the digits M, D, C, L, X, V, and I?
+                         </i>
+                     </p>
+                     <h3 style="color: #e0214d;">What does the input step look like?</h3>
+                     <p>
+                         Reading a line of text into an array is a common action. We can recycle the input handling template used in the digit-by-digit approach (being sure to remember the print at the end!). The body of the loop reads each character and stores it into the next array cell. The loop must also count the characters it reads and use the counter variable to index the array. We'll call the counter variable length. Both the characters and the count are passed back to the main program in order to simplify subsequent processing of the array. We use parameters because the variables are updated in the function. Here's the code:
+                     </p>
+                     <p style="font:16px 'Courier New';">
+                        MAXSTRLEN = 20; <br>
+
+                        StringType = []<br>
+                        def ReadRoman(roman, length): <br>
+                          <span style="margin-left: 30px;">ch = '' </span><br> 
+                          <span style="margin-left: 30px;">print('Type a Roman numeral followed by RETURN: ')</span><br>
+                          <span style="margin-left: 30px;">length = 0</span><br>
+                          <span style="margin-left: 30px;">while not '\n': </span><br>
+                            <span style="margin-left: 60px;">ch = input()</span><br>
+                            <span style="margin-left: 60px;">length = length + 1</span><br>
+                            <span style="margin-left: 60px;">roman[length] = ch</span><br>
+                </p>
+                <h3 style="color: #e0214d;">What are the advantages of the array approach?</h3>
+                <p>
+                    An array significantly simplifies the conversion of the Roman numeral. Using an array, the program can look ahead at the next Roman digit to see whether to add or subtract its value from the sum, since all the digits have been stored in the array beforehand. Thus the loop can go digit by digit through the array, as follows:
+                </p>
+                <p style="font:16px 'Courier New';">
+                    def DecimalValue(roman, length): <br>
+                            <span style="margin-left: 30px;">sum = 0</span><br>
+                            <span style="margin-left: 30px;">k = 0</span><br>
+                            <span style="margin-left: 30px;">for k in range(0, length-1):</span><br>
+                                <span style="margin-left: 60px;">if DecimalTrans(roman[k]) </span><br>
+                                 <span style="margin-left: 60px;">>= DecimalTrans(roman[k+1]):</span><br>
+                                    <span style="margin-left: 90px;">sum = sum + DecimalTrans(roman[k])</span><br>
+                                <span style="margin-left: 60px;">else:</span><br>
+                                    <span style="margin-left: 90px;">sum = sum - DecimalTrans(roman[k])</span><br>
+                            <span style="margin-left: 30px;">DecimalValue = sum + DecimalTrans(roman[length-1])</span><br>
+                            <span style="margin-left: 30px;">return DecimalValue</span><br>
+                </p>
+                <h3 style="color: #e0214d;">What about the output step?</h3>
+                <p>
+                          
+                    Printing is easy. PrintDecimal consists of a single print. The final program appears in the Python Code section.
+                </p>
+                <h3 style="color: #e0214d;">Stop & Predict</h3>
+                <p>
+                    <i>
+                        Will the same tests used in the digit-by-digit version work for this program? Why or why not?
+                    </i>
+
+                </p>
+                 <h3 style="color: #e0214d;">How is the program tested?</h3>
+                 <p>
+                     Most of the test data for the first version of the program was chosen according to the black-box approach, derived only from the problem specification, not from the code itself Thus the same set of data can be used to test the current version. The glass-box approach suggests another boundary case, a Roman numeral as long as possible. We first test the routines that use arrays (ReadRoman and DecimalValue) to get the bugs out of them before combining them with other routines.
+                 </p>
+                 <h3 style="color: #e0214d;">Stop & Predict</h3>
+                 <p>
+                     <i>
+                         How can the parts of the program that use arrays be tested separately?
+                     </i>
+                 </p>
+                 <h3 style="color: #e0214d;">How can the parts be tested?</h3>
+                 <p>
+                     For a program patterned on the "input, process, output" template, there are typically two ways to test it in smaller pieces. One way is to test the input routine first, and merely have a print statement or some other such sub routine for the processing. The other way is to include assignment statements in the program to initialize some variables, and then process those. Either way requires an output routine, so we can see the results of the testing. Testing the ReadRoman function by itself uses the first way. An output routine to print the result of the input could be called WriteRoman. The main program would look something like the following:
+                 </p>
+            </article>
+            <footer>
+                <ol id="page-numbers">
+                    <li>9</li>
+                    <li>10</li>
+                </ol>
+            </footer>
+        </section>
+
+
+        <section class="open-book" style="margin-top: 50px;">
+            <header>
+                <h1>Chapter 4</h1>
+                <h6>Durk Jan de Bruin</h6>
+            </header>
+            <article>
+            	
+                 <p style="font:16px 'Courier New';">
+                    # main program <br>
+
+                    while True: <br>
+                      <span style="margin-left: 30px;"># Read the Roman numeral and its length. </span><br>
+                      <span style="margin-left: 30px;">ReadRoman(roman, length)</span><br>
+                      <span style="margin-left: 30px;"># Print both out to make sure we've read them correctly.</span><br>
+                      <span style="margin-left: 30px;">WriteRoman(roman, length)</span><br>
+                 </p>
+                 <p>
+                     Testing the DecimalValue function by itself requires using assignment statements to set up a Roman numeral without doing input. In some versions of Python, this may be done as follows:
+                 </p> 
+                  <p style="font:16px 'Courier New';">
+                      roman = 'CXIV' <br>
+                      length = 4 <br>
+                      WriteDecimal(DecimalValue(roman, length))  <br>
+                  </p>
+                   <h3 style="color: #e0214d;">Stop & Predict</h3> 
+                   <p>
+                       <i>
+                           How does the entire numeral version compare with the digit-by-digit version?
+                       </i>
+                   </p> 
+                   <h3 style="color: #e0214d;">How does the entire-numeral solution compare with the digit-by-digit solution?</h3> 
+                   <p>
+                       The entire-numeral approach, though slightly longer than the digit-by-digit approach, is easier to split into smaller pieces, which can in turn be easily understood, tested, and debugged. Basing the entire numeral solution on the "input, process, output" template forces us to use an array to store the Roman numeral. Storing the values in the array make it possible to look ahead at the next Roman digit and thus simplifies the task of converting the Roman numeral to decimal. In general, when processing a sequence of data items that depend on each other, it is much easier to read them all into an array, if possible, before processing than to try to process the items "on the fly" without storing them.
+                   </p>
+                    <h3 style="color: #e0214d;">Debugging</h3>
+                    <p>
+                        4.13 A common bug in a program is an off-by-one error. Suppose that, on entry to the DecimalValue function, its length argument is either one too high or one too low. Explain what would happen, and how a programmer would notice the bug from the output.
+                    </p>
+                     <h3 style="color: #e0214d;">Reflection</h3>
+                     <p>
+                         4.14 What bugs would you expect to encounter using the entire numeral approach?
+                     </p>
+                     <h3 style="color: #e0214d;">Modification</h3>
+                     <p>
+                         4.15 The loop in DecimalValue can be rewritten as follows:
+                     </p>
+                      <p style="font:16px 'Courier New';">
+                        for k in range(1, length): <br>
+                            <span style="margin-left: 30px;">sum = sum + ValueToAccum(...)</span><br>
+                    </p>
+                    <p>
+                        Write the ValueToAccum function.
+                    </p>
+                    <br>
+                    <h2 style="color: #f55c7f;background: lavenderblush;">Another Use for on Array</h2>
+                <p>
+                    An alternative solution uses an array to replace the DecimalTrans function. An array defines an association between an index value and the contents of the corresponding array cell, and in this way acts as a function that takes the index as an argument and returns the indexed value.
+                     (In some programming languages, the notation for accessing an array is exactly the same as that for calling a function).
+                </p>
+                <h3 style="color: #e0214d;">How can the DecimalTrans function be replaced by an array?</h3>
+                <p>
+                    This suggests that a function whose single argument is a value of type integer, char, or boolean (a legal type for an array index) may be converted to a one-dimensional array instead. DecimalTrans is such a function, and it may be replaced by an array whose index values are characters and whose contents are integers. Thus, the values of the array would be as follows:
+                </p>
+                 <p style="font:16px 'Courier New';">
+                    decimalTrans['M'] = 1000, <br>
+                    decimalTrans['D'] = 500,
+                </p>
+                <p>
+                    and so on. These values could be assigned at the start of the main program or in an initialization function.
+                </p>
+                <p>
+                    Python doesn't allow arrays indexed only by the characters 'M', 'D', 'C', 'L', 'X', 'V', and 'I'; the index set must include all the characters in between as well. What do we do with decimaltrans['E'], decimalTrans['F'], and all the other? With correct input, they won't be used. If they're somehow used as a result of a bug, they should have values that produce obviously incorrect output. A reasonable choice is maxint, predefined in Python as the largest value of type integer.
+                </p>
+                <p>
+                    This array acts just like a Python constant. After its values are assigned at the start of the program, they don't change. Python unfortunately doesn't allow the use of arrays in const declarations, so the array must be declared and initialized with assignment statements. To show the array's role in the program, however, we use all capital letters for its name just as we do for Python constants. For the same reason, we do not pass it as a parameter to DecimalValue, but instead use it globally. The result appears in the Python Code section.
+                </p>
+                 <h3 style="color: #e0214d;">Debugging</h3>
+                <p>
+                    4.16 Suppose that, on entry to the rewritten DecimalValue function, its length argument is either one too high or one too low. Explain what would happen, and how a programmer would notice the bug from the output.
+                </p>
+                 <h3 style="color: #e0214d;">Application</h3>
+                 <p>
+                     4.17 Write and test a loop that, for every element of the decimalTrans array, prints either the element's value if it's less than maxint or the word illegal if the value is equal to maxint.
+                 </p>
+                    
+            </article>
+            <footer>
+                <ol id="page-numbers">
+                    <li>11</li>
+                    <li>12</li>
+                </ol>
+            </footer>
+        </section>
+
+        <section class="open-book">
+            <header>
+                <h1>Chapter 4</h1>
+                <h6>Durk Jan de Bruin</h6>
+            </header>
+            <article>
+            	
+                 <h2 style="color: #f55c7f;background: lavenderblush;">Outline of Design and Development Questions</h2>
+                 <p>
+                     These questions summarize the main points of the commentary.
+                 </p>
+                 <p>
+                    <b>Preliminary Planning</b><br>
+                    What should the program do?<br>
+                    What problems have decompositions similar to this one?<br>
+                    How should the information used in the program be represented?<br>
+                    How can Roman digits be translated into decimal digits?<br>
+                 </p>
+                 <p>
+                    <b>Digit-by-Digit Approach</b><br>
+                    What sort of loop will the digit-by-digit approach use?<br>
+                    How can prefixes be handled?<br>
+                    What is the precise definition of the loop action?<br>
+                    What code must precede and follow the loop?<br>
+                    How should DecimalTrans be written?<br>
+                    Can the code be simplified?<br>
+                    How should the program be tested?<br>
+                    How can the process of testing be simplified?<br>
+                    What bugs were encountered?<br>
+                 </p>
+                 <p>
+                    <b>Entire-Numeral Solution</b> <br>
+                    What does the entire-numeral solution involve?<br>
+                    How is the array declared?<br>
+                    What does the input step look like?<br>
+                    What are the advantages of the array approach?<br>
+                    What about the output step?<br>
+                    How is the program tested?<br>
+                    How can the parts be tested?<br>
+                    How does the entire-numeral solution compare with the digit-by-digit solution?<br>
+                 </p>
+                 <p>
+                     <b>Another Use for an Array</b><br>
+                     How can the DecimalTrans function be replaced by an array?<br>
+                 </p> <br>
+                 <h2 style="color: #f55c7f;background: lavenderblush;">Programmers' Summary</h2>
+                 <p>
+                     This case study introduces arrays as a problem-solving tool and illustrates programming templates that use arrays. The case compares two solutions to Roman numeral translation: one without arrays, the digit-by-digit solution, and another with arrays, the entire-numeral solution. The introduction of the array illustrates the Multiple Representation principle: several representations of the array concept are presented. Arrays are verbally described, illustrated, and diagrammed.
+                 </p>
+                 <p>
+                The digit-by-digit solution introduces the template read and process input until no more values.
+                Following this template, each Roman digit is translated into an integer, then added into a running sum as it is read.
+                The entire-numeral solution uses the "input, process, output" template introduced in Check that Number! Following this template, all the Roman digits are read into an array before any of them are processed.
+            </p>  
+            <p>
+                The array used in the entire-numeral solution provides more than just a convenient storage area. It simplifies the processing of the Roman digits, too, by making it easy to look ahead at the next Roman digit when encountering a possible prefix. In general, arrays make it easier to solve problems that require accessing more than one value in a set.
+            </p>
+            <p>
+                A suggested modification to the entire-numeral solution illustrates an interesting interchangeability between program structure and data structure. Where an if statement is used to associate an integer value with a given Roman digit, the modification makes use of an array of integer values, indexed by possible Roman digits.
+            </p>
+            <p>
+                Implementing the digit-by-digit solution requires finding a clear way to handle prefixes. Ideally the template loop reads one value during each iteration. However, prefixes cannot be evaluated without considering two values in sequence. Rather than reading two values during some iterations and none during others, a variable is added that keeps track of the previous digit read. Processing then involves handling two situations within the loop, one for a prefix and the other for a nonprefix.
+            </p>
+            <p>
+                Template applications to fill an array and to process the array in the entire-numeral solution are straightforward. The pattern
+            </p>
+            <p style="font:16px 'Courier New';">
+                while True: <br>
+                    <span style="margin-left: 30px;">read input value</span>
+            </p>
+            <p>
+                is useful in both solutions.
+            </p>
+            <p>
+                This case also provides a good example of the Divide and Conquer principle in that each of the solutions involves dividing most of the action of the program into familiar templates. By dividing the program into parts that can be implemented with familiar templates, the details and complex parts are postponed. Often, as a result, the parts that are postponed turn out to be easier than expected.
+            </p>
+            <p>
+                As in The Calendar Shop, test data are selected via both the glass-box and black-box approaches; the latter approach suggests a wider range of tests, useful to exercise both versions of the program. Extreme test values include Roman numerals as large and as small as possible and numerals with prefixes occurring at the ends of the data sequence. A main program that repeatedly reads and evaluates Roman numerals is added for testing.
+                (To conform to the problem statement, the main program will be replaced by a program that reads just one value.)
+            </p>
+            <p>
+                This case study illustrates the Fingerprint principle by associating common array bugs with their symptoms. For example, the off-by-one bug can be detected when a program accesses an out-of-range location in an array.
+            </p>
+            <p>
+                Incremental development of the entire numeral solution is easy because we can split the program into pieces and test them individually. We use a stub function one that handles only a small part of its intended purpose for the processing step while testing the input step. We also use an assignment statement as a stub for the input function while testing the processing step.
+            </p>
+
+
+            </article>
+            <footer>
+                <ol id="page-numbers">
+                    <li>13</li>
+                    <li>14</li>
+                </ol>
+            </footer>
+        </section>
+
+
+        <section class="open-book" style="margin-top: 50px;">
+            <header>
+                <h1>Chapter 4</h1>
+                <h6>Durk Jan de Bruin</h6>
+            </header>
+            <article>
+            
+             <h2 style="color: #f55c7f;background: lavenderblush;">Making Sense of Roman Calculator Construction</h2>
+             <h3 style="color: #e0214d;">Application</h3>
+             <p>
+                 4.18 Think of other problems whose solution would be simplified by using arrays.
+             </p>
+              <h3 style="color: #e0214d;">Reflection</h3>
+              <p>
+                  4.19 Suppose you had taken the digit-by-digit approach and attempted to create a loop that, on encountering a possible prefix, read another Roman digit. There are several cases to analyze in such a solution. Would you try to analyze all the cases? If not, at what point would you give up and look for a better solution?
+              </p>
+              <h3 style="color: #e0214d;">Analysis</h3>
+              <p>
+                  4.20 The loop in ConvertRoman in the digit-by-digit version of the program contains the statement
+              </p>
+               <p style="font:16px 'Courier New';">
+                  sum = sum + currentValue - prevValue - prevValue
+            </p>
+
+            <p>
+                Why isn't the corresponding statement in the loop in DecimalValue in the other two versions written as follows?
+            </p>
+            <p style="font:16px 'Courier New';">
+                sum= sum-DecimalTrans(roman[k])-DecimalTrans(roman[k])
+            </p>
+            <h3 style="color: #e0214d;">Analysis</h3>
+            <p>
+                4.21 We claim in the commentary on the digit-by-digit solution that sum will contain the value of the Roman numeral represented by the digits read so far at the end of each iteration of the loop. But what if the digits so far do not represent a legal Roman numeral? More generally, if the first few digits of a legal Roman numeral are considered by themselves, do they also represent a legal Roman numeral?
+            </p>
+               
+            <h3 style="color: #e0214d;">Modification</h3>
+                <p>
+                    4.22 Rewrite ConvertRoman as a function that returns the decimal value of the Roman numeral. Update the main program so that it prints the value returned by the function. (This use of a function that does input is somewhat controversial; input is a side effect, and functions by convention avoid side effects.)
+                </p>
+                <h3 style="color: #e0214d;">Application</h3>
+                <p>
+                    4.23 Write and test a "Roman Numerals Quiz" program that asks the quizmaster for a Roman numeral, asks the participant for the decimal equivalent, and then tells the participant if the answer is correct.
+                </p>
+                <h3 style="color: #e0214d;">Application</h3>
+                <p>
+                    4.24 Write and test a calculator program that prints the sum of two Roman numerals input by the user.
+                </p>
+                <h3 style="color: #e0214d;">Modification</h3>
+                <p>
+                    4.25 Modify each version of the program to handle two more Roman digits, T, meaning 10,000, and F, meaning 5000. M can prefix T to represent 9000 or F to represent 4000. No more than three occurrences of T may appear consecutively, and no more than one occurrence of F may appear at all. What is the longest Roman numeral that can be formed with these and the other Roman digits?
+                </p>
+                 <h3 style="color: #e0214d;">Application</h3>
+                 <p>
+                     4.26 Write and test a program that reads a hexadecimal numeral (base 16) and prints its base 10 value. Hexadecimal numerals use the letters A, B, G, D, E, and F to represent the values 10, 11, 12, 13, 14, and 15. Digits in a hexadecimal numeral represent successively higher powers of 16; for instance, 3E9 represents 3*256 + 14*16 + 9 = 768 + 224 + 9 = 1001.
+                 </p>
+                 <h2 style="color: #f55c7f;background: lavenderblush;">Linking to Previous Case Studies</h2>
+                 <h3 style="color: #e0214d;">Modification</h3>
+                 <p>
+                     4.27 Rewrite the character variable version of the Check That Number! program so that it reads an identification number of up to twenty digits into an array of characters, then checks the result. The last digit of the value read will be the check digit, computed as in the original problem.
+                 </p>
+                 <h3 style="color: #e0214d;">Modification</h3>
+                 <p>
+                     4.28 Rewrite the Banners With CLASS program to read a line of letters into an array, then print block versions of every letter in the line.
+                 </p>
+                 <h3 style="color: #e0214d;">Modification</h3>
+                 <p>
+                     4.29 Rewrite The Calendar Shop main program to produce a calendar for each of a sequence of years provided by the user.
+                 </p>
+                  <h3 style="color: #e0214d;">Reflection</h3>
+                  <p>
+                     4.30 Describe similarities and differences between the translation of Roman digits to decimal values in this case study and the translation of characters to digit values in Check That Number!
+                  </p>
+            </article>
+            <footer>
+                <ol id="page-numbers">
+                    <li>15</li>
+                    <li>16</li>
+                </ol>
+            </footer>
+        </section>
+
+        <section class="open-book">
+            <header>
+                <h1>Chapter 4</h1>
+                <h6>Durk Jan de Bruin</h6>
+            </header>
+            <article>
+                
+                   <h2 style="color: #f55c7f;background: lavenderblush;">Digit-by-Digit Program</h2>
+                    <p style="font:16px 'Courier New';">
+                        # Given a legal Roman digit, return its decimal value. <br><br>
+
+                        def DecimalTrans(romanDigit): <br>
+                            <span style="margin-left: 30px;">if romanDigit == 'M':</span><br>
+                                <span style="margin-left: 60px;">DecimalTrans = 1000</span><br>
+                            <span style="margin-left: 30px;">if romanDigit == 'D':</span><br>
+                                <span style="margin-left: 60px;">DecimalTrans = 500</span><br>
+                            <span style="margin-left: 30px;">if romanDigit == 'C':</span><br>
+                                <span style="margin-left: 60px;">DecimalTrans = 100</span><br>
+                            <span style="margin-left: 30px;">if romanDigit == 'L':</span><br>
+                                <span style="margin-left: 60px;">DecimalTrans = 50</span><br>
+                            <span style="margin-left: 30px;">if romanDigit == 'X':</span><br>
+                                <span style="margin-left: 60px;">DecimalTrans = 10</span><br>
+                            <span style="margin-left: 30px;">if romanDigit == 'V':</span><br>
+                                <span style="margin-left: 60px;">DecimalTrans = 5</span><br>
+                            <span style="margin-left: 30px;">if romanDigit == 'I':</span><br>
+                                <span style="margin-left: 60px;">DecimalTrans = 1</span><br>
+                            <span style="margin-left: 30px;">return DecimalTrans</span><br><br>
+
+                        # Ask for and read a Roman numeral, then print its decimal value. <br><br>
+
+                        def ConvertRoman(): <br>
+                            <span style="margin-left: 30px;">sum = 0</span><br>
+                            <span style="margin-left: 30px;">prevValue = 0</span><br>
+                            <span style="margin-left: 30px;">currentValue = 0</span><br>
+                            <span style="margin-left: 30px;">romanDigit = ''</span><br>
+                            <span style="margin-left: 30px;"># (Convert Roman)</span><br>
+                            <span style="margin-left: 30px;">print('Type a Roman numeral followed by RETURN: ')</span><br>
+                            <span style="margin-left: 30px;">romanDigit = input()</span><br>
+                            <span style="margin-left: 30px;">prevValue = DecimalTrans(romanDigit)</span><br>
+                            <span style="margin-left: 30px;">sum = prevValue</span><br><br>
+
+                            """
+                            Read each Roman digit, and adjust the value of sum to account for it. At the end of each iteration, the value in sum will be the decimal value of all the Roman digits read so far. If the previous Roman digit is a prefix--i.e. its value is less than the value of the current Roman digit--we have to undo it along with adding in the value of the current digit.
+                            """ <br><br>
+
+                            <span style="margin-left: 30px;">while True: <br>
+                                <span style="margin-left: 60px;">romanDigit = input()</span><br>
+                                <span style="margin-left: 60px;">if romanDigit == '':</span><br>
+                                    <span style="margin-left: 90px;">break</span><br>
+                                <span style="margin-left: 60px;">currentValue = DecimalTrans(romanDigit)</span><br>
+                                <span style="margin-left: 60px;">if currentValue <= prevValue:</span><br>
+                                    <span style="margin-left: 90px;">sum = sum + currentValue</span><br>
+                                <span style="margin-left: 60px;">else:</span><br>
+                                    <span style="margin-left: 90px;">sum = sum + currentValue </span><br>
+                                      <span style="margin-left: 90px;">- prevValue - prevValue</span><br>
+                                <span style="margin-left: 60px;">prevValue = currentValue</span><br>
+                            <span style="margin-left: 30px;">print(sum)</span><br> <br>
+
+                        # main program <br>
+                        while True: <br>
+                            <span style="margin-left: 30px;">ConvertRoman()</span><br>
+                    </p>
+
+                    <h2 style="color: #f55c7f;background: lavenderblush;">Entire-Numeral Program</h2>
+                    <p style="font:16px 'Courier New';">
+                        roman = ''  # The Roman numeral read from the user <br>
+                        length = 0 # How many Roman digits it contains <br><br>
+                        def DecimalTrans(romanDigit): <br>
+                            <span style="margin-left: 30px;">if romanDigit == 'M':</span><br>
+                                <span style="margin-left: 60px;">DecimalTrans = 1000</span><br>
+                            <span style="margin-left: 30px;">if romanDigit == 'D':</span><br>
+                                <span style="margin-left: 60px;">DecimalTrans = 500</span><br>
+                            <span style="margin-left: 30px;">if romanDigit == 'C':</span><br>
+                                <span style="margin-left: 60px;">DecimalTrans = 100</span><br>
+                            <span style="margin-left: 30px;">if romanDigit == 'L':</span><br>
+                                <span style="margin-left: 60px;">DecimalTrans = 50</span><br>
+                            <span style="margin-left: 30px;">if romanDigit == 'X':</span><br>
+                                <span style="margin-left: 60px;">DecimalTrans = 10</span><br>
+                            <span style="margin-left: 30px;">if romanDigit == 'V':</span><br>
+                                <span style="margin-left: 60px;">DecimalTrans = 5</span><br>
+                            <span style="margin-left: 30px;">if romanDigit == 'I':</span><br>
+                                <span style="margin-left: 60px;">DecimalTrans = 1</span><br>
+                            <span style="margin-left: 30px;">return DecimalTrans</span><br><br>
+
+
+                        # Given a Roman numeral and the number of Roman digits it contains, return its value in decimal. <br><br>
+
+                        def DecimalValue(roman, length): <br>
+                            <span style="margin-left: 30px;">sum = 0</span><br>
+                            <span style="margin-left: 30px;">k = 0</span><br>
+                            <span style="margin-left: 30px;">for k in range(0, length-1):</span><br>
+                                <span style="margin-left: 60px;">if DecimalTrans(roman[k]) </span><br>
+                                 <span style="margin-left: 60px;">>= DecimalTrans(roman[k+1]):</span><br>
+                                    <span style="margin-left: 90px;">sum = sum + DecimalTrans(roman[k])</span><br>
+                                <span style="margin-left: 60px;">else:</span><br>
+                                    <span style="margin-left: 90px;">sum = sum - DecimalTrans(roman[k])</span><br>
+                            <span style="margin-left: 30px;">DecimalValue = sum + DecimalTrans(roman[length-1])</span><br>
+                            <span style="margin-left: 30px;">return DecimalValue</span><br><br>
+
+                        # Request and read a Roman numeral from the user. <br>
+                        # Also return the number of Roman digits in the numeral. <br> <br> 
+
+                        def PrintDecimal(n): <br>
+                            <span style="margin-left: 30px;"># Print Decimal</span><br>
+                            <span style="margin-left: 30px;">print(n)</span><br><br>
+
+                        # main program <br>
+                        while True: <br>
+                            <span style="margin-left: 30px;"># ReadRoman</span><br>
+                            <span style="margin-left: 30px;">print('Type a Roman numeral followed by RETURN: ')</span><br>
+                            <span style="margin-left: 30px;">roman = input()</span><br>
+                            <span style="margin-left: 30px;">length = len(roman)</span><br>
+                            <span style="margin-left: 30px;">PrintDecimal(DecimalValue(roman, length))</span><br>
+                    </p>
+
+				
+
+            </article>
+            <footer>
+                <ol id="page-numbers">
+                    <li>17</li>
+                    <li>18</li>
+                </ol>
+            </footer>
+        </section>
+
+
+        <section class="open-book" style="margin-top: 50px;">
+            <header>
+                <h1>Chapter 4</h1>
+                <h6>Durk Jan de Bruin</h6>
+            </header>
+            <article>
+            	
+                    <h2 style="color: #f55c7f;background: lavenderblush;">Program Using an Array of Decimal Equivalents for Roman Digits</h2>
+                    <p style="font:16px 'Courier New';">
+                        # Given a Roman numeral and the number of Roman digits it contains, return its value in decimal. <br><br>
+
+                        def DecimalValue(roman, length): <br>
+                            <span style="margin-left: 30px;">sum = 0</span><br>
+                            <span style="margin-left: 30px;">k = 0</span><br>
+                            <span style="margin-left: 30px;">for k in range(0, length-1):</span><br>
+                                <span style="margin-left: 60px;">if DECIMALEQUIV[roman[k]] </span><br>
+                                <span style="margin-left: 60px;">>= DECIMALEQUIV[roman[k+1]]:</span><br>
+                                    <span style="margin-left: 90px;">sum = sum + DECIMALEQUIV[roman[k]]</span><br>
+                                <span style="margin-left: 60px;">else:</span><br>
+                                    <span style="margin-left: 90px;">sum = sum - DECIMALEQUIV[roman[k]]</span><br>
+                            <span style="margin-left: 30px;">DecimalValue = sum + DECIMALEQUIV[roman[length-1]]</span><br>
+                            <span style="margin-left: 30px;">return DecimalValue</span><br> <br>
+
+                        def PrintDecimal(n): <br>
+                            <span style="margin-left: 30px;"># Print Decimal</span><br>
+                            <span style="margin-left: 30px;">print(n)</span><br><br>
+
+                        # main program <br>
+
+                        DECIMALEQUIV = { <br>
+                            <span style="margin-left: 30px;">'M' : 1000,</span><br>
+                            <span style="margin-left: 30px;">'D' : 500,</span><br>
+                            <span style="margin-left: 30px;">'C' : 100,</span><br>
+                            <span style="margin-left: 30px;">'L' : 50,</span><br>
+                            <span style="margin-left: 30px;">'X' : 10,</span><br>
+                            <span style="margin-left: 30px;">'V' : 5,</span><br>
+                            <span style="margin-left: 30px;">'I' : 1</span><br>
+                            <span style="margin-left: 30px;">}</span><br><br>
+
+                        while True:
+                            <span style="margin-left: 30px;"># The Roman numeral read from the user</span><br>
+                            <span style="margin-left: 30px;">print('Type a Roman numeral followed by RETURN: ')</span><br>
+                            <span style="margin-left: 30px;">roman = input()</span><br>
+                            <span style="margin-left: 30px;"># How many Roman digits it contains</span><br>
+                            <span style="margin-left: 30px;">length = len(roman)</span><br>
+                            <span style="margin-left: 30px;">PrintDecimal(DecimalValue(roman, length))</span><br>
+                    </p>
+                    <div style="height: 1000px;">
+                      
+                    </div>
+
+            </article>
+            <footer>
+                <ol id="page-numbers">
+                    <li>19</li>
+                    <li>20</li>
+                </ol>
+            </footer>
+        </section>
+    </div>
+</div>
+</body>
+</html>

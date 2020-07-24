@@ -1,0 +1,1660 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>Chapter 7</title>
+</head>
+<body>
+<div id="wrapper">
+    <div id="container">
+
+        <section class="open-book">
+            <header>
+                <h1>Chapter 7</h1>
+                <h6>Durk Jan de Bruin</h6>
+            </header>
+            <article>
+                <h2 class="chapter-title">You Are What You Eat</h2>
+
+                <div>
+                	<img src="chapter7.png" style="width: 100%">
+                </div>
+                <p>
+                    Eating fresh fruits and vegetables keeps fat and calories low. Use this program to chart your progress.
+                </p>
+                <p>
+                   The current enthusiasm for choosing a healthy diet motivates people to keep track of the calories, fat, and cholesterol they consume. Suppose you were asked to design a program to help. This case study describes how a programmer might respond.
+                </p><br>
+                <h2 style="color: #f55c7f;background: lavenderblush;">Problem Statement</h2>   
+                <p>
+                    Our friend Terry is just learning about computers and comes to us with a request. It sounds straight forward so we agree to help. Here is our conversation.
+                </p>
+                <p>
+                    TERRY: Can you write a program for my new home computer to help me keep track of my diet? My computer is the same brand as yours.
+                </p>
+                <p>
+                    MIKE AND MARCIA: What should the program do?
+                </p>
+                <p>
+                    TERRY: Well, I want it to keep track of the fat and calories in the food I eat, figure out daily averages, and stuff like that. I've been using pencil and paper, but I lose track.
+                </p>
+                <p>
+                    MIKE AND MARCIA: A running thirty-day average would be easy to compute. We could even have it graph your last thirty days of fat and calories if you want.
+                </p>
+                <p>
+                    TERRY: Great!
+
+                </p>
+                <p>
+                    MIKE AND MARCIA: We're still a bit confused, though. When you run the program, what do you expect to give it as input?
+                </p>
+                <p>
+                    TERRY: Well, now I write down the fat and calories for everything I eat. I want to give the program all those numbers each day.
+                </p>
+                <p>
+                    MIKE AND MARCIA: So the program should total them all up to get your daily total for fat and calories.
+                </p>
+                <p>
+                    TERRY: It can do that, right?
+                </p>
+                <p>
+                   MIKE AND MARCIA: Yes, that will be easy. You'll run the program every day?
+               </p>
+               <p>
+                   Terry: Right.
+               </p>
+               <p>
+                   MIKE AND MARCIA: And, you want the average and the graph printed every day. Let's see, for a graph it would help to know the maximum number of fat and calories to expect. What have the values been like?
+               </p>
+               <p>
+                   TERRY: I've never eaten more than 6000 calories in a day. I think the fat has been as high as 400 grams, but I'm working on lowering that.
+               </p>
+               <p>
+                   MIKE AND MARCIA: Wc Can display the graph on the screen. Is your screen just like ours?
+               </p>
+               <p>
+                   TERRY: They look the same.
+               </p>
+               <p>
+                   MIKE AND MARCIA: Do you have a disk drive on your computer? The program will need to keep a permanent file on your disk.
+               </p>
+               <p>
+                   TERRY: Yes, it has a hard disk. Will that do?
+               </p>
+               <p>
+                   MIKE AND MARCIA: Yes. Give us a few days and we'll come up with something you can try out.
+               </p>
+               <p>
+                   TERRY: Great!
+               </p>
+                          
+                   </article>
+            <footer>
+                <ol id="page-numbers">
+                    <li>1</li>
+                    <li>2</li>
+                </ol>
+            </footer>
+        </section>
+
+
+        <section class="open-book" style="margin-top: 50px;">
+            <header>
+                <h1>Chapter 7</h1>
+                <h6>Durk Jan de Bruin</h6>
+            </header>
+            <article>
+               
+               <h3 style="color: #e0214d;">Analysis</h3>
+               <p>
+                   7.1 Why do we need to know about screen size?
+               </p>
+               <h3 style="color: #e0214d;">Analysis</h3>
+               <p>
+                   7.2 Why do we need to know the maximum amounts of fat and calories for the graph?
+               </p>
+               <h3 style="color: #e0214d;">Reflection</h3>
+               <p>
+                   7.3 What special needs will an inexperienced computer user have?
+               </p>
+               <h3 style="color: #e0214d;">Analysis</h3>
+               <p>
+                   7.4 Sketch an interaction between Terry and the program.
+               </p>
+               <h3 style="color: #e0214d;">Reflection</h3>
+               <p>
+                   7.5 What additional information from Terry might be useful for designing the program?
+               </p> 
+               <h3 style="color: #e0214d;">Analysis</h3>
+               <p>
+                   7.6 What sophisticated features might an experienced computer user desire of a program that keeps track of nutrition information?
+               </p>
+               <h3 style="color: #e0214d;">Reflection</h3>
+               <p>
+                   7.7 Why have we agreed to write a program instead of telling Terry to use a commercial product?
+               </p><br>
+               <h2 style="color: #f55c7f;background: lavenderblush;">Preparation</h2>
+               <p>
+                   The reader is expected to be familiar with arrays and dictionary; this case study introduces the  functions and the eof function used with text files.
+               </p><br>
+                <h2 style="color: #f55c7f;background: lavenderblush;">Planning the Program</h2>
+                 <h3 style="color: #e0214d;">How can this program meet the needs of the user?</h3>
+                 <p>
+                     Successful programs not only compute information desired by the user but also allow the user to communicate "intuitively" with the computer. Because Terry has limited computer experience, the program should be crashproof, its error messages should make sense to a novice, and there
+                     should be ways to get help. Most important, the interface should be "intuitive" in the sense that it should anticipate Terry's view of the problem.
+                 </p>
+                <h3 style="color: #e0214d;">Will the needs of the user change?</h3> 
+                <p>
+                    Because Terry is inexperienced, he may not anticipate all the ways a program can help him. He did not, for instance, think of having a graph of his nutrition information. It is likely that more features will be added to the program as Terry tests it. Thus, we need to design a program that is easy to modify.
+                </p>
+                <h3 style="color: #e0214d;">Stop & Consider</h3> 
+                <p>
+                    <i>
+                        What modifications might Terry ask for when he sees the program?
+                    </i>
+                </p>
+                <h3 style="color: #e0214d;">Stop & Predict</h3>
+                <p>
+                    <i>
+                        List the main steps of the program before proceeding. Check yours against those indicated.
+                    </i>
+                </p>
+                <h3 style="color: #e0214d;">What are the main steps in the program?</h3>
+                <p>
+                    The discussion with Terry suggests five main steps for the program.
+                </p>
+                <ul>
+                  <li>Input—read lines containing fat and calorie figures from Terry.</li>
+                  <li>Compute daily total—add up the values to get a total for the day.</li>
+                  <li>Compute and output average—access the values for the last 29 days,
+                    compute the average of these values combined with the value for the
+                    current day, and print the average.</li>
+                  <li>Output graph—print a graph displaying the daily total for the current
+                    day and the previous 29 days.</li>
+                  <li>Update accumulated data—add the current day's data to the collection
+                    of data.</li>
+                </ul>
+                  <h3 style="color: #e0214d;">Stop & Predict</h3>
+                  <p>
+                      <i>
+                          Why is the data for the past 29 days differentiated from the data for the current day?
+                      </i>
+                  </p>
+                   <h3 style="color: #e0214d;">What parts of this program can be solved by recyling solutions to other problems?</h3>
+                   <p>
+                       
+                       The program will prompt Terry for input. It should be possible to recyle input and error-checking functions developed in Is It Legal? Computing the average sounds like a place for the "process every element" template.Printing a graph might share similarities with printing block letters or printing calendar months.
+                    </p>
+                    <p>
+                       If an array for storing the collection of nutrition data is involved, then templates used earlier for array manipulation may be applicable here.
+                   </p>
+                   <h3 style="color: #e0214d;">What data structures are needed?</h3>
+                    <p>
+                        The collection of fat and calorie data must be stored external to the program so it can be accessed each time the program is run. That means that a file must be used; we'll call it historyFile. We also need to manipulate the data internally to compute the average and print the graph. We call this internal structure recentHistory.
+                    </p>
+              
+            </article>
+            <footer>
+                <ol id="page-numbers">
+                    <li>3</li>
+                    <li>4</li>
+                </ol>
+            </footer>
+        </section>
+
+        <section class="open-book">
+            <header>
+                <h1>Chapter 7</h1>
+                <h6>Durk Jan de Bruin</h6>
+            </header>
+            <article>
+            
+            <h3 style="color: #e0214d;">Stop & Predict</h3>
+            <p>
+                <i>
+                    Why not just use the external data structure for both storage and computation?
+                </i>
+            </p>
+            <p>
+                Access to data in a file is much slower than access to data in an array. Thus it is typical to read data from a file into internal variables those corresponding to memory locations, like simple variables, arrays, or dictionary do whatever computations are necessary using those variables, and then
+                write the results back to the file. Another reason for using an internal structure is that file operations are limited to reading and writing in 
+                sequence. To compute the average and print the graph we will need to access elements nonsequentially.
+            </p>
+            <h3 style="color: #e0214d;">Which should be refined first, the data structures or the algorithms?</h3>
+            <p>
+                At this point, we could design the main program, the functions for getting input from Terry, and so on. In earlier case studies, deciding what to do next was more a matter of taste; one might prefer to tackle hard things first, or easy things. In this situation, however, where the program is likely to change with feedback from Terry, we try not to make decisions that will cost a lot of time later when the program must be modified.
+            </p>
+            <p>
+                For this program the goal is clear—keeping track of fat and calories—but the specific details may change. In general, the data structures in a program are most sensitive to changes in the details of problem specifications. If Terry needed merely to know the maximum and minimum fat and calorie intake over the last month, we could use two simple variables as internal storage. But for this problem, we will need a more complicated structure. Terry's future needs may complicate the situation still more. Thus it is important to design the program in such a way that changes, particularly to the program's data structures, will have minimal impact.
+            </p>
+            <p>
+                The internal history structure and the external file seem to be important to the rest of the program as well, since every processing step uses one or the other of them. Thus we will consider their design first and produce code that isolates as much as possible the effects of using a different representation for each one.
+            </p>
+            <h3 style="color: #e0214d;">How are data types designed?</h3>
+            <p>
+                What we're really designing here is the data type. The data structure is a variable of that type. The design involves specifying the operations that
+                will be applied to a variable of each type and then selecting an implementation.
+            </p>
+            <h3 style="color: #e0214d;">What operations are applied to historyFile?</h3>
+            <p>
+                The program will apply two operations to historyFile. First, the program will read at least the previous 29 days of fat and calorie data from the file. Secand, the program will add the current day's data to the file.
+            </p>
+             <h3 style="color: #e0214d;">How should historyFile be implemented?</h3>
+             <p>
+                 A text file offers a straight forward implementation for historyFile. Each line can contain a given day's fat and calorie data (two numbers).
+             </p>
+             <p>
+                 Terry asked us to keep track of thirty days worth of data. We decide, however, to store all the fat and calorie data in the file, just in case Terry decides to chart long-term trends. It is fairly easy to keep track of extra data and impossible to reconstruct data that has been deleted.
+             </p>
+             <h3 style="color: #e0214d;">Stop & Consider</h3>
+             <p>
+                 <i>
+                     What is a disadvantage of storing all the fat and calorie data?
+                 </i>
+             </p>
+              <h3 style="color: #e0214d;">How should the entries in historyFile be ordered?</h3>
+              <p>
+                  Storing the most recent 29 days' worth of data together in the file will make it easier to access. A straightforward approach is to organize the data in historyFile by date. Either the file will start with the most recent data or it will end with the most recent data. Inserting the first 29 entries into recentHistory will then consist of reading either the first 29 lines in the file or the last 29 lines in the file; output of the current day's entry will require rewriting the file with a new first line or with a new last line.
+              </p>
+              <p>
+                  We postpone deciding whether the entries should be ordered most recent first or least recent first until the operations on recentHistory are defined; we consider these next.
+              </p>
+              <h3 style="color: #e0214d;">Stop & Help</h3>
+              <p>
+                  <i>
+                      Suppose the entries were stored by amount of calories consumed. What information would have to be stored with each entry to allow access to the last 29 days data?
+
+                  </i>
+              </p>
+               <h3 style="color: #e0214d;">What will be the operations on recentHistory?</h3>
+               <p>
+                   The program will fill the recentHistory structure with 29 days's data, add the current day's data, use the data to compute the average and generate the graph, and update historyFile with the current data.
+               </p>
+               <p>
+                   All the operations involve accessing the data by day:
+               </p>
+               <ul>
+                    <li>
+                      Initializing 29 days from historyFile means reading the most recent data into recentHistory.
+                    </li>
+                    <li>
+                      Adding the current day's data means storing the data for the current day into recentHistory.
+                    </li>
+                    <li>
+                      Computing the average means summing the values for each day and dividing by the number of days.
+                    </li>
+                    <li>
+                      Generating the graph means determining the line or column for the graph that corresponds to the data value for each day, and producing appropriate output.
+                    </li>
+                    <li>
+                      Updating the historyfile means either writing the whole collection of data or at least the current day's data into history File.
+                    </li>
+               </ul>
+                <h3 style="color: #e0214d;">How will the data be represented internally?</h3>
+                <p>
+                    The program will manipulate 30 days' data. This suggests one or more arrays of thirty elements. Each day's data consists of a fat quantity and a calorie quantity, and perhaps the date as well. Given a day, we will want to access both the fat and calorie figures.
+                </p>
+                
+            </article>
+            <footer>
+                <ol id="page-numbers">
+                    <li>5</li>
+                    <li>6</li>
+                </ol>
+            </footer>
+        </section>
+
+
+        <section class="open-book" style="margin-top: 50px;">
+            <header>
+                <h1>Chapter 7</h1>
+                <h6>Durk Jan de Bruin</h6>
+            </header>
+            <article>
+            	<h3 style="color: #e0214d;">Stop & Predict</h3>
+                <p>
+                    <i>
+                        Which provides a better way to store the recent history: a two-dimensional array, an array of dictionary, or two separate arrays?
+                    </i>
+                </p>
+                <p>
+                    An array of dictionary is most appropriate for this purpose. Other programming languages may require two separate arrays to store the fat and the calories, and we could also do that in Python. However, the fat and calories for a given day in a Python dictionary makes clear their association, and reduces the likelihood of bugs in which the indexes for fat and calories are "off-by-one."
+                </p>
+                <h3 style="color: #e0214d;">How should the date be represented?</h3>
+                <p>
+                    The date could be a part of the dictionary. This seems unnecessary, however. If the data is ordered in the array by date, the date will not be needed to create the graph. In an array indexed from 0 to 29, the kth element would store the information for the day that's k days before the current day. The operations on recentHistory can easily be implemented with such an array.
+                </p>
+                 <h3 style="color: #e0214d;">Stop & Predict</h3>
+                 <p>
+                     <i>
+                         Why might Terry want to know the day or date associated with a given entry?
+                     </i>
+                 </p>
+                 <p>
+                     On further consideration, we wander if Terry might want to know more about data for particular dates, for instance to compare weekday data and weekend data. We decide to start a list of things to ask Terry.
+                 </p>
+                 <p>
+                     Questions for Terry
+                  </p>
+                  <ul>
+                    <li>
+                          Should any dates be specially indicated in the history file?
+                    </li>
+                  </ul>
+                  <h3 style="color: #e0214d;">Stop & Predict</h3>
+                  <p>
+                    <i>
+                      How would the data type for recentHistory be declared in Python?
+                  </i>
+              </p>
+              <p>
+                  The type for recentHistory may be defined as shown below. Just in case Terry later decides that he wants graphs over a different history interval, we define a constant called HISTORYSIZE for the size of the array.
+              </p>
+               <p style="font:16px 'Courier New';">
+                HISTORYSIZE = 29 <br>
+                EntryType = { <br>
+                "fat": 0, <br>
+                "calories": 0 <br>
+                } <br>
+                HistoryType = [] <br>
+                for i in range(0,30): <br>
+                    <span style="margin-left: 30px;">HistoryType.append(EntryType.copy()) </span><br>
+                recentHistory = HistoryType.copy() <br>
+                </p>
+                <h3 style="color: #e0214d;">How should data be ordered in historyFile?</h3>
+                <p>
+                    We postponed deciding how to order entries in historyFile until the operations for recenthistory were defined. Two operations involve both historyFile and recenthistory: initializing recenthistory and updating historyFile.
+                </p>
+                <h3 style="color: #e0214d;">How should values be input from historyFile</h3>
+                <p>
+                    Suppose that entries were stored most recent first. Then recentHistory would be initialized by reading and storing the first 29 entries from historyFile. Now suppose that the entries in historyFile were stored most recent last. Then the last 29 entries are to be stored in recentHistory. Reading the first 29 entries in a file into an array is easy. Reading the last 29 entries is harder. (How can the program detect when it's 29 entries from the end?)
+                </p>
+                 <h3 style="color: #e0214d;">Stop & Help</h3>
+                <p>
+                    <i>
+                        Design pseudocode that initializes recentHistory by reading the last 29 entries in a file into elements 1 through 29 of an array.
+                    </i>
+                </p>
+
+                <h3 style="color: #e0214d;">How is historyFile updated?</h3>
+                <p>
+                    Updating historyFile means essentially inserting the new day's data into the file, using only sequential reading from and writing to the file. This is like inserting an element into an array, while only accessing the array elements sequentially. We can recycle the two-array approach used in Space Text.
+                </p>
+                <p>
+                    Suppose that the entries are stored most recent first in historyFile, and the first 29 elements have been read into recentHistory. The new entry, recentHistory, is to be inserted at the beginning of the file. A Python file cannot be read from and written to simultaneously; in order to write to the file, the write function must be used, but it empties the file. Thus the insertion must take place as follows:
+                </p>
+                <ul>
+                  <li>
+                      The entire contents of historyFile (some of which is already in recentHistory) is copied to a temporary file.
+                  </li>
+                  <li>
+                    A write operation is performed on historyFile.
+                  </li>
+                  <li>
+                    The new element is written to the beginning of historyFile.
+                  </li>
+                  <li>
+                    The contents of the temporary file are copied back to historyFile.
+                  </li>
+                </ul>
+
+                <p>
+                    The last two steps are similar to the insertion approach used in Space Text. If the entries are stored most recent last, the updating is very similar. We still need to copy historyFile to a temporary file since the write function empties the file.
+                </p>
+                 <h3 style="color: #e0214d;">Stop & Predict</h3>
+                 <p>
+                     <i>
+                         Which is better, storing data most recent first or storing data most recent last?
+                     </i>
+                 </p>
+                 <p>
+                     The input step is straightforward if historyFile entries are ordered most recent first, complicated if they are ordered most recent last. Updating of historyFile seems to be equally difficult with each option. Thus we choose to order the entries in historyFile from most recent to least recent.
+                 </p>
+                  <h3 style="color: #e0214d;">What do we have so far?</h3>
+                  <p>
+                      We now have two data types defined, one for the history file and one for the recent history. We summarize the operations for each type:
+                  </p>
+                  <p>
+                      Operations on the recent history
+                  </p>
+
+                  <ul>
+                    <li>
+                      Find the average figure for fat or calorie consumption.
+                    </li>
+                    <li>
+                      Print a graph of fat or calorie consumption.
+                    </li>
+                    <li>
+                      Add the current day's data to the recent history
+                    </li>
+                  </ul>
+            </article>
+            <footer>
+                <ol id="page-numbers">
+                    <li>7</li>
+                    <li>8</li>
+                </ol>
+            </footer>
+        </section>
+
+        <section class="open-book">
+            <header>
+                <h1>Chapter 7</h1>
+                <h6>Durk Jan de Bruin</h6>
+            </header>
+            <article>
+               <p>
+                   Operations on both the recent history and the history file
+               </p>
+               <ul>
+                 <li>
+                   Read the most recent 29 days' data from the history file into the recent history.
+                 </li>
+                 <li>
+                   Write the most recent 30 days' data from the recent history to the history file.
+                 </li>
+               </ul>
+               <p>
+                   Our goal is to design the program so that it is easy to modify. Therefore we will represent each of these operations by a subprogram so that they
+                   are localized, group these subprograms together in the program so that they will be easy to find, and write the remainder of the program so that
+                   access to the history file or the recent history always involves calling one of these subprograms.
+               </p>
+                <h3 style="color: #e0214d;">Stop & Help</h3>
+                <p>
+                    <i>
+                        Explain how these steps for organizing the program make future modification of the program easier.
+                    </i>
+                </p>
+                <h3 style="color: #e0214d;">Analysis</h3>
+                <p>
+                    7.8 Why is input and output to the external data structure separated from Terry's input and print output?
+                </p>
+                <h3 style="color: #e0214d;">Analysis</h3>
+                <p>
+                    7.9 What changes in the specifications would require changes to the data structures?
+                </p>
+                <h3 style="color: #e0214d;">Reflection</h3>
+                <p>
+                    7.10 Why is recentHistory a better name for the internal data structure than monthData or some other name indicating that it contains thirty days of information?
+                </p>
+                <h3 style="color: #e0214d;">Analysis</h3>
+                <p>
+                    7.11 Why not have an array into which all the data from the history file is read, rather than just the recent data?
+                </p><br>
+                <h2 style="color: #f55c7f;background: lavenderblush;">Solving the Problem</h2>
+                <h3 style="color: #e0214d;">What is the top-level decomposition of the solution?</h3>
+                <p>
+                    Linking these newly designed data types to the main steps of the program results in new steps as follows:
+                </p>
+                <p>
+                    Input and process information from Terry: Read individual fat and calorie figures from Terry and add them up. Store the totals into a new entry. Add the new entry to recentHistory as its most recent element.
+                </p>
+                <p>
+                    Input from file: Initialize the remaining values for recentHistory from historyFile.
+                </p>
+                <p>
+                    Output to Terry: Compute an average and generate a graph from the entries in recentHistory.
+                </p>
+                <p>
+                    Output to the file: Write a revised version of historyFile.
+                </p>
+                 <h3 style="color: #e0214d;">Stop & Help</h3>
+                 <p>
+                     <i>
+                         Compare these input-process-output steps to the main steps identified at the beginning of the design process.
+                     </i>
+                 </p>
+                 <p>
+                     This leads to the following code for the main program:
+                 </p>
+                 <p style="font:16px 'Courier New';">
+                    ReadEntry(historyFile, entry) <br>
+                    Initialize(historyFile, entry, recentHistory)<br>
+                    PrintAverages(recentHistory)<br>
+                    PrintGraphs(recentHistory)<br>
+                    Update(historyFile, recentHistory)<br>
+
+                </p>
+                <h3 style="color: #e0214d;">Stop & consider</h3>
+                <p>
+                    <i>
+                        Why not code the first statement in the above code as ReadEntry(recentHistory[O])?
+                    </i>
+                </p>
+                <h3 style="color: #e0214d;">Stop & consider</h3>
+                <p>
+                    <i>
+                        Does it matter which functions are designed next?
+                    </i>
+                </p>
+                <h3 style="color: #e0214d;">How should the program ask for input?</h3>
+                <p>
+                    We start with the first step, input from Terry. As usual the program will print a prompt, then read some input.
+                </p>
+                 <h3 style="color: #e0214d;">Stop & Predict</h3>
+                 <p>
+                     <i>
+                         Should we ask Terry for both fat and calorie amounts at once?
+                     </i>
+                 </p>
+                 <p>
+                     Since a confused user might type the values in the wrong order or insert punctuation between them, it is better to ask for each input separately. We decide to prompt and read values for fat and calories separately.
+                 </p>
+                 <h3 style="color: #e0214d;">Stop & Predict</h3>
+                 <p>
+                    <i>
+                     How can the prompts meet the needs of an inexperienced user?
+                 </i>
+             </p>
+             <p>
+                 We should also make sure that there is no confusion about the meaning of the input value. For calories, that's not a problem. Fat is usually specified in grams, but not always. The prompt for fat amount should ask for the number of grams.
+             </p>
+             <p>
+                 A survey of a number of food labels suggests that fat and calorie values should be integers rather than fractions. Not having to worry about values with decimal points will make our programming task easier. We add this to the list of things to check with Terry, however.
+             </p>
+             <p>
+                 Questions for Terry
+              </p>
+              <ul>
+                <li>
+                  Should any dates be specially indicated in the history file?
+                </li>
+                <li>
+                  Is it OK to use integer values for fat?
+                </li>
+              </ul>
+             <h3 style="color: #e0214d;">How does the program detect that all the data are entered?</h3>
+             <p>
+                 How will Terry tell the program that he is finished entering data? One way is to ask Terry how much input he has. Since computers are better at counting than people, a better approach is to provide a sentinel value that signals no more data.
+             </p>
+            </article>
+            <footer>
+                <ol id="page-numbers">
+                    <li>9</li>
+                    <li>10</li>
+                </ol>
+            </footer>
+        </section>
+
+
+        <section class="open-book" style="margin-top: 50px;">
+            <header>
+                <h1>Chapter 7</h1>
+                <h6>Durk Jan de Bruin</h6>
+            </header>
+            <article>
+             <p>
+                 To make the sentinel intuitive to Terry we consider several alternatives. A number is bad because it requires Terry to translate the concept of being finished into a number, and unnecessary because the program will have to read values as characters rather than integers anyway to be bulletproof.
+             </p>
+              <h3 style="color: #e0214d;">Stop & Help</h3>
+              <p>
+                  <i>
+                      How can we be sure that Terry remembers the sentinel value?
+                  </i>
+              </p>
+              <p>
+                  We could remind Terry of the sentinel value every time a prompt is given, but this seems excessive. We decide to ask Terry to advise us.
+              </p>
+              <p>
+                    Questions for Terry<br>
+
+              </p>
+              <ul>
+                <li>
+                  Should any dates be specially indicated in the history file?
+                </li>
+                <li>
+                  Is it OK to use integer values for fat?
+                </li>
+                <li>
+                  Can you remember "done," or should this be in the prompt?
+                </li>
+              </ul>
+
+               <h3 style="color: #e0214d;">What is the pseudocode for the input step?</h3>
+               <p>
+                   This yields the following pseudocode steps in the solution:
+               </p>
+               <p style="font:16px 'Courier New';">
+                   initialize totalCalories and totalFat to 0<br>
+                    repeat the following until done:<br>
+                    prompt Terry for a fat amount (expressed in grams)<br>
+                    read and error-check the input, continuing to prompt<br>
+                    and reread until an integer or the word "done" is typed<br>
+                    if not done, then<br>
+                    prompt Terry for a calorie amount<br>
+                    read and error-check the input, continuing to prompt<br>
+                    and reread until an integer is typed<br>
+                    add the values to totalCalories and totalFat<br>
+               </p>
+               <h3 style="color: #e0214d;">Stop & Predict</h3>
+               <p>
+                   <i>
+                       Devise a plan for breaking this pseudocode into manageable functions. What code can be recycled from previous case studies?
+                   </i>
+               </p>
+               <h3 style="color: #e0214d;">How are the fat and calorie values input?</h3>
+               <p>
+                   To code each prompt, read, and error-check loop, we can recycle the Readinteger code from Is It Legal? This code may be simplified by storing the line and its length together in a dictionary:
+               </p>
+                <p style="font:16px 'Courier New';">
+                    LineType = { <br>
+                    "length": 0, <br>
+                    "chars": '' <br>
+                    }
+                </p>
+                <p>
+                    Using a dictionary means that all the functions called from ReadInteger now have only one parameter, a variable of type LineType, rather than having separate parameters for the length and the input array. Where each function formerly referred to length, it now refers to line["length"]; where it referred to line or line[k], it now refers to line["chars"] or line["chars"][k]. With these modifications, we generate two copies of Readinteger, one called ReadFat that includes an additional check for the word "done," and the other called ReadCalories.
+                </p>
+                 <h3 style="color: #e0214d;">Stop & Help</h3>
+                 <p>
+                     <i>
+                         Write the code for ReadFat and ReadCalories.
+                     </i>
+                 </p>
+                 <p>
+                     An application of the "input and process until done" template produces code that calls ReadFat and ReadCalories:
+                 </p>
+
+                 <p style="font:16px 'Courier New';">
+                      def ReadEntry(inFile, entry): <br>
+                          <span style="margin-left: 30px;">fat = 0 </span><br>
+                          <span style="margin-left: 30px;">calories = 0</span><br>
+                          <span style="margin-left: 30px;">done = False</span><br>
+                          <span style="margin-left: 30px;">entry["fat"] = 0</span><br>
+                          <span style="margin-left: 30px;">entry["calories"] = 0</span><br>
+                          <span style="margin-left: 30px;">ReadFat(inFile, fat, done)</span><br>
+                          <span style="margin-left: 30px;">ReadCalories(inFile, calories, done)</span><br>
+                </p>
+                 <h3 style="color: #e0214d;">How is the initialization step coded?</h3> 
+                 <p>
+                     We move on to code the Initialize function. To initialize recentHistory need some kind of a loop. Since there are 29 elements to be read, a for loop is an obvious choice.
+                 </p>   
+                 <p style="font:16px 'Courier New';">
+                    for k in range(1, HISTORYSIZE): <br>
+                    <span style="margin-left: 30px;">read(historyFile, recentHistory[k]["fat"],</span><br>
+                    <span style="margin-left: 30px;">recentHistory[k]["calories"])</span><br>
+                </p>
+                 <h3 style="color: #e0214d;">Stop & Predict</h3>
+                 <p>
+                     <i>
+                         Why is a for loop inappropriate for initializing recentHistory?
+                     </i>
+                 </p>
+                 <p>
+                     A for loop won't work if historyFile does not contain 29 entries. When Terry first runs the program, there will be no history. (This problem will also show up when the data are graphed.) The problem can be fixed either by complicating the input loop to handle a premature end of file or by ensuring that historyFile does contain 29 lines by starting it out that way. Taking the conservative approach, we choose the former option. The following code is an application of the "fill an array" template:
+                 </p>
+                 <p style="font:16px 'Courier New';">
+                    def Initialize(historyFile, entry, recentHistory): <br>
+                        <span style="margin-left: 30px;">numEntries = 0</span><br>
+                        <span style="margin-left: 30px;">k = 0</span><br>
+                        <span style="margin-left: 30px;">done = False</span><br>
+                        <span style="margin-left: 30px;">while not done:</span><br>
+                            <span style="margin-left: 60px;">if historyFile:</span><br>
+                                <span style="margin-left: 90px;">done = True</span><br>
+                            <span style="margin-left: 60px;">elif numEntries == HISTORYSIZE:</span><br>
+                                <span style="margin-left: 90px;">done = True</span><br>
+                            <span style="margin-left: 60px;">else:</span><br>
+                                <span style="margin-left: 90px;">numEntries = numEntries + 1</span><br>
+                        <span style="margin-left: 30px;">for k in range(1, HISTORYSIZE): </span><br>
+                    <span style="margin-left: 30px;">read(historyFile, recentHistory[k]["fat"],</span><br>
+                    <span style="margin-left: 30px;">recentHistory[k]["calories"])</span><br>
+                </p>
+                <h3 style="color: #e0214d;">Stop & Help</h3>
+                <p>
+                    <i>
+                        
+                        Why is it necessary to have the for loop at the end of Initialize?
+                    </i>
+                </p>
+            </article>
+            <footer>
+                <ol id="page-numbers">
+                    <li>11</li>
+                    <li>12</li>
+                </ol>
+            </footer>
+        </section>
+
+        <section class="open-book">
+            <header>
+                <h1>Chapter 7</h1>
+                <h6>Durk Jan de Bruin</h6>
+            </header>
+            <article>
+          
+            <h3 style="color: #e0214d;">Stop & Help</h3>
+            <p>
+                <i>
+                    Why is coding a more complicated input loop a more "conservative approach " than ensuring that historyFile always contains at least 29 values?
+                </i>
+            </p>
+            <h3 style="color: #e0214d;">Stop & Predict</h3>
+            <p>
+                <i>
+                    
+               Must the values read from historyFile be error-checked? Why or why not?
+           </i>
+        </p>
+        <p>
+            The code will probably crash if there are format errors in historyFile. A primary consideration in the program design is the avoidance of crashes. However, there is no reason to believe that Terry will touch the file; it is accessed and updated only by the program. Thus, if any errors are present in the file, the program has a bug and shouldn't be available to Terry anyway. We add to our list for Terry a note to remind him not to alter the file.
+        </p>
+        <p>
+            Questions for Terry<br>
+        </p>
+              <ul>
+                <li>
+                  Should any dates be specially indicated in the history file?
+                </li>
+                <li>
+                  Is it OK to use integer values for fat?
+                </li>
+                <li>
+                  Can you remember "done," or should this be in the prompt?
+                </li>
+                <li>
+                  Can we rely on you not to touch historyFile?
+                </li>
+              </ul>
+
+        <h3 style="color: #e0214d;">How are averages computed?</h3>
+        <p>
+            Computing the average fat and calorie consumption is straightforward: it is just an application of the "process every element of an array" template. The representation we have chosen for the recent history requires separate subprograms for averaging the fat and averaging the calories, since a field name of a dictionary can't be passed as a parameter to a single averaging subprogram. We'll code two functions, and call them FatAverage and CalorieAverage.
+        </p>
+             <h3 style="color: #e0214d;">Stop & Help</h3>
+             <p>
+                 <i>
+                     Write the code for FatAverage and CalorieAverage
+                 </i>
+             </p>
+              <h3 style="color: #e0214d;">How is the history file updated?</h3>
+              <p>
+                  We postpone PrintGraph briefly, since the Update function has already essentially been designed. It implements a five-step process that uses a temporary file named tempFile:
+              </p>
+              <ul>
+                <li>
+                  Write tempFile, thereby emptying it.
+                </li>
+                <li>
+                  Write the 30 elements of recentHistory to tempFile, one element per line.
+                </li>
+                <li>
+                  Copy the rest of historyFile to tempFile.
+                </li>
+                <li>
+                  Reset tempFile in order to read from it starting at the beginning, and write historyFile, thereby emptying it.
+                </li>
+                <li>
+                  Copy the contents of tempFile to historyFile.
+                </li>
+              </ul>
+               <h3 style="color: #e0214d;">Stop & Help</h3>
+               <p>
+                   <i>
+                       What are Update's preconditions?
+                   </i>
+               </p>
+               <h3 style="color: #e0214d;">Stop & Consider</h3>
+               <p>
+                   <i>
+                       Explain the function write and reset in Python. What makes these terms confusing?
+                   </i>
+               </p>
+               <p>
+                   Writing the code is straightforward. The write and reset steps translate directly to Python. The "process every element in an array" template is applied to write the elements of recentHistory. To copy the rest of historyFile, we note that the "input and process until done" template works just as well for files as it does for input from the terminal. The function appears below.
+               </p>
+                <p style="font:16px 'Courier New';">
+                    def Update(historyFile, recentHistory): <br>
+                        <span style="margin-left: 30px;">f = open("historyFile.txt", "w") </span><br>
+                        <span style="margin-left: 30px;">f.write('Over the last '+str(HISTORYSIZE)+' days\n')</span><br>
+                        <span style="margin-left: 30px;">f.write("Fat     Calories\n")</span><br>
+                        <span style="margin-left: 30px;">for dayNum in range(HISTORYSIZE):</span><br>
+                            <span style="margin-left: 60px;">f.write("{}{}\n".format(recentHistory</span><br>
+                            <span style="margin-left: 60px;">[dayNum]["fat"],recentHistory[dayNum]["calories"]))</span><br>
+                        <span style="margin-left: 30px;">f.close()</span><br>
+                        
+                        <span style="margin-left: 30px;">if DEBUGGING:</span><br>
+                            <span style="margin-left: 60px;">f = open("testFile.txt", "w")</span><br>
+                            <span style="margin-left: 60px;">f.write('Over the last '+str(HISTORYSIZE)</span><br>
+                            <span style="margin-left: 60px;">+' days\n')</span><br>
+                            <span style="margin-left: 60px;">f.write("Fat     Calories\n")</span><br>
+                            <span style="margin-left: 60px;">for dayNum in range(HISTORYSIZE):</span><br>
+                                <span style="margin-left: 90px;">f.write("{}{}\n".format(recentHistory</span><br>
+                                <span style="margin-left: 90px;">[dayNum]["fat"],recentHistory[dayNum]["calories"]))</span><br>
+                            <span style="margin-left: 60px;">f.close()</span><br>
+                </p>
+                 <h3 style="color: #e0214d;">Stop & Help</h3>
+                 <p>
+                    <i>
+                        Test the code designed so far, since it can be run and checked without the averaging and graphing functions.
+                    </i>
+                     
+                 </p>
+                 <h3 style="color: #e0214d;">What should the graph look like?</h3>
+
+                 <p>
+                     To determine the decomposition for the graph step we need to figure out how the graph will look. We decide on two graphs, one for fat and one for calories. We already determined that the axes will be time and either fat or calories.
+                 </p>
+                 <p>
+                     Several choices must be made:
+                 </p>
+                 <ul>
+                   <li>
+                     Which quantity is to be measured on the vertical (up-down) axis and which on the horizontal (left-right) axis?
+                   </li>
+                   <li>
+                     In which direction should the numbers on each axis go?
+                   </li>
+                   <li>
+                     How should a given value on the graph be displayed? (For instance, should it appear as a single point or as a bar?)
+                   </li>
+                 </ul>
+                 <p>
+                    Probably high fat/calorie values should appear at the right or at the top of the graph. Displaying each day's calorie total as a point seems reasonable. We try some example graphs to settle the other questions.
+                </p>
+            </article>
+            <footer>
+                <ol id="page-numbers">
+                    <li>13</li>
+                    <li>14</li>
+                </ol>
+            </footer>
+        </section>
+
+
+        <section class="open-book" style="margin-top: 50px;">
+            <header>
+                <h1>Chapter 7</h1>
+                <h6>Durk Jan de Bruin</h6>
+            </header>
+            <article>
+                <div>
+                  <img src="graph1.png" style="width: 100%;">
+                  <img src="graph2.png" style="width: 100%;">
+                </div>
+                 <h3 style="color: #e0214d;">Which is best?</h3>
+                 <p>
+                     Looking at these graphs, we imagine that Terry will want to compare his fat and calorie consumption over a given range of days. Since the graphs will appear one above the other, comparison will be easiest if the time is on the horizontal axis. Furthermore, to reduce clutter, we decide to print every 5th day on the horizontal axis.
+                 </p>
+                 <p>
+                     We add this decision to the list of things we want to check with Terry.
+                 </p>
+                 <p>
+                     Questions for Terry
+                  </p>
+                 <ul>
+                <li>
+                  Should any dates be specially indicated in the history file?
+                </li>
+                <li>
+                  Is it OK to use integer values for fat?
+                </li>
+                <li>
+                  Can you remember "done," or should this be in the prompt?
+                </li>
+                <li>
+                  Can we rely on you not to touch historyFile?
+                </li>
+                <li>
+                  Does the proposed graph look OK?
+                </li>
+                </ul>
+                  <h3 style="color: #e0214d;">What should the intervals for calorie consumption be?</h3>
+                  <p>
+                      Ten intervals for calorie consumption look about right, but we keep in mind that this may change after Terry has some experience with the program.
+                  </p>
+
+                   <h3 style="color: #e0214d;">How is the task of displaying the graph decomposed?</h3>
+                   <p>
+                       As were letters in the Banners With CLASS program and months in The Calendar Shop program, the graph will be plotted line by line.
+                   </p>
+                    <h3 style="color: #e0214d;">Stop & Predict</h3>
+                    <p>
+                        <i>
+                            Describe the steps in the decomposition. Then check your ideas against the list below.
+                        </i>
+                    </p>
+                    <p>
+                        Here is a reasonable approach:
+                    </p>
+                    <p>
+                        Print the word "calories," followed by a carriage return.<br>
+                        For each calorie interval from the maximum down to 0, print the interval<br>
+                        title, a vertical bar, and the X's in appropriate columns, followed by a carriage return.<br>
+                        Print the horizontal axis, followed by a carriage return.<br>
+                        Print the labels for the horizontal axis: one line of digits and blanks followed by a carriage return, then the centered phrase "Numbar of days" and
+                        another carriage return.<br>
+                    </p>
+                    <p>
+                   Here is a graph that might result.   
+                  </p>
+                  <p>
+                      Printing a single word is straightforward. Printing a line of hyphens is almost as easy. We now consider the other two steps.
+                  </p>
+                </article>
+            <footer>
+                <ol id="page-numbers">
+                    <li>15</li>
+                    <li>16</li>
+                </ol>
+            </footer>
+        </section>
+
+        <section class="open-book">
+            <header>
+                <h1>Chapter 7</h1>
+                <h6>Durk Jan de Bruin</h6>
+            </header>
+            <article>
+            	   <div>
+                  <img src="graph3.png" style="width: 100%;"> 
+                 </div>
+                  <h3 style="color: #e0214d;">How is the step of printing the data in the graph decomposed?</h3>
+                  <p>
+                      Printing the data in the graph consists of printing ten lines. We define a constant called MAXGRAPHLINES to make it easier to change the number of lines if Terry requests it. The data-printing step is then a for loop:
+                  </p>
+                   <p style="font:16px 'Courier New';">
+                        for lineNum in range(MAXGRAPHLINES): <br>
+                            <span style="margin-left: 30px;">print the interval title, a vertical bar, and X's in the appropriate columns</span><br>
+                        print("\n")
+                    </p>
+                     <h3 style="color: #e0214d;">How is the interval that corresponds to each line determined?</h3>
+                     <p>
+                         Printing a line of the graph involves first determining the interval for that line. There are ten lines, so each interval represents one-tenth of the available range. This is similar to printing weeks in The Calendar Shop. Since there are two values for each interval it makes sense to maintain two variables to hold the endpoint values, and to update these variables each time through the loop. We refine our loop as follows:
+                     </p>
+                     <p style="font:16px 'Courier New';">
+                     Initialize leftValue and rightValue. <br>
+                        for lineNum in range(MAXGRAPHLINES): <br>
+                            <span style="margin-left: 30px;">print("  {1:4d} - {0:4d}|".format </span><br>
+                            <span style="margin-left: 30px;">(leftValue, rightValue),end='')</span><br>
+                            <span style="margin-left: 30px;">print X's in the appropriate columns</span><br>
+                            <span style="margin-left: 30px;">print("\n")</span><br>
+                            <span style="margin-left: 30px;">rightValue = leftValue</span><br>
+                            <span style="margin-left: 30px;">reduce leftValue</span><br>
+                         </p>
+                         <p>
+                             Terry indicated that he consumed at most 400 grams of fat and 6000 calories per day. We will use these as the maximum values for the graph but define them as Python constants so that they can be easily changed later if necessary. We continue refining the pseudocode:
+                         </p>
+
+                          <p style="font:16px 'Courier New';">
+                            rightValue = MAXCALORIES <br>
+                            leftValue = rightValue-MAXCALORIES//MAXGRAPHLINES+1; <br>
+                            for lineNum in range(MAXGRAPHLINES): <br>
+                                <span style="margin-left: 30px;">print("  {1:4d} - {0:4d}|".format</span><br>
+                                <span style="margin-left: 30px;">(leftValue, rightValue),end='')</span><br>
+                                <span style="margin-left: 30px;">print X's in the appropriate columns</span><br>
+                                <span style="margin-left: 30px;">rightValue = leftValue - 1</span><br>
+                                <span style="margin-left: 30px;">leftValue = leftValue-MAXCALORIES//MAXGRAPHLINES</span><br>
+                        </p>
+                    <h3 style="color: #e0214d;">How are the X's on each line produced?</h3> 
+                    <p>
+                        All that remains is to print the X's; actually this means printing a line containing X's and blanks. If X's were to appear for each of the last 30 days,the loop would be
+                    </p>   
+
+                     <p style="font:16px 'Courier New';">
+                        for dayNum in range(HISTORYSIZE): <br>
+                            <span style="margin-left: 30px;">print('X', end="") </span><br>
+                        print("\n") <br>
+                        </p>
+                     <p>
+                         X's should not appear that often, however. An X should be printed when the corresponding day's calorie total falls within the given interval. This is a straightforward refinement:
+                     </p>  
+                      <p style="font:16px 'Courier New';">
+                        for dayNum in range(HISTORYSIZE): <br>
+                            <span style="margin-left: 30px;">if (recentHistory[dayNum]["calories"] >= leftValue)</span><br>
+                            <span style="margin-left: 30px;">and(recentHistory[dayNum]["calories"]<=rightValue):</span><br>
+                                <span style="margin-left: 60px;">print('  X',end='')</span><br>
+                            <span style="margin-left: 30px;">else:</span><br>
+                                <span style="margin-left: 60px;">print('   ',end = '')</span><br>
+                        print('\n')    
+                    </p>
+                    <p>
+                        Here we have another application of the "process every element of an array" template.
+                    </p>
+                     <h3 style="color: #e0214d;">How is the horizontal axis label produced?</h3>
+                     <p>
+                         The label for the time axis comprises two lines. On the first line, it displays values between 29 and 0 that are divisible by 5. On the secand line, some blanks are printed, then the words "days ago."
+                     </p>
+                     <p>
+                         A loop to print the first line on the time axis is similar to code used in the day-by-day solution for The Calendar Shop. It's an application of a template for processing in cycles:
+                     </p>
+                      <p style="font:16px 'Courier New';">
+                        for dayNum in range(31): <br>
+                            <span style="margin-left: 30px;">if dayNum % 5 == 0:</span><br>
+                                <span style="margin-left: 60px;">print("  {}".format(dayNum),end='')</span><br>
+                            <span style="margin-left: 30px;">else:</span><br>
+                                <span style="margin-left: 60px;">print("  {}".format(BLANK),end='')</span><br>
+
+                     </p>
+                     <p>
+                         The last line is just a print of the string "days ago," with the field width determined by experimentation.
+                     </p>   
+                     <p>
+                         The program is now ready for feedback from Terry. It will be easy to find the functions that he wants modified, and most changes can be localized rather than distributed across the program. The code for the entire program appears in the Python Code section. It's relatively large; the call diagram appears below.
+                     </p>
+            </article>
+            <footer>
+                <ol id="page-numbers">
+                    <li>17</li>
+                    <li>18</li>
+                </ol>
+            </footer>
+        </section>
+
+
+        <section class="open-book" style="margin-top: 50px;">
+            <header>
+                <h1>Chapter 7</h1>
+                <h6>Durk Jan de Bruin</h6>
+            </header>
+            <article>
+                <div>
+                  <img src="calldiagram.png" style="width: 100%;">
+                </div>
+                 <h3 style="color: #e0214d;">Analysis</h3> 
+                     <p>
+                         7.12 Indicate on the call diagram the routines that receive input from Terry. Do the same for the routines that access the history file and the routines that manipulate the recent history.
+                     </p>
+                      <h3 style="color: #e0214d;">Modification</h3>
+                      <p>
+                          7.13 Modify the graph-printing functions to use the constant BLANK along with a field width whenever blanks are to be printed.
+                      </p>
+                      <h3 style="color: #e0214d;">Reflection</h3> 
+                      <p>
+                          7.14 Why would it be preferable to use the constant BLANK instead of an explicitly specified string constant?
+                      </p>
+                       <h3 style="color: #e0214d;">Modification</h3>
+                       <p>
+                           7.15 Modify the program to use a history file whose lines are arranged least recent to most recent.
+                       </p><br>
+                <h2 style="color: #f55c7f;background: lavenderblush;">Testing the Program</h2>
+
+                 <h3 style="color: #e0214d;">How is the program tested and debugged?</h3> 
+                 <p>
+                     Since the program is so large, there are many alternatives for a sequence in which to test and debug the code. The program structure isn't complicated it's merely a variant of the "input, process, output" template so there is no need to test the main program using stubs for subprograms. Instead, we will develop the program bottom-up, starting from the bottom of the call tree.
+                 </p>
+                  <h3 style="color: #e0214d;">What parts of the program are tested first?</h3> 
+                  <p>
+                      We choose first to test the routines that read from Terry. Almost all of them have already been tested in developing the Is It Legal? program. However, lines may be lost while copying, or a typographical error may be introduced while modifying the code.
+                  </p>
+                    <h3 style="color: #e0214d;">Stop & Help</h3>
+                       <i>
+                           Write a main program to test the ReadEntry function and the subprograms it calls.
+                       </i>
+                   </p>
+                   <h3 style="color: #e0214d;">How might the testing process be made easier?</h3>
+                   <p>
+                       A technique to relieve the pain of testing a program is to set up a file to contain data normally typed by the user. This requires an extra declaration, a call to reset, plus modification of all uses of input, read, and eoln. The latter all appear in the ReadTrimmedLine function, so they could be changed there. In order to get test input from a file, one might then use a DEBUGGING switch—we've done this in earlier case studies—and change each read statement in ReadTrimmedLine as follows:
+                   </p>
+                   <p style="font:16px 'Courier New';">
+                    if DEBUGGING: <br>
+                    <span style="margin-left: 30px;">code that reads from a file </span><br>
+                    else: <br>
+                    <span style="margin-left: 30px;">code that reads from the terminal </span><br>
+                    
+                </p>
+                <p>
+                    An idea that requires copying less code is to have all the calls to input, read, and eoln use a file argument that is passed into ReadTrimmedLine. When ReadTrimmedLine is called using input as argument, test input is read from the terminal. For ease and clarity of coding, we set up all the Read... functions to take a file argument, then have the if DEBUGGING ... code appear in the main program:
+                </p>
+                <p style="font:16px 'Courier New';">
+                    if DEBUGGING: <br>
+                        <span style="margin-left: 30px;">ReadEntry(testFile, entry)</span><br>
+                    else: <br>
+                        <span style="margin-left: 30px;">ReadEntry(historyFile, entry)</span><br>
+                </p>
+                 <h3 style="color: #e0214d;">How is the file input code tested?</h3>
+                 <p>
+                     Next to be tested is the code to read from the history file. Test files will have differing numbers of lines: 0, 1, 28, 29, 30. As noted before, we assume that lines in historyFile are correctly formatted, so there is no need to try error cases.
+                 </p> 
+                  <h3 style="color: #e0214d;">Stop & Help</h3>
+                  <p>
+                      <i>
+                          Write a main program to test the Initialize function.
+                      </i>
+                  </p>
+                  <p>
+                      There are two options for the next development step: we can test either the averaging/graphing code or the file updating code. It doesn't make much difference which we do, except that graphing is harder and could be put off for that reason.
+                  </p>
+                  <h3 style="color: #e0214d;">How is the file updating code tested?</h3>
+                  <p>
+                      The file updating code can be tested with the same sample files as the file input code. We can, of course, check the file after each test to see if its contents are correct, but it will be easier to include debugging output that prints a copy of everything written to the file on the screen as well.
+                  </p>
+            </article>
+            <footer>
+                <ol id="page-numbers">
+                    <li>19</li>
+                    <li>20</li>
+                </ol>
+            </footer>
+        </section>
+
+        <section class="open-book" style="margin-top: 50px;">
+            <header>
+                <h1>Chapter 7</h1>
+                <h6>Durk Jan de Bruin</h6>
+            </header>
+            <article>
+             <h3 style="color: #e0214d;">How is the graphing code tested?</h3>
+             <p>
+                 Last comes the graph printing functions. Test data here should be chosen to ensure that data values fall into the correct graphing interval. Thus data values at or within 1 of interval boundaries are appropriate.
+             </p>
+             <h3 style="color: #e0214d;">Debugging</h3>
+             <p>
+                 7.16 Introduce a bug into the program, and get a fellow programmer to find it. Which bugs are easiest to locate? Which are most difficult?
+             </p>
+             <h3 style="color: #e0214d;">Debugging</h3>
+             <p>
+                 7.17 Create "mutations" of your program to provide evidence that you've devised a comprehensive set of test data.
+             </p><br>
+              <h2 style="color: #f55c7f;background: lavenderblush;">Outline of Design and Development Questions</h2>
+              <p>
+                    These questions summarize the main points of the commentary.
+              </p>
+              <p>
+                    <b>Planning the Program</b><br>
+                    How can this program meet the needs of the user?<br>
+                    Will the needs of the user change?<br>
+                    What are the main steps in the program?<br>
+                    What parts of this program can be solved by recyling solutions to other
+                    problems?<br>
+                    What data structures are needed?<br>
+                    Which should be refined first, the data structures or the algorithms?<br>
+                    How are data types designed?<br>
+                    What operations are applied to historyFile?<br>
+                    How should historyFile be implemented?<br>
+                    How should the entries in historyFile be ordered?<br>
+                    What will be the operations on recenthistory?<br>
+                    How will the data be represented internally?<br>
+                    How should the date be represented?<br>
+                    How should data be ordered in historyFile?<br>
+                    How should values be input from historyFile?<br>
+                    How is historyFile updated?<br>
+                    What do we have so far?<br><br>
+                    <b>Solving the Problem</b><br>
+                    What is the top-level decomposition of the solution?<br>
+                    How should the program ask for input?<br>
+                    How does the program detect that all the data are entered?<br>
+                    What is the pseudocode for the input step?<br>
+                    How are the fat and calorie values input?<br>
+                    How is the initialization step coded?<br>
+                    How are averages computed?<br>
+                    How is the history file updated?<br>
+                    What should the graph look like?<br>
+                    Which graph is best?<br>
+                    What should the intervals for calorie consumption be?<br>
+                    How is the task of displaying the graph decomposed?<br>
+                    How is the step of printing the data in the graph decomposed?<br>
+                    How is the interval that corresponds to each line determined?<br>
+                    How are the X's on each line produced?<br>
+                    How is the horizontal axis label produced?<br><br>
+                    <b>Testing the program</b><br>
+                    How is the program tested and debugged?<br>
+                    What parts of the program are tested first?<br>
+                    How might the testing process be made easier?<br>
+                    How is the file input code tested?<br>
+                    How is the file updating code tested?<br>
+                    How is the graphing code tested?<br>
+                    </p><br>
+                     <h2 style="color: #f55c7f;background: lavenderblush;">Programmers' Summary</h2>
+                     <p>
+                         In this case study a program is designed for a client. Typically clients specify the goal of the program but not the details. For this problem the goal is to keep track of daily intake of calories and fat; the details include such questions as (a) Is it acceptable to represent fat as an integer? and (b) Is it necessary to restate the sentinel value every time a value is added? To resolve such details programmers usually develop a prototype version of the program and get feedback from the client. One challenge is to design the program so that feedback can be easily incorporated.
+                     </p>
+                     <p>
+                         This problem is further complicated because the user has little computer experience. Inexperienced users typically do not understand computer jargon, are not able to recover from program errors, and may make input errors without realizing it.
+                     </p>
+                     <p>
+                         This program and any foreseeable variant is organized around the "input, process, output" template. Feedback is most likely to result in change to the data structures. Thus the data structures are isolated from the action of the program to make changes easy to implement.
+                     </p>
+                     <p>
+                        Accesses to each potentially modifiable data structure are localized in one place. Ideally, changing a detail of the specification should require modifications in only one part of the program. One example of this type of data isolation occurred in previous case studies when Python constants were used to represent values that were constant when the program was designed but could change in the future. Coding array dimensions, loop bounds, and so on in terms of Python constants rather than actual numeric values means that a single change to the constant definition propagates to the whole program.
+                    </p>
+            </article>
+            <footer>
+                <ol id="page-numbers">
+                    <li>21</li>
+                    <li>22</li>
+                </ol>
+            </footer>
+        </section>
+
+        <section class="open-book" style="margin-top: 50px;">
+            <header>
+                <h1>Chapter 7</h1>
+                <h6>Durk Jan de Bruin</h6>
+            </header>
+            <article>
+            
+            <p>
+                For more complex data, we design types of data—the values stored and the operations performed on them. The goal is to localize and minimize the amount of code to be modified if the data type must be represented differently. The operations for each data type are then coded in subprograms. All direct manipulation of the data storage is done by these subprograms. The other parts of the program interact with the data only through these subprograms. If the storage of the values must change, only these routines need to be changed.
+                </p>
+                <p>
+                    Designing for inexperienced clients requires that the user interface be extremely helpful and easy to understand. The input routines from Is It Legal? can check for any illegal values. Once an illegal value is detected, good error messages are needed so that the user can improve the input. Some errors, such as using the wrong units for an input value, cannot be detected. In these cases we elaborate the prompts to remind the user of the information expected (such as that fat is to be entered in grams). Communicating the output to the user can also be confusing. We consider several possibilities for each output graph, choosing one with minimal clutter in which fat and calorie trends over time can easily be compared.
+                </p>
+                <p>
+                    In this case study, we extend the Persecution Complex principle to the interaction between the designer and the client. To make it easier to get feedback later, we keep a list of the decisions we made for the client.These mostly concern the user interface; one decision, however, would require a different history file representation if made differently.
+                </p>
+                <p>
+                    To store the collection of fat/calorie values, we choose between files and arrays. A file is necessary to preserve the values between program runs. File access, however, is inefficient and clumsy, since Standard Python allows only sequential reads from and writes to a file, and it prohibits simultaneous read and write access to a file. We decide to read part of the file into an array indexed by an integer value representing a number of days prior to the current day. This allows much more convenient access for computation. Applying the Literacy Principle, we choose to pair fat and calorie values for a given day in a dictionary. (We also use a dictionary to pair the input line with its length, which shortens the parameter lists for the various input routines.)
+                </p>
+                <p>
+                    Almost the entire design consists of recycled code from earlier case studies. Routines from Is It Legal? for reading an integer value need only minor modification. Reading all the data for the current day is a simple application of the "input and process until done" template. Routines for file handling are patterned on those in the Space program for inserting into an array using an auxiliary array. To average fat and calorie values, we accumulate the sum over array elements. To graph them, we code a line-by-line loop similar to that found in the week-by-week version of The Calendar Shop program and we code a "process every array element" loop within to print a given line in the graph.
+                </p>
+                <p>
+                    Since the program structure is straightforward, it makes more sense to develop from the bottom of the call tree to the top rather than top-down. Output to a file is invisible while a program is run, so we make sure to copy file output to the terminal if requested by a DEBUGGING switch. Testing is simplified by using a file of input rather than typing in values for each test.
+                </p><br>
+                <h2 style="color: #f55c7f;background: lavenderblush;">Making Sense of You Are What You Eat</h2>
+                <h3 style="color: #e0214d;">Testing</h3>
+                <p>
+                    7.18 Some Python environments allow reset and write to take a string variable containing the name of a file as a secand argument. Is this feature provided in your Python environment? If so, explain the difference between the file variable historyFile and a file name that might be given as the secand argument to reset or write.
+                </p>
+                <h3 style="color: #e0214d;">Reflection</h3>
+                <p>
+                    7.19 Explain how the feature described in question 7.18 would make it easier to test the program.
+                </p>
+               <h3 style="color: #e0214d;">Modification</h3> 
+               <p>
+                   7.20 If your Python environment provides the feature described in question 7.18, modify the program to request a file name from the user from which to read history data. Incorporate as much error checking and help for the user as possible.
+               </p>
+                <h3 style="color: #e0214d;">Analysis</h3>
+                <p>
+                    7.21 Terry may forget to collect data about the food he eats on a given day. How should the program be modified to handle the case of a missing day of data?
+                </p>
+                <h3 style="color: #e0214d;">Modification</h3>
+                <p>
+                    7.22 Modify the program to use a history file whose first line contains a single integer that says how many days of data the file contains.
+                </p>
+                <h3 style="color: #e0214d;">Modification</h3>
+                <p>
+                    7.23 Change the EntryType definition to be a two-element array instead of a two-field dictionary, define two constants called FAT and CALORIES, and update the rest of the program accordingly. Then combine the FatAverage and CalorieAverage functions into a single function with an extra parameter. The new function would be called with an argument of FAT to compute the fat average and an argument of CALORIES to compute the calorie average.
+                </p>
+
+            </article>
+            <footer>
+                <ol id="page-numbers">
+                    <li>23</li>
+                    <li>24</li>
+                </ol>
+            </footer>
+        </section>
+         <section class="open-book" style="margin-top: 50px;">
+            <header>
+                <h1>Chapter 7</h1>
+                <h6>Durk Jan de Bruin</h6>
+            </header>
+            <article>
+             <h3 style="color: #e0214d;">Analysis</h3>
+             <p>
+                7.24 Can PrintFatGraph and PrintCaloriesGraph be combined using the technique described in question 7.23? Why or why not?
+             </p>
+              <h3 style="color: #e0214d;">Analysis</h3>
+              <p>
+                 7.25  Describe what parts of the program would need to be changed if Terry wanted to print graphs for the last 60 days instead of the last 30 days.
+              </p>
+               <h3 style="color: #e0214d;">Modification</h3>
+               <p>
+                   7.26 Suppose Terry decides that he wants each entry in the graph to represent the average fat and calories he consumed for two days. Modify the program so that it displays 30 data points on the graph, each data point representing the average fat or calories for two days.
+               </p>
+                <h3 style="color: #e0214d;">Modification</h3>
+                <p>
+                    7.27 Terry is concerned about the percent of calories he consumes that come from fat. He says it is reasonable to assume that one gram of fat has about 10 calories. Write a function that will print a graph of the percent of calories that come from fat for the last 30 days. Reuse
+                    templates as much as possible.
+                </p>
+                 <h3 style="color: #e0214d;">Debugging</h3>
+                 <p>
+                     Terry notices that the graph for calories seems to give values that are consistently higher than he expects from looking at the average calorie consumption. Describe two types of errors that could result in this pattern.
+                 </p>
+                 <h3 style="color: #e0214d;">Debugging</h3>
+                 <p>
+                     7.29 After using the program for 15 days, Terry calls to say that he is consuming fewer and fewer calories but the average is increasing every day. What kind of error could cause this pattern of results?
+                 </p> 
+                  <h3 style="color: #e0214d;">Modification</h3>
+                  <p>
+                      7.30 Write a function to print a graph of the average calories consumed by each day in the month. The most recent day will display the average for the past 30 days. The previous day will display the average for the 29 days leading up to it, and so on.
+                  </p><br>
+                   <h2 style="color: #f55c7f;background: lavenderblush;">Linking to Previous Case Studies</h2>
+                   <h3 style="color: #e0214d;">Modification</h3>
+                   <p>
+                       7.31 Modify the program to read the current date from Terry, then annotate the output with actual dates instead of the number of days ago. Recycle code from The Calendar Shop program.
+                   </p>
+                     <h3 style="color: #e0214d;">Analysis</h3>
+                     <p>
+                         
+                         7.32 Describe how the Check That Number! program could be modified to check values with any number of digits. Use techniques from You Are What You Eat.
+                     </p>
+                     <h3 style="color: #e0214d;">Reflection</h3>
+                     <p>
+                         7.33 Compare the use of Python constants in other case studies to the methods for isolating data in this program. How are both helpful when programs need modification?
+                     </p>
+                     <h3 style="color: #e0214d;">Analysis</h3>
+                     <p>
+                         7.34 How might a user of the Space Text function want it to be modified? Describe two possible modifications and discuss why they are easy or difficult to implement.
+                     </p><br>
+                     <h2 style="color: #f55c7f;background: lavenderblush;">Program to Be Tested</h2>
+                      <p style="font:16px 'Courier New';">
+                          HISTORYSIZE = 0 <br>
+                          DONESTR = 'done'<br>
+                          BLANK = ' '<br>
+                          MAXLINELEN = 10<br>
+                          MAXGRAPHLINES = 10<br>
+                          MAXFAT = 400<br>
+                          MAXCALORIES = 6000<br>
+                          DEBUGGING = False<br>
+                          EntryType = {<br>
+                              "fat": 0,<br>
+                              "calories": 0<br>
+                              }<br>
+                          HistoryType = []<br>
+                          for i in range(0,30):<br>
+                              <span style="margin-left: 30px;">HistoryType.append(EntryType.copy()) </span><br>
+                          StringType = ''<br>
+                          LineType = {<br>
+                              "length": 0,<br>
+                              "chars": ''<br>
+                              } <br>
+                          historyFile = open("historyFile.txt", "w")<br>
+                          testFile = open("testFile.txt", "w")<br>
+                          entry = EntryType.copy()<br>
+                          recentHistory = HistoryType.copy() <br> <br>
+                          # Return true exactly when the line is empty (contains no characters). <br><br>
+                          def Empty(line): <br>
+                              <span style="margin-left: 30px;">Empty = (line == '')</span><br>
+                              <span style="margin-left: 30px;">return Empty</span><br><br>
+                          # Return true exactly when line contains the same characters as s. <br><br>
+                          def Equal(line, s): <br>
+                              <span style="margin-left: 30px;">if line == s:</span><br>
+                                  <span style="margin-left: 60px;">Equal = True</span><br>
+                              <span style="margin-left: 30px;">else:</span><br>
+                                  <span style="margin-left: 60px;">Equal = False</span><br>
+                              <span style="margin-left: 30px;">return Equal</span><br>
+                      </p>
+            </article>
+            <footer>
+                <ol id="page-numbers">
+                    <li>25</li>
+                    <li>26</li>
+                </ol>
+            </footer>
+        </section>
+        <section class="open-book" style="margin-top: 50px;">
+            <header>
+                <h1>Chapter 7</h1>
+                <h6>Durk Jan de Bruin</h6>
+            </header>
+            <article>
+             <p style="font:16px 'Courier New';">
+                # Return true exactly when the given fat figure is reasonable. <br><br>
+                def IsInFatRange(fat):<br>
+                    <span style="margin-left: 30px;">fat = int(fat)</span><br>
+                    <span style="margin-left: 30px;">IsInFatRange = (fat >= 0) and (fat <= MAXFAT)</span><br>
+                    <span style="margin-left: 30px;">return IsInFatRange</span><br><br>
+                # Return true exactly when the given calories figure is reasonable. <br><br>
+                def IsInCaloriesRange(calories): <br>
+                    <span style="margin-left: 30px;">calories = int(calories)</span><br>
+                    <span style="margin-left: 30px;">IsInCaloriesRange=(calories>=0)</span><br>
+                      <span style="margin-left: 30px;">and(calories<=MAXCALORIES)</span><br>
+                    <span style="margin-left: 30px;">return IsInCaloriesRange</span><br><br>
+                """ Read a value for fat consumption from inFile, and keep prompting until a legal value is provided. Return a true value for done if a line containing the string 'done' is provided """ <br><br>
+                def ReadFat(inFile, fat, done): <br>
+                    <span style="margin-left: 30px;">error = False</span><br>
+                    <span style="margin-left: 30px;">line = LineType.copy()</span><br>
+                    <span style="margin-left: 30px;">done = False</span><br>
+                    <span style="margin-left: 30px;">i = 0</span><br>
+                    <span style="margin-left: 30px;">while not done:</span><br>
+                        <span style="margin-left: 60px;">error = False</span><br>
+                        <span style="margin-left: 60px;">print('How much fat? Please type a </span><br>
+                        <span style="margin-left: 60px;">whole number of grams, ')</span><br>
+                        <span style="margin-left: 60px;">print('or type the word "done"--without </span><br>
+                        <span style="margin-left: 60px;">the quotes--', 'if you''re finished.')</span><br>
+                        <span style="margin-left: 60px;">input1 = input()</span><br>
+                        <span style="margin-left: 60px;">if Empty(input1):</span><br>
+                            <span style="margin-left: 90px;">error = True</span><br>
+                        <span style="margin-left: 60px;">elif Equal(input1, DONESTR):</span><br>
+                            <span style="margin-left: 90px;">done = True</span><br>
+                        <span style="margin-left: 60px;">elif not input1.isnumeric():</span><br>
+                            <span style="margin-left: 90px;">error = True</span><br>
+                        <span style="margin-left: 60px;">elif not IsInFatRange(input1):</span><br>
+                            <span style="margin-left: 90px;">error = True</span><br>
+                        <span style="margin-left: 60px;">else:</span><br>
+                            <span style="margin-left: 90px;">fat = int(input1)</span><br>
+                            <span style="margin-left: 90px;">recentHistory[i]["fat"] = fat</span><br>
+                            <span style="margin-left: 90px;">i = i + 1</span><br>
+                            <span style="margin-left: 90px;">global HISTORYSIZE</span><br>
+                            <span style="margin-left: 90px;">HISTORYSIZE = HISTORYSIZE + 1</span><br>
+                        
+                        <span style="margin-left: 60px;">if error:</span><br>
+                            <span style="margin-left: 90px;">print('You must provide an integer </span><br>
+                              <span style="margin-left: 90px;">number of grams,',' no more than', MAXFAT)</span><br><br>
+                # Read a value for calorie consumption from inFile, and keep prompting until a legal value is provided. <br><br>
+                def ReadCalories(inFile, calories, done): <br>
+                    <span style="margin-left: 30px;">error = False</span><br>
+                    <span style="margin-left: 30px;">line = LineType.copy()</span><br>
+                    <span style="margin-left: 30px;">done = False</span><br>
+                    <span style="margin-left: 30px;">i = 0</span><br>
+                    <span style="margin-left: 30px;">while not done:</span><br>
+                        <span style="margin-left: 60px;">error = False</span><br>
+                        <span style="margin-left: 60px;">print('How many calories? Please </span><br>
+                        <span style="margin-left: 60px;">type a whole number.')</span><br>
+                        <span style="margin-left: 60px;">print('or type the word "done"--without</span><br>
+                        <span style="margin-left: 60px;">the quotes--', 'if you''re finished.')</span><br>
+                        <span style="margin-left: 60px;">input2 = input()</span><br>
+                        <span style="margin-left: 60px;">if Empty(input2):</span><br>
+                            <span style="margin-left: 90px;">error = True</span><br>
+                        <span style="margin-left: 60px;">elif Equal(input2, DONESTR):</span><br>
+                            <span style="margin-left: 90px;">done = True</span><br>
+                        <span style="margin-left: 60px;">elif not input2.isnumeric():</span><br>
+                            <span style="margin-left: 90px;">error = True</span><br>
+                        <span style="margin-left: 60px;">elif not IsInCaloriesRange(input2):</span><br>
+                            <span style="margin-left: 90px;">error = True</span><br>
+                        <span style="margin-left: 60px;">else:</span><br>
+                            <span style="margin-left: 90px;">calories = int(input2)</span><br>
+                            <span style="margin-left: 90px;">recentHistory[i]["calories"] = calories</span><br>
+                            <span style="margin-left: 90px;">i = i + 1</span><br>
+                        
+                        <span style="margin-left: 60px;">if error:</span><br>
+                            <span style="margin-left: 90px;">print('You must provide an integer </span><br>
+                            <span style="margin-left: 90px;">number of calories,',' no more </span><br>
+                              <span style="margin-left: 90px;">than', MAXCALORIES)</span><br><br>
+                # Read an entry consisting of a value for fat consumption and a value for calories consumption from inFile. <br><br>
+                def ReadEntry(inFile, entry): <br>
+                    <span style="margin-left: 30px;">fat = 0</span><br>
+                    <span style="margin-left: 30px;">calories = 0</span><br>
+                    <span style="margin-left: 30px;">done = False</span><br>
+                    <span style="margin-left: 30px;">entry["fat"] = 0</span><br>
+                    <span style="margin-left: 30px;">entry["calories"] = 0</span><br>
+                    <span style="margin-left: 30px;">ReadFat(inFile, fat, done)</span><br>
+                    <span style="margin-left: 30px;">ReadCalories(inFile, calories, done)</span><br><br>
+                """ Fill recentHistory[0] with the given entry, and fill recentHistory[1..HISTORYSIZE] with the most recent HISTORYSIZE entries from historyFile. If there are fewer than HISTORYSIZE entries in historyFile, the remainder are assumed to contain fat and calorie values of 0.""" <br><br>
+                def Initialize(historyFile, entry, recentHistory): <br>
+                    <span style="margin-left: 30px;">numEntries = 0</span><br>
+                    <span style="margin-left: 30px;">k = 0</span><br>
+                    <span style="margin-left: 30px;">done = False</span><br>
+                    <span style="margin-left: 30px;">while not done:</span><br>
+                        <span style="margin-left: 60px;">if historyFile:</span><br>
+                            <span style="margin-left: 90px;">done = True</span><br>
+                        <span style="margin-left: 60px;">elif numEntries == HISTORYSIZE:</span><br>
+                            <span style="margin-left: 90px;">done = True</span><br>
+                        <span style="margin-left: 60px;">else:</span><br>
+                            <span style="margin-left: 90px;">numEntries = numEntries + 1</span><br><br>
+                # Return the average fat consumption of entries in recentHistory. <br><br>
+                def FatAverage(recentHistory): <br>
+                    <span style="margin-left: 30px;">sum1 = 0</span><br>
+                    <span style="margin-left: 30px;">dayNum = 0</span><br>
+                    <span style="margin-left: 30px;">for dayNum in range(0,HISTORYSIZE):</span><br>
+                        <span style="margin-left: 60px;">sum1 = sum1 + recentHistory[dayNum]["fat"]</span><br>
+                    <span style="margin-left: 30px;">FatAverage = sum1 / HISTORYSIZE</span><br>
+                    <span style="margin-left: 30px;">return FatAverage</span><br>
+            </p>
+
+                
+
+            </article>
+            <footer>
+                <ol id="page-numbers">
+                    <li>27</li>
+                    <li>28</li>
+                </ol>
+            </footer>
+        </section>
+         <section class="open-book" style="margin-top: 50px;">
+            <header>
+                <h1>Chapter 7</h1>
+                <h6>Durk Jan de Bruin</h6>
+            </header>
+            <article>
+             <p style="font:16px 'Courier New';">
+                # Return the average calorie consumption of entries in recentHistory. <br><br>
+                def CalorieAverage(recentHistory): <br>
+                    <span style="margin-left: 30px;">sum1 = 0</span><br>
+                    <span style="margin-left: 30px;">dayNum = 0</span><br>
+                    <span style="margin-left: 30px;">for dayNum in range(0,HISTORYSIZE):</span><br>
+                        <span style="margin-left: 60px;">sum1 = sum1 + recentHistory[dayNum]["calories"]</span><br>
+                    <span style="margin-left: 30px;">CalorieAverage = sum1 / HISTORYSIZE</span><br>
+                    <span style="margin-left: 30px;">return CalorieAverage</span><br><br>
+                # Print the average fat and calorie consumption. <br><br>
+                def PrintAverages(recentHistory): <br>
+                    <span style="margin-left: 30px;">print('\nOver the last '+str(HISTORYSIZE)+' days')</span><br>
+                    <span style="margin-left: 30px;">print('The average fat consumption has </span><br>
+                    <span style="margin-left: 30px;">been '+str(FatAverage(recentHistory))+' grams, and ') </span><br>
+                    <span style="margin-left: 30px;">print('The average calorie consumption has </span><br>
+                    <span style="margin-left: 30px;">been'+str(CalorieAverage(recentHistory))+'calories')</span><br>
+                    <span style="margin-left: 30px;">print("\n")</span><br><br>
+                # Print the graph of fat consumption. <br><br>
+                def PrintFatGraph(recentHistory): <br>
+                    <span style="margin-left: 30px;">leftValue = 0</span><br>
+                    <span style="margin-left: 30px;">rightValue = 0</span><br>
+                    <span style="margin-left: 30px;">dayNum = 0</span><br>
+                    <span style="margin-left: 30px;">lineNum= 0</span><br>
+                    <span style="margin-left: 30px;">print('Fat intake in grams:')</span><br>
+                    <span style="margin-left: 30px;">rightValue = MAXFAT</span><br>
+                    <span style="margin-left: 30px;">leftValue = rightValue - MAXFAT // MAXGRAPHLINES + 1</span><br>
+                    <span style="margin-left: 30px;">for lineNum in range(MAXGRAPHLINES):</span><br>
+                        <span style="margin-left: 60px;">print("  {1:3d} - {0:3d}|".format</span><br>
+                        <span style="margin-left: 60px;">(leftValue, rightValue),end='')</span><br>
+                        <span style="margin-left: 60px;">for dayNum in range(HISTORYSIZE):</span><br>
+                            <span style="margin-left: 90px;">if (recentHistory[dayNum]["fat"] </span><br>
+                            <span style="margin-left: 90px;">>= leftValue) and (recentHistory[dayNum]</span><br>
+                            <span style="margin-left: 90px;">["fat"] <= rightValue):</span><br>
+                                <span style="margin-left: 120px;">print('  X',end='')</span><br>
+                            <span style="margin-left: 90px;">else:</span><br>
+                                <span style="margin-left: 120px;">print('   ',end = '')</span><br>
+                        <span style="margin-left: 60px;">print('')</span><br>
+                        <span style="margin-left: 60px;">rightValue = leftValue - 1</span><br>
+                        <span style="margin-left: 60px;">leftValue = leftValue - MAXFAT // MAXGRAPHLINES</span><br>
+                    <span style="margin-left: 30px;">print('           ' + '+',end='')</span><br>
+                    <span style="margin-left: 30px;">for dayNum in range(31):</span><br>
+                        <span style="margin-left: 60px;">print('---',end='')</span><br>
+                    <span style="margin-left: 30px;">print('\n')</span><br>
+                    <span style="margin-left: 30px;">print('         ',end='')</span><br>
+                    <span style="margin-left: 30px;">for dayNum in range(31):</span><br>
+                        <span style="margin-left: 60px;">if dayNum % 5 == 0:</span><br>
+                            <span style="margin-left: 90px;">print("  {}".format(dayNum),end='')</span><br>
+                        <span style="margin-left: 60px;">else:</span><br>
+                            <span style="margin-left: 90px;">print("  {}".format(BLANK),end='')</span><br>
+                    <span style="margin-left: 30px;">print('\n')</span><br>
+                    <span style="margin-left: 30px;">print("{}".format(BLANK) + 'Number of days')</span><br><br>
+
+                # Print the graph of calorie consumption. <br><br>
+                def PrintCalorieGraph(recentHistory): <br>
+                    <span style="margin-left: 30px;">leftValue = 0</span><br>
+                    <span style="margin-left: 30px;">rightValue = 0</span><br>
+                    <span style="margin-left: 30px;">dayNum = 0</span><br>
+                    <span style="margin-left: 30px;">lineNum= 0</span><br>
+                    <span style="margin-left: 30px;">print('Calorie intake:')</span><br>
+                    <span style="margin-left: 30px;">rightValue = MAXCALORIES</span><br>
+                    <span style="margin-left: 30px;">leftValue=rightValue-MAXCALORIES//MAXGRAPHLINES+1</span><br>
+                    <span style="margin-left: 30px;">for lineNum in range(MAXGRAPHLINES):</span><br>
+                        <span style="margin-left: 60px;">print("  {1:4d} - {0:4d}|".format</span><br>
+                        <span style="margin-left: 60px;">(leftValue, rightValue),end='')</span><br>
+                        <span style="margin-left: 60px;">for dayNum in range(HISTORYSIZE):</span><br>
+                            <span style="margin-left: 90px;">if (recentHistory[dayNum]["calories"] </span><br>
+                            <span style="margin-left: 90px;">>= leftValue) and (recentHistory[dayNum]</span><br>
+                            <span style="margin-left: 90px;">["calories"] <= rightValue):</span><br>
+                                <span style="margin-left: 120px;">print('  X',end='')</span><br>
+                            <span style="margin-left: 90px;">else:</span><br>
+                                <span style="margin-left: 120px;">print('   ',end = '')</span><br>
+                        <span style="margin-left: 60px;">print('')</span><br>
+                        <span style="margin-left: 60px;">rightValue = leftValue - 1</span><br>
+                        <span style="margin-left: 60px;">leftValue=leftValue-MAXCALORIES//MAXGRAPHLINES</span><br>
+                    <span style="margin-left: 30px;">print('           ' + '+',end='')</span><br>
+                    <span style="margin-left: 30px;">for dayNum in range(31):</span><br>
+                        <span style="margin-left: 60px;">print('---',end='')</span><br>
+                    <span style="margin-left: 30px;">print('\n')</span><br>
+                    <span style="margin-left: 30px;">print('         ',end='')</span><br>
+                    <span style="margin-left: 30px;">for dayNum in range(31):</span><br>
+                        <span style="margin-left: 60px;">if dayNum % 5 == 0:</span><br>
+                            <span style="margin-left: 90px;">print("  {}".format(dayNum),end='')</span><br>
+                        <span style="margin-left: 60px;">else:</span><br>
+                            <span style="margin-left: 90px;">print("  {}".format(BLANK),end='')</span><br>
+                    <span style="margin-left: 30px;">print('\n')</span><br>
+                    <span style="margin-left: 30px;">print("{}".format(BLANK) + 'Number of days')</span><br><br>
+                # Print the fat and calorie consumption graphs. <br><br>
+                def PrintGraphs(recentHistory): <br>
+                    <span style="margin-left: 30px;">PrintFatGraph(recentHistory)</span><br>
+                    <span style="margin-left: 30px;">print("\n")</span><br>
+                    <span style="margin-left: 30px;">print("\n")</span><br>
+                    <span style="margin-left: 30px;">PrintCalorieGraph(recentHistory)</span><br>
+            </p>
+            </article>
+            <footer>
+                <ol id="page-numbers">
+                    <li>29</li>
+                    <li>30</li>
+                </ol>
+            </footer>
+        </section>
+         <section class="open-book" style="margin-top: 50px;">
+            <header>
+                <h1>Chapter 7</h1>
+                <h6>Durk Jan de Bruin</h6>
+            </header>
+            <article>
+             <p style="font:16px 'Courier New';">           
+                # Write the updated contents of recentHistory to the history file. <br><br>
+                def Update(historyFile, recentHistory): <br>
+                    <span style="margin-left: 30px;">f = open("historyFile.txt", "w")</span><br>
+                    <span style="margin-left: 30px;">f.write('Over the last ' + </span><br>
+                    <span style="margin-left: 30px;">str(HISTORYSIZE) +' days\n')</span><br>
+                    <span style="margin-left: 30px;">f.write("Fat     Calories\n")</span><br>
+                    <span style="margin-left: 30px;">for dayNum in range(HISTORYSIZE):</span><br>
+                        <span style="margin-left: 60px;">f.write("{}     {}\n".format(recentHistory</span><br>
+                        <span style="margin-left: 60px;">[dayNum]["fat"],recentHistory[dayNum]</span><br>
+                        <span style="margin-left: 60px;">["calories"]))</span><br>
+                    <span style="margin-left: 30px;">f.close()</span><br>
+                    
+                    <span style="margin-left: 30px;">if DEBUGGING:</span><br>
+                        <span style="margin-left: 60px;">f = open("testFile.txt", "w")</span><br>
+                        <span style="margin-left: 60px;">f.write('Over the last ' + </span><br>
+                        <span style="margin-left: 60px;">str(HISTORYSIZE) +' days\n')</span><br>
+                        <span style="margin-left: 60px;">f.write("Fat     Calories\n")</span><br>
+                        <span style="margin-left: 60px;">for dayNum in range(HISTORYSIZE):</span><br>
+                            <span style="margin-left: 90px;">f.write("{}     {}\n".format</span><br>
+                            <span style="margin-left: 90px;">(recentHistory[dayNum]["fat"],</span><br>
+                            <span style="margin-left: 90px;">recentHistory[dayNum]["calories"]))</span><br>
+                        <span style="margin-left: 60px;">f.close()</span><br><br>
+                # Main Program <br><br>
+
+                if DEBUGGING: <br>
+                    <span style="margin-left: 30px;">ReadEntry(testFile, entry)</span><br>
+                else: <br>
+                    <span style="margin-left: 30px;">ReadEntry(historyFile, entry)</span><br>
+                    <span style="margin-left: 30px;">Initialize(historyFile, entry, recentHistory)</span><br>
+                    <span style="margin-left: 30px;">PrintAverages(recentHistory)</span><br>
+                    <span style="margin-left: 30px;">PrintGraphs(recentHistory)</span><br>
+                    <span style="margin-left: 30px;">Update(historyFile, recentHistory)</span><br>
+              </p>
+              <div style="height: 1500px;">
+                
+              </div>
+            </article>
+            <footer>
+                <ol id="page-numbers">
+                    <li>31</li>
+                    <li>32</li>
+                </ol>
+            </footer>
+        </section>
+         
+    </div>
+</div>
+</body>
+</html>
