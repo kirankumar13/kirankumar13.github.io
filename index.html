@@ -12,17 +12,6 @@
       <span class="title">A Case Study Approach</span>
     </header>
     
-		<div class="primary-content t-border">
-        <h2 style="text-align: center;">Author</h2>
-			 <div class="card1">
-        <img src="img/profile_logo.jpg" alt="John" style="width:100%">
-        <h3>DURK JAN DE BRUIN</h3>
-        <p class="title1">Directeur/mede-eigenaar at E-diensten BV</p>
-        <p>Haarlem, Netherlands</p>
-        <p><a href="https://www.facebook.com/durk.debruin.5"><button class="button1">Contact</button></a></p>
-    </div>
-			
-    
 		</div><!-- End .primary-content -->
 
 		<div class="secondary-content t-border group"> 
@@ -93,8 +82,8 @@
               How should programs respond to illegal data? Assuming that data will be legal asks for trouble: What if users mistype? What if users want to confuse the program? This case study describes how to guard against illegal data in the Check That Number!, Banners With CLASS, Calendar Shop, and Roman Calculator Construction programs.
             </p>
         </div>
-        <div style="margin-bottom: 20px;"><a href="#"><button class="button2">Read More >></button></a></div>
-        <a href="#"><button class="button1">Download Source Code</button></a>
+        <div style="margin-bottom: 20px;"><button class="button2" id="myBtn5" onclick="modal5()">Read More >></button></div>
+        <button class="button1" id="myBtn5a" onclick="modal5a()">Download Source Code</button>
       </div>
 
       <div class="resorts">
@@ -135,8 +124,8 @@
           </p>
           <p></p>
         </div>
-        <div style="margin-bottom: 20px;"><a href="#"><button class="button2">Read More >></button></a></div>
-        <a href="#"><button class="button1">Download Source Code</button></a>   
+        <div style="margin-bottom: 20px;"><button class="button2" id="myBtn8" onclick="modal8()">Read More >></button></div>
+        <button class="button1" id="myBtn8a" onclick="modal8a()">Download Source Code</button>   
       </div>
     </div><!-- End .secondary-content -->
 
@@ -149,8 +138,8 @@
               Computer programs that play chess, solve chess puzzles, or create chess problems are widespread. There is even an annual contest pitting chess playing programs against each other and against human experts. This case study addresses a simple problem related to chess, where each square either is empty or contains a queen.
             </p>
         </div>
-        <div style="margin-bottom: 20px;"><a href="#"><button class="button2">Read More >></button></a></div>
-        <a href="#"><button class="button1">Download Source Code</button></a>
+        <div style="margin-bottom: 20px;"><button class="button2" id="myBtn9" onclick="modal9()">Read More >></button></div>
+        <button class="button1" id="myBtn9a" onclick="modal9a()">Download Source Code</button>
       </div>
 
       <div class="resorts">
@@ -162,8 +151,8 @@
           </p>
           <p></p>
         </div>
-        <div style="margin-bottom: 20px;"><a href="#"><button class="button2">Read More >></button></a></div>
-        <a href="#"><button class="button1">Download Source Code</button></a>   
+        <div style="margin-bottom: 20px;"><button class="button2" id="myBtn10" onclick="modal10()">Read More >></button></div>
+        <button class="button1" id="myBtn10a" onclick="modal10a()">Download Source Code</button>  
       </div>
     </div><!-- End .secondary-content -->
 
@@ -178,8 +167,8 @@
               How do you know that a program works? Julius Caesar Enterprises has constructed a program they claim will convert Roman numerals to their decimal equivalents. See if it works, fix it if it fails, and submit a bill for consultant services. The programmer also shows you the program’s output for a number of test cases.
             </p>
         </div>
-        <div style="margin-bottom: 20px;"><a href="#"><button class="button2">Read More >></button></a></div>
-        <a href="#"><button class="button1">Download Source Code</button></a>
+        <div style="margin-bottom: 20px;"><button class="button2" id="myBtn11" onclick="modal11()">Read More >></button></div>
+        <button class="button1" id="myBtn11a" onclick="modal11a()">Download Source Code</button>
       </div>
 
       <div class="resorts">
@@ -191,14 +180,337 @@
           </p>
           <p></p>
         </div>
-        <div style="margin-bottom: 20px;"><a href="#"><button class="button2">Read More >></button></a></div>
-        <a href="#"><button class="button1">Download Source Code</button></a>   
+        <div style="margin-bottom: 20px;"><button class="button2" id="myBtn12" onclick="modal12()">Read More >></button></div>
+        <button class="button1" id="myBtn12a" onclick="modal12a()">Download Source Code</button>   
       </div>
     </div><!-- End .secondary-content -->
+    <!-- The Modal1 -->
+	<div id="myModal" class="modal">
+
+	  <!-- Modal content -->
+	  <div class="modal-content">
+	    <span class="close">&times;</span>
+	    <p>Oops! This Chapter does not exist.</p>
+	  </div>
+
+	</div>
+
+	<!-- The Modal 2-->
+	<div id="myModal2" class="modal">
+
+	  <!-- Modal content -->
+	  <div class="modal-content">
+	    <span class="close1">&times;</span>
+	    <p>Oops! Download does not exist.</p>
+	  </div>
+
+	</div>
     
 		<footer class="main-footer">
 			<p style="color: white;">&copy; 2020 Durk Jan De Bruin. All rights reserved.</p>
 			<a href="#top">Back to top &raquo;</a>
 		</footer>
+		<script type="text/javascript">
+			function modal12(){
+			// Get the modal
+			var modal = document.getElementById("myModal");
+
+			// Get the button that opens the modal
+			var btn = document.getElementById("myBtn12");
+
+			// Get the <span> element that closes the modal
+			var span = document.getElementsByClassName("close")[0];
+
+			// When the user clicks on the button, open the modal
+			  modal.style.display = "block";
+
+			// When the user clicks on <span> (x), close the modal
+			span.onclick = function() {
+			  modal.style.display = "none";
+			}
+
+			// When the user clicks anywhere outside of the modal, close it
+			window.onclick = function(event) {
+			  if (event.target == modal) {
+			    modal.style.display = "none";
+			  }
+			}
+			}
+			function modal12a(){
+			// Get the modal
+			var modal = document.getElementById("myModal2");
+
+			// Get the button that opens the modal
+			var btn = document.getElementById("myBtn12a");
+
+			// Get the <span> element that closes the modal
+			var span = document.getElementsByClassName("close1")[0];
+
+			// When the user clicks on the button, open the modal
+			  modal.style.display = "block";
+
+			// When the user clicks on <span> (x), close the modal
+			span.onclick = function() {
+			  modal.style.display = "none";
+			}
+
+			// When the user clicks anywhere outside of the modal, close it
+			window.onclick = function(event) {
+			  if (event.target == modal) {
+			    modal.style.display = "none";
+			  }
+			}
+			}
+			function modal11(){
+			// Get the modal
+			var modal = document.getElementById("myModal");
+
+			// Get the button that opens the modal
+			var btn = document.getElementById("myBtn11");
+
+			// Get the <span> element that closes the modal
+			var span = document.getElementsByClassName("close")[0];
+
+			// When the user clicks on the button, open the modal
+			  modal.style.display = "block";
+
+			// When the user clicks on <span> (x), close the modal
+			span.onclick = function() {
+			  modal.style.display = "none";
+			}
+
+			// When the user clicks anywhere outside of the modal, close it
+			window.onclick = function(event) {
+			  if (event.target == modal) {
+			    modal.style.display = "none";
+			  }
+			}
+			}
+			function modal11a(){
+			// Get the modal
+			var modal = document.getElementById("myModal2");
+
+			// Get the button that opens the modal
+			var btn = document.getElementById("myBtn11a");
+
+			// Get the <span> element that closes the modal
+			var span = document.getElementsByClassName("close1")[0];
+
+			// When the user clicks on the button, open the modal
+			  modal.style.display = "block";
+
+			// When the user clicks on <span> (x), close the modal
+			span.onclick = function() {
+			  modal.style.display = "none";
+			}
+
+			// When the user clicks anywhere outside of the modal, close it
+			window.onclick = function(event) {
+			  if (event.target == modal) {
+			    modal.style.display = "none";
+			  }
+			}
+			}
+			function modal10(){
+			// Get the modal
+			var modal = document.getElementById("myModal");
+
+			// Get the button that opens the modal
+			var btn = document.getElementById("myBtn10");
+
+			// Get the <span> element that closes the modal
+			var span = document.getElementsByClassName("close")[0];
+
+			// When the user clicks on the button, open the modal
+			  modal.style.display = "block";
+
+			// When the user clicks on <span> (x), close the modal
+			span.onclick = function() {
+			  modal.style.display = "none";
+			}
+
+			// When the user clicks anywhere outside of the modal, close it
+			window.onclick = function(event) {
+			  if (event.target == modal) {
+			    modal.style.display = "none";
+			  }
+			}
+			}
+			function modal10a(){
+			// Get the modal
+			var modal = document.getElementById("myModal2");
+
+			// Get the button that opens the modal
+			var btn = document.getElementById("myBtn10a");
+
+			// Get the <span> element that closes the modal
+			var span = document.getElementsByClassName("close1")[0];
+
+			// When the user clicks on the button, open the modal
+			  modal.style.display = "block";
+
+			// When the user clicks on <span> (x), close the modal
+			span.onclick = function() {
+			  modal.style.display = "none";
+			}
+
+			// When the user clicks anywhere outside of the modal, close it
+			window.onclick = function(event) {
+			  if (event.target == modal) {
+			    modal.style.display = "none";
+			  }
+			}
+			}
+			function modal9(){
+			// Get the modal
+			var modal = document.getElementById("myModal");
+
+			// Get the button that opens the modal
+			var btn = document.getElementById("myBtn9");
+
+			// Get the <span> element that closes the modal
+			var span = document.getElementsByClassName("close")[0];
+
+			// When the user clicks on the button, open the modal
+			  modal.style.display = "block";
+
+			// When the user clicks on <span> (x), close the modal
+			span.onclick = function() {
+			  modal.style.display = "none";
+			}
+
+			// When the user clicks anywhere outside of the modal, close it
+			window.onclick = function(event) {
+			  if (event.target == modal) {
+			    modal.style.display = "none";
+			  }
+			}
+			}
+			function modal9a(){
+			// Get the modal
+			var modal = document.getElementById("myModal2");
+
+			// Get the button that opens the modal
+			var btn = document.getElementById("myBtn9a");
+
+			// Get the <span> element that closes the modal
+			var span = document.getElementsByClassName("close1")[0];
+
+			// When the user clicks on the button, open the modal
+			  modal.style.display = "block";
+
+			// When the user clicks on <span> (x), close the modal
+			span.onclick = function() {
+			  modal.style.display = "none";
+			}
+
+			// When the user clicks anywhere outside of the modal, close it
+			window.onclick = function(event) {
+			  if (event.target == modal) {
+			    modal.style.display = "none";
+			  }
+			}
+			}
+			function modal8(){
+			// Get the modal
+			var modal = document.getElementById("myModal");
+
+			// Get the button that opens the modal
+			var btn = document.getElementById("myBtn8");
+
+			// Get the <span> element that closes the modal
+			var span = document.getElementsByClassName("close")[0];
+
+			// When the user clicks on the button, open the modal
+			  modal.style.display = "block";
+
+			// When the user clicks on <span> (x), close the modal
+			span.onclick = function() {
+			  modal.style.display = "none";
+			}
+
+			// When the user clicks anywhere outside of the modal, close it
+			window.onclick = function(event) {
+			  if (event.target == modal) {
+			    modal.style.display = "none";
+			  }
+			}
+			}
+			function modal8a(){
+			// Get the modal
+			var modal = document.getElementById("myModal2");
+
+			// Get the button that opens the modal
+			var btn = document.getElementById("myBtn8a");
+
+			// Get the <span> element that closes the modal
+			var span = document.getElementsByClassName("close1")[0];
+
+			// When the user clicks on the button, open the modal
+			  modal.style.display = "block";
+
+			// When the user clicks on <span> (x), close the modal
+			span.onclick = function() {
+			  modal.style.display = "none";
+			}
+
+			// When the user clicks anywhere outside of the modal, close it
+			window.onclick = function(event) {
+			  if (event.target == modal) {
+			    modal.style.display = "none";
+			  }
+			}
+			}
+			function modal5(){
+			// Get the modal
+			var modal = document.getElementById("myModal");
+
+			// Get the button that opens the modal
+			var btn = document.getElementById("myBtn5");
+
+			// Get the <span> element that closes the modal
+			var span = document.getElementsByClassName("close")[0];
+
+			// When the user clicks on the button, open the modal
+			  modal.style.display = "block";
+
+			// When the user clicks on <span> (x), close the modal
+			span.onclick = function() {
+			  modal.style.display = "none";
+			}
+
+			// When the user clicks anywhere outside of the modal, close it
+			window.onclick = function(event) {
+			  if (event.target == modal) {
+			    modal.style.display = "none";
+			  }
+			}
+			}
+			function modal5a(){
+			// Get the modal
+			var modal = document.getElementById("myModal2");
+
+			// Get the button that opens the modal
+			var btn = document.getElementById("myBtn5a");
+
+			// Get the <span> element that closes the modal
+			var span = document.getElementsByClassName("close1")[0];
+
+			// When the user clicks on the button, open the modal
+			  modal.style.display = "block";
+
+			// When the user clicks on <span> (x), close the modal
+			span.onclick = function() {
+			  modal.style.display = "none";
+			}
+
+			// When the user clicks anywhere outside of the modal, close it
+			window.onclick = function(event) {
+			  if (event.target == modal) {
+			    modal.style.display = "none";
+			  }
+			}
+			}
+		</script>
   </body>
 </html>
