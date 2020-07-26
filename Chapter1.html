@@ -1,6 +1,7 @@
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chapter 1</title>
 </head>
 <body>
@@ -34,7 +35,7 @@
 	                one line containing (only) a four-digit identification number. For testing purposes, the program should prompt for input and print the output. Assume that the tested program, with input and output procedure calls appropriately replaced, will become the processor for a photocopier whose display panel is similar to the illustration. 
             	</p>
                 <p>
-                	The program should prompt the user for a four-digit identification number, read the number, and determine whether it is valid. Valid numbers have a correct “check digit.” The check digit for an identification number is its rightmost digit; a correct check digit is equal to the remainder of the sum of the other three digits divided by 7. 
+                	The program should prompt the user for a four-digit identification number, read the number, and determine whether it is valid. Valid numbers have a correct "check digit." The check digit for an identification number is its rightmost digit; a correct check digit is equal to the remainder of the sum of the other three digits divided by 7. 
                 </p>
                 <p>
                 	The program should print one of the following messages after verifying the number:
@@ -117,10 +118,10 @@
                 	What form should the input and output messages take?
                 </p>
                 <p>
-                	Note that the problem statement has not specified the exact format of the prompt. It makes sense, however, for the request for input and the user’s input itself to be on the same line and for the output message to be on the line that immediately follows. The request for input should also tell the user as precisely as possible what he or she is supposed to type.
+                	Note that the problem statement has not specified the exact format of the prompt. It makes sense, however, for the request for input and the user's input itself to be on the same line and for the output message to be on the line that immediately follows. The request for input should also tell the user as precisely as possible what he or she is supposed to type.
                 </p>
                 <p>
-                	Here are some sample interactions with the program, with the user’s input shown in boldface:
+                	Here are some sample interactions with the program, with the user's input shown in boldface:
                 </p>
                 <p style="font:16px 'Courier New';">
                 	Please type a four-digit identification number: 5739 
@@ -235,7 +236,7 @@
                 </p>
                 <h3 style="color: #e0214d;">What are the variables in the program?</h3>
                 <p>
-                	Identifying and naming variables as soon as possible during program design makes it easier to devise and keep track of further steps in the solution. Variables should have names that express their purpose so that they are easy to identify in the code. Two obvious choices for variables in this program are the identification number, which we’ll call <b>idNumber</b>, and the check digit, which we’ll call <b>checkDigit</b>. Since both are numbers, it makes sense for both to be represented by integer variables.
+                	Identifying and naming variables as soon as possible during program design makes it easier to devise and keep track of further steps in the solution. Variables should have names that express their purpose so that they are easy to identify in the code. Two obvious choices for variables in this program are the identification number, which we'll call <b>idNumber</b>, and the check digit, which we'll call <b>checkDigit</b>. Since both are numbers, it makes sense for both to be represented by integer variables.
                 </p>
                 <p>
                 	Using these variables, we rewrite the outline as follows:
@@ -322,7 +323,7 @@
 				</p>
 				<h3 style="color: #e0214d;">How are the digits of the identification number separated?</h3>
 				<p>
-					We move on to separate the digits. We already determined the rightmost digit. The leftmost digit of a four-digit value is the number of “thousands” the value contains. In Python, we find this by using the % operator:
+					We move on to separate the digits. We already determined the rightmost digit. The leftmost digit of a four-digit value is the number of "thousands" the value contains. In Python, we find this by using the % operator:
 				</p>
 				<p style="font:16px 'Courier New';">
                 	digit1 = idNumber % 1000
@@ -380,7 +381,7 @@
                 </p>
                 <h3 style="color: #e0214d;">Can tests guarantee that a program works?</h3>
                 <p>
-                	Tests can also provide evidence that a program works correctly, if the program’s output matches the result of hand calculations on sufficiently well chosen values. Even seemingly convincing evidence, however, can have flaws. Sometimes complicated programs run for years before errors are detected in an unusual situation.
+                	Tests can also provide evidence that a program works correctly, if the program's output matches the result of hand calculations on sufficiently well chosen values. Even seemingly convincing evidence, however, can have flaws. Sometimes complicated programs run for years before errors are detected in an unusual situation.
                 </p>
                 <h3 style="color: #e0214d;">Stop & Consider</h3>
                 <p>
@@ -388,11 +389,11 @@
                 </p>
                 <h3 style="color: #e0214d;">What are good test values?</h3>
                 <p>
-                	Tests should collectively execute all the code in the program. If a section of code isn’t executed, there’s no way (other than proofreading it) to tell if it works as intended. In the test runs for this program, data should include both valid and invalid identification numbers, so that both output messages get printed.
+                	Tests should collectively execute all the code in the program. If a section of code isn't executed, there's no way (other than proofreading it) to tell if it works as intended. In the test runs for this program, data should include both valid and invalid identification numbers, so that both output messages get printed.
                 </p>
                 <h3 style="color: #e0214d;">What attitude towards a program helps in testing it?</h3>
                 <p>
-                	A helpful attitude to adopt when testing a program is to imagine oneself as an opponent, trying to break it. Of course “typical” numbers should be tested. To break a program, however, the best values are usually those that push it to its limits in some way. Such values are called <b>extreme values</b> or <b>boundary values</b>. Examples for this program would be values where one or more of the digits are 0 or 9.
+                	A helpful attitude to adopt when testing a program is to imagine oneself as an opponent, trying to break it. Of course "typical" numbers should be tested. To break a program, however, the best values are usually those that push it to its limits in some way. Such values are called <b>extreme values</b> or <b>boundary values</b>. Examples for this program would be values where one or more of the digits are 0 or 9.
                 </p>
                 <p>
                 	Whatever the test values, it is good to figure out ahead of time what answers to expect, so discrepancies stick out.
@@ -422,7 +423,7 @@
                 	<i>Should the value of remainderDigit and checkDigit also be printed? Why or why not?</i>
                 </p>
                 <p>
-                	To produce this output, we add print statements to the program before the if statement. The output is labeled clearly as intermediate debugging results. Before releasing a “production” version of the program, we would either remove the intermediate output code (in general, not a good idea) or surround it by an if statement that only prints debugging output if a debugging variable has an appropriate value.
+                	To produce this output, we add print statements to the program before the if statement. The output is labeled clearly as intermediate debugging results. Before releasing a "production" version of the program, we would either remove the intermediate output code (in general, not a good idea) or surround it by an if statement that only prints debugging output if a debugging variable has an appropriate value.
                 </p>
                 <p>
                 	The complete program, including the statements that produce debugging output, appears in the Python Code section.
@@ -489,7 +490,7 @@
                 </p>
                 <h3 style="color: #e0214d;">How can the other digits be separated?</h3>
                 <p>
-                	Thus one way to make the code clearer is to make the digit separation as similar as possible for the four digits. We noticed that separating the last digit of an integer value was easy. To find the second and third digits of idNumber, we first made them the last digit of some value, then we separated the digit. To make this process more transparent, it would help to isolate the computation of the value whose last digit is useful. We could call this variable idPart. Here’s how it might be used.
+                	Thus one way to make the code clearer is to make the digit separation as similar as possible for the four digits. We noticed that separating the last digit of an integer value was easy. To find the second and third digits of idNumber, we first made them the last digit of some value, then we separated the digit. To make this process more transparent, it would help to isolate the computation of the value whose last digit is useful. We could call this variable idPart. Here's how it might be used.
                 </p>
                 <p>
                 	First compute checkDigit as before.
@@ -519,7 +520,7 @@
                 	digit2 = idPart % 10
 				</p>
 				<p>
-					We remove idPart’s last digit again:
+					We remove idPart's last digit again:
 				</p>
 				<p style="font:16px 'Courier New';">
                 	idPart = idPart / 10
@@ -531,7 +532,7 @@
                 	digit1 = idPart % 10
 				</p>
 				<p>
-					Here’s how this process would work, applied to the identification number 5738.
+					Here's how this process would work, applied to the identification number 5738.
 				</p>
 
             </article>
@@ -635,7 +636,7 @@
                 </p>
 
                 <p>
-                	<span style="color: #e0214d;"><b>Input:</b></span> Get the identification number from the user by prompting the user as in the previous solutions and by reading the number’s digits into d1, d2, d3, and d4.
+                	<span style="color: #e0214d;"><b>Input:</b></span> Get the identification number from the user by prompting the user as in the previous solutions and by reading the number's digits into d1, d2, d3, and d4.
                 </p>
                 <p>
                 	<span style="color: #e0214d;"><b>Process:</b></span> Convert d1, d2, and d3 into the corresponding integer values and store them in digit1, digit2, and digit3 respectively; convert d4 into the corresponding integer value and store it in checkDigit; compute remainderDigit.
@@ -660,14 +661,14 @@
             <article>
             	<h3 style="color: #e0214d;">How is a character digit converted to the corresponding integer value?</h3>
             	<p>
-            		The characters 'O', '1', ... '9' are represented differently from the integers 0, 1, 9. The Python function int, given a character as argument, returns an integer. For the characters 'O', '1', ..., '9', however, the returned values will not be the integers 0, 1, ..., 9. Instead, int returns the position of the argument character in the computer’s <b>character sequence</b>. (Typically, punctuation characters, not digits, are the first few characters in the sequence.)
+            		The characters 'O', '1', ... '9' are represented differently from the integers 0, 1, 9. The Python function int, given a character as argument, returns an integer. For the characters 'O', '1', ..., '9', however, the returned values will not be the integers 0, 1, ..., 9. Instead, int returns the position of the argument character in the computer's <b>character sequence</b>. (Typically, punctuation characters, not digits, are the first few characters in the sequence.)
             	</p>
             	<h3 style="color: #e0214d;">Stop & Help</h3>
                 <p>
                 	<i>Write and run a program that prints the values of int('O'), int('1'), and int('9').</i>
                 </p>
                 <p>
-                	The Python Standard guarantees that the digits 'O' through '9' will occur consecutively in the computer’s character sequence. That is, int('1') will be 1 plus int('O'), int('2') will be 1 plus int('1'), and so on. This fact allows the computation of the integer value for a given digit character. It’s just the distance that digit character is from 'O'; equivalently, it’s the difference between int of that character and int('O').
+                	The Python Standard guarantees that the digits 'O' through '9' will occur consecutively in the computer's character sequence. That is, int('1') will be 1 plus int('O'), int('2') will be 1 plus int('1'), and so on. This fact allows the computation of the integer value for a given digit character. It's just the distance that digit character is from 'O'; equivalently, it's the difference between int of that character and int('O').
                 </p>
                 <p>
                 	Here is code that reads the characters in the identification number and computes the corresponding digit values.
@@ -691,11 +692,11 @@
                 	The code for the character solution is simpler than that for the integer solutions. The character solution also has similar pieces, just like the final integer version.
                 </p>
                 <p>
-                	The only complexity is the conversion of character variables to integers. This seems to be something that will come up again and again, so it’s worth understanding.
+                	The only complexity is the conversion of character variables to integers. This seems to be something that will come up again and again, so it's worth understanding.
                 </p>
                 <h3 style="color: #e0214d;">Are there any changes in the testing procedure?</h3>
                 <p>
-                	To guard against typographical errors, we could retain the intermediate output of all the digit values. However, since all the digits are being processed in exactly the same way, printing one value might be enough. The similarities in the code for these computations enhance our confidence in the program’s correctness.
+                	To guard against typographical errors, we could retain the intermediate output of all the digit values. However, since all the digits are being processed in exactly the same way, printing one value might be enough. The similarities in the code for these computations enhance our confidence in the program's correctness.
                 </p>
                 <p>
                 	The program that uses this approach appears in the Python Code section.
@@ -788,7 +789,7 @@
             		The programs are designed via <b>stepwise refinement</b>, that is, writing an outline of the program and expanding each step of the outline in turn. This allows the programmer to effectively manage the program complexity and avoid having to deal with all the details of the program at once.
             	</p>
             	<p>
-            		The three programs provide successively better examples of organizing code into similar pieces. In the first program, the second, third, and fourth digits are separated by first determining a value whose last digit is the one to be stored. In the second program, digits are separated using a sequence of “store the rightmost digit, then remove that digit” steps. The third program separates the digits during input, then applies exactly the same operation to each one to compute its integer representation. Similarities among code segments provide more confidence in the correctness of the code; if one works, the others are more likely to work as well.
+            		The three programs provide successively better examples of organizing code into similar pieces. In the first program, the second, third, and fourth digits are separated by first determining a value whose last digit is the one to be stored. In the second program, digits are separated using a sequence of "store the rightmost digit, then remove that digit" steps. The third program separates the digits during input, then applies exactly the same operation to each one to compute its integer representation. Similarities among code segments provide more confidence in the correctness of the code; if one works, the others are more likely to work as well.
             	</p>
             	<p>
             		All the solutions illustrate the power of the Divide and Conquer principle. When in doubt about how to proceed, one should select a part of the problem that seems straightforward, and solve it; often the remainder of the problem seems easier as a result.
@@ -797,10 +798,10 @@
             		Reading the code is not sufficient for determining correctness. The collection of tests executes every part of each program. In addition, <b>boundary values</b> for the quantities are tested according to the Persecution Complex principle. Since the programs deal with digits whose extremes are 0 and 9, values with 0 or 9 as digits are used as test data. (Thorough tests are typically not sufficient for determining correctness either.)
             	</p>
             	<p>
-            		All three programs also provide examples of two common programming patterns, or <b>templates</b>. One is “prompt the user for a value, then read the value.” The other is “input values, process them, then output the results.” A third common operation, used in the character solution, is that of determining the integer value a given character represents.
+            		All three programs also provide examples of two common programming patterns, or <b>templates</b>. One is "prompt the user for a value, then read the value." The other is "input values, process them, then output the results." A third common operation, used in the character solution, is that of determining the integer value a given character represents.
             	</p>
             	<p>
-            		Early in the design, the program’s input-output behavior is analyzed. This is reflected in the program comments. Descriptive names are chosen for the variables to indicate their purpose and to make it easier to remember what each part of the program does. This choice of names illustrates the Literacy principle and makes it easier to modify versions of the program.
+            		Early in the design, the program's input-output behavior is analyzed. This is reflected in the program comments. Descriptive names are chosen for the variables to indicate their purpose and to make it easier to remember what each part of the program does. This choice of names illustrates the Literacy principle and makes it easier to modify versions of the program.
             	</p>
             	<br>
             	<h2 style="color: #f55c7f;background: lavenderblush;">Making Sense of Check That Number!</h2>
@@ -818,7 +819,7 @@
             	</p>
             	<h3 style="color: #e0214d;">Modification</h3>
             	<p>
-            		1.24) Change each version of the program to accommodate the following change in the problem statement: “A correct check digit is equal to the remainder of the sum of the other three digits divided by 9.”
+            		1.24) Change each version of the program to accommodate the following change in the problem statement: "A correct check digit is equal to the remainder of the sum of the other three digits divided by 9."
             	</p>
             	<h3 style="color: #e0214d;">Analysis</h3>
             	<p>
@@ -826,7 +827,7 @@
             	</p>
             	<h3 style="color: #e0214d;">Modification</h3>
             	<p>
-            		1.26) Question 1.24 suggests that one might wish to have versions of the program that compute different remainders. Python provides a way to define <b>named constants</b> to make program modification easier. In order to change the divisor — which in a larger program might be used more than once — one simply changes the definition. Modify each version of the program to include the definition and use of a named constant for the divisor.
+            		1.26) Question 1.24 suggests that one might wish to have versions of the program that compute different remainders. Python provides a way to define <b>named constants</b> to make program modification easier. In order to change the divisor - which in a larger program might be used more than once - one simply changes the definition. Modify each version of the program to include the definition and use of a named constant for the divisor.
             	</p>
             	<h3 style="color: #e0214d;">Modification</h3>
             	<p>
