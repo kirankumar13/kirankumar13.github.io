@@ -64,15 +64,16 @@ body {
     text-transform: uppercase;
 }
 
-.open-book footer {
-    padding-top: 1em;
-}
+
 
 .open-book footer #page-numbers {
     display: none;
     list-style: none;
     padding: 0;
     text-align: left;
+}
+#Chap {
+	display: none;
 }
 
 .open-book footer #page-numbers > li:last-child {
@@ -260,6 +261,9 @@ body {
     }
 
     /* Header/Footer */
+    .open-book footer {
+    padding-top: 1em;
+	}
     .open-book header:before,
     .open-book header:after,
     .open-book footer:before,
@@ -341,6 +345,9 @@ body {
     .open-book footer #page-numbers {
         display: block;
     }
+    #Chap {
+	display: block;
+}
 
     /* Chapter Title */
     .open-book .chapter-title {
