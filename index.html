@@ -1,987 +1,112 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<link rel="stylesheet" type="text/css" href="style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chapter 1</title>
+	<title>Admin Login</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main3.css">
+<!--===============================================================================================-->
 </head>
-<body>
-<div id="wrapper">
-    <div id="container">
-
-        <section class="open-book">
-            <header id="Chap">
-                <h1>Chapter 1</h1>
-                <h6>Durk Jan de Bruin</h6>
-            </header>
-            <article>
-                <h2 class="chapter-title">CHECK THAT NUMBER!</h2>
-
-                <div>
-                	<img src="chapter1.png" style="width: 100%">
-                </div>
-                
-                
-                <p>
-                    More and more activities are controlled by numbers every day. Now we have numeric codes to get money, to register for class, to access a phone company, to arm an alarm system, or to use a copy machine. Computers often validate these numbers. This case study describes a program that validates numbers for a copy machine.
-                </p>
-                <br />
-                <h2 style="color: #f55c7f;background: lavenderblush;">Problem Statement</h2>
-                <p>
-                	Write a program that determines whether identification numbers typed by users of a photocopier are valid, and prints appropriate messages.
-                </p>
-                <p>
-	                The program should assume that the input consists of 
-	                <img src="calc.png" style="float: right;width: 20%;margin-left: 15px;">
-	                one line containing (only) a four-digit identification number. For testing purposes, the program should prompt for input and print the output. Assume that the tested program, with input and output procedure calls appropriately replaced, will become the processor for a photocopier whose display panel is similar to the illustration. 
-            	</p>
-                <p>
-                	The program should prompt the user for a four-digit identification number, read the number, and determine whether it is valid. Valid numbers have a correct "check digit." The check digit for an identification number is its rightmost digit; a correct check digit is equal to the remainder of the sum of the other three digits divided by 7. 
-                </p>
-                <p>
-                	The program should print one of the following messages after verifying the number:
-                </p>
-                <p style="font:16px 'Courier New';">
-                	The number is valid. Ready to make copies.
-                	<br />
-					<span style="color: black;">Or</span>
-					<br/>
-					*** The number is not valid for this copy machine.
-                </p>
-                <h3 style="color: #e0214d;">Analysis</h3>
-                <p>
-                	1.1)	Does the identification number 4150 have a correct check digit?
-                </p>
-                <h3 style="color: #e0214d;"><span style='font-size:20px;'>&#931;</span> Analysis</h3>
-                <p>
-					1.2)	Suppose a correct check digit were determined by dividing the sum of the first three digits by 3 rather than 7. Determine a four-digit value whose check digit would be correct in either system.
-                </p>
-                <h3 style="color: #e0214d;">Application</h3>
-                <p>
-					1.3)	How does the inclusion of a check digit in the identification number help protect against illegal use of the copier? Do some research to determine if commonly used identification numbers, like credit card numbers or Social Security numbers, include a check digit.
-                </p>
-                <br />
-                <h2 style="color: #f55c7f;background: lavenderblush;">Preparation</h2>
-                <p>
-                	The reader is expected to be familiar with the heading for a Python program, variable declarations, and the print and input functions. This case study introduces the use variables of type integer and char, the division and modulo operators, assignment statements, the print function, and the if statement.
-                </p>
-                <br />
-                
-
-            </article>
-            <footer>
-                <ol id="page-numbers">
-                    <li>1</li>
-                    <li>2</li>
-                </ol>
-            </footer>
-        </section>
-
-
-        <section class="open-book" >
-            <header id="Chap">
-                <h1>Chapter 1</h1>
-                <h6>Durk Jan de Bruin</h6>
-            </header>
-            <article>
-                
-            	<h2 style="color: #f55c7f;background: lavenderblush;">Understanding the Problem</h2>
-                <h3 style="color: #e0214d;">How do programmers start to make sense of problem statements?</h3>
-                <p>
-                	Understanding a programming problem involves at least making sense of the problem statement, identifying the input and output behavior of the desired program, and designing an algorithm that solves the problem.
-                </p>
-                <h3 style="color: #e0214d;">Stop & Predict </h3>
-                <p>
-                	What words in the problem statement seem to have special meanings for programmers?
-                </p>
-                <h3 style="color: #e0214d;">What aspects of the problem statement are important? </h3>
-                <p>
-                	Interpreting a problem statement or specification often requires understanding special programming terms that may have different meanings from their standard English usage. For example, the Check That Number! problem statement uses the term <b>print</b>, which in computer jargon means to print a message that asks for a response from the user.
-                </p>
-                <p>
-                	To understand a problem statement it often helps to restate the problem in more familiar language. For example, the Check That Number! program should print a message asking the user for a four-digit identification number, read in the number that the user types, determine the check digit, compare it to what the check digit is supposed to be, and print a message saying whether or not the number is valid.
-                </p>
-
-                <h3 style="color: #e0214d;">What will the program input and output? </h3>
-                <p>
-                	Translating the problem specification into the desired <b>input-output behavior </b> clarifies what the program accomplishes. It involves answering three questions: What input for the program is legal? What output is desired for legal input? What behavior is desired for illegal input?
-                </p>
-
-                <p>
-                    The problem statement indicates that the input will be a non-negative four-digit number. That means values like -1437, 28, ABC, and 3P0 will not be input, so the program need not check for them. It is not clear whether a value less than 1000 qualifies as a four-digit number. 0012 has four digits and would be punched into the keyboard in that way; however, 0012 has the same value as 12. We will infer from the intended use of the program that 0012 is allowable input and 12 is not.
-                </p>
-                <p>
-                	As for the output, it will be one of the two messages given in the problem statement. The output will be determined by examining the input value, viewed as a two-piece value, as shown below.
-                </p>
-                <img src="input.png" style="display: block;width: 40%;">
-                <h3 style="color: #e0214d;">Stop & Predict </h3>
-                <p>
-                	What form should the input and output messages take?
-                </p>
-                <p>
-                	Note that the problem statement has not specified the exact format of the prompt. It makes sense, however, for the request for input and the user's input itself to be on the same line and for the output message to be on the line that immediately follows. The request for input should also tell the user as precisely as possible what he or she is supposed to type.
-                </p>
-                <p>
-                	Here are some sample interactions with the program, with the user's input shown in boldface:
-                </p>
-                <p style="font:16px 'Courier New';">
-                	Please type a four-digit identification number: 5739 
-                	<br>*** The number is not valid for this copy machine.
-					<br>Please type a four-digit identification number: 5731 
-					<br>The number is valid. Ready to make copies.
-                	
-                </p>
-                <h3 style="color: #e0214d;">How are algorithms designed?</h3>
-                <p>
-                	Solving the problem involves designing an <b>algorithm</b> for the solution, namely a solution outline that can be straightforwardly translated into a Python program that satisfies the specifications.
-                </p>
-                <h3 style="color: #e0214d;">Reflection</h3>
-                <p>
-                	1.4) How would you benefit from restating the problem and specifying the input and output before starting to write the code for the solution? To answer this question, consider how well you have done in situations where you had to interpret a specification and produce an answer based on the specification. How much clarification did you need? Did you ever misinterpret the question?
-                </p>
-                <h3 style="color: #e0214d;">Analysis</h3>
-                <p>
-                	1.5) Try to convince a fellow programmer that a value like 28 is a four digit number and should be allowable input.
-                </p>
-                <h3 style="color: #e0214d;">Application, Analysis</h3>
-                <p>
-                	1.6) In what ways is the output specification incomplete? Describe a situation in which deviating from the desired output format in subtle ways could have serious consequences.
-                </p>
-                <h3 style="color: #e0214d;">Analysis</h3>
-                <p>
-                	1.7) What could be the consequences of producing extra output beyond what is requested in the specification?
-                </p>
-
-            </article>
-            <footer>
-                <ol id="page-numbers">
-                    <li>3</li>
-                    <li>4</li>
-                </ol>
-            </footer>
-        </section>
-
-        <section class="open-book">
-            <header id="Chap">
-                <h1>Chapter 1</h1>
-                <h6>Durk Jan de Bruin</h6>
-            </header>
-            <article>
-                
-                <h2 style="color: #f55c7f;background: lavenderblush;">Solution That Uses Only Integer Variables</h2>
-                <h3 style="color: #e0214d;">How is the Python program designed?</h3>
-                <p>
-                	Terms used in the problem statement suggest Python constructs to use in the solution:
-                </p>
-                <table style="font:16px 'Courier New';color: black;">
-                	<tr>
-                		<td>prompts the user</td>
-                		<td>print()</td>
-                	</tr>
-                	<tr>
-                		<td>reads the number</td>
-                		<td>input(), with some variable representing the number</td>
-                	</tr>
-                	<tr>
-                		<td style="width: 45%;">print one of the ... messages</td>
-                		<td>print()</td>
-                	</tr>
-                	<tr>
-                		<td>checks whether</td>
-                		<td>if</td>
-                	</tr>
-                	
-                </table>
-                <h3 style="color: #e0214d;">Stop & Predict</h3>
-                <p>
-                	<i>Are we ready to write the code?</i>
-                </p>
-                <p>
-                	Trying to combine the constructs into some sort of program means dealing with both Python details and the steps of the solution at the same time. We might end up wasting time writing useless Python code. To reduse confusion, we postpone the details of Python code until the main steps in the solution are worked out. A good way to identify the steps is to outline the solution.
-                </p>
-                <p>
-                	Outlining a problem solution before turning it into Python is like outlining an essay before turning it into English prose: one arranges the big ideas without getting bogged down in the details. By dividing the problem into parts and <b>refining</b> each part of the outline in turn, there are never too many things to consider at once. Many people call this approach <b>divide and conquer.</b>
-                </p>
-                <h3 style="color: #e0214d;">Stop & Consider</h3>
-                <p>
-                	<i>Give an example of a problem that is easier to solve with a "divide and conquer" strategy than with an "all at once" strategy.</i>
-                </p>
-                <h3 style="color: #e0214d;">What are the steps in the solution?</h3>
-                <p>
-                	The problem statement describes these steps in the solution:
-                </p>
-                <ul>
-                	<li>Prompt the user for the identification number.</li>
-                	<li>Read the number.</li>
-                	<li>Determine if the identification number is valid.</li>
-                	<li>Print a message saying if the number is valid.</li>
-                </ul>
-                <p>
-                	Since prompting and reading generate the input for the program, it makes sense to treat these steps as a single component of the outline:
-                </p>
-                <p>
-                	<span style="color: #e0214d;"><b>Input:</b></span> Get the identification number from the user by (a) prompting the user and (b) reading the value.
-                </p>
-                <p>
-                	<span style="color: #e0214d;"><b>Process:</b></span> Determine if the identification number is valid.
-                </p>
-                <p>
-                	<span style="color: #e0214d;"><b>Output:</b></span> If the number is valid, print an appropriate message; if it is invalid, print an appropriate message.
-                </p>
-                <p>
-                	These steps are an example of a common programming pattern: input of data values, processing of that data, and output of associated information.
-                </p>
-                <h3 style="color: #e0214d;">Stop & Help</h3>
-                <p>
-                	<i>What details are being postponed?</i>
-                </p>
-                <h3 style="color: #e0214d;">What are the variables in the program?</h3>
-                <p>
-                	Identifying and naming variables as soon as possible during program design makes it easier to devise and keep track of further steps in the solution. Variables should have names that express their purpose so that they are easy to identify in the code. Two obvious choices for variables in this program are the identification number, which we'll call <b>idNumber</b>, and the check digit, which we'll call <b>checkDigit</b>. Since both are numbers, it makes sense for both to be represented by integer variables.
-                </p>
-                <p>
-                	Using these variables, we rewrite the outline as follows:
-                </p>
-                <p>
-                	<span style="color: #e0214d;"><b>Input:</b></span> Get the identification number from the user.
-                </p>
-                <p style="font:16px 'Courier New';margin-left: 25px;">
-                	idNumber = int(input('Please type a four-digit identification number: ')) 
-				</p>
-                <p>
-                	<span style="color: #e0214d;"><b>Process:</b></span> Determine whether the three leftmost digits in idNumber, when summed and divided by 7, have a remainder equal to checkDigit.
-                </p>
-                <p>
-                	<span style="color: #e0214d;"><b>Output:</b></span> If checkDigit is equal to the remainder, then
-                </p>
-                <p style="font:16px 'Courier New';margin-left: 25px;">
-                	print('The number is valid. Ready to make copies')
-				</p>
-				<p>
-					otherwise
-				</p>
-				<p style="font:16px 'Courier New';margin-left: 25px;">
-                	print('*** The number is not valid for this copy machine.')
-				</p>
-				
-                <h3 style="color: #e0214d;">How is the identification number validated?</h3>
-                <p>
-                	To validate the identification number we need to figure out the check digit, sum the remaining digits, and compare the remainder when the sum is divided by 7 to the check digit.
-                </p>
-                <h3 style="color: #e0214d;">How is the check digit computed?</h3>
-                <p>
-                	The problem statement says that the check digit is the rightmost digit of the identification number. The best technique for isolating this digit is to use the Python % operator, computing the remainder when dividing the identification number by 10. In Python, this computation may be done with the statement
-                </p>
-                <p style="font:16px 'Courier New';">
-                	checkDigit = idNumber % 10;
-                </p>
-                <h3 style="color: #e0214d;">Stop & Consider</h3>
-                <p>
-                	<i>What if the leftmost digit were the check digit? How would it be separated?</i>
-                </p>
-                <h3 style="color: #e0214d;">How are the remaining digits summed?</h3>
-                <p>
-                	The problem statement says that a valid identification number has a check digit that is equal to the remainder of the sum of the other three digits in the identification number divided by 7. Thus these three digits must be separated, then added. That suggests that four more variables will be needed:
-                </p>
-                <p>
-                	digit1, the leftmost digit of idNumber 
-                	<br>digit2, the second digit 
-                	<br>digit3,	the third digit
-					<br>remainderDigit, the remainder when the sum of the three digits is divided by 7
-                </p>
-
-            </article>
-            <footer>
-                <ol id="page-numbers">
-                    <li>5</li>
-                    <li>6</li>
-                </ol>
-            </footer>
-        </section>
-
-
-        <section class="open-book">
-            <header id="Chap">
-                <h1>Chapter 1</h1>
-                <h6>Durk Jan de Bruin</h6>
-            </header>
-            <article>
-            	<p>
-            		The process and output steps in the outline then become
-            	</p>
-            	<p>
-                	<span style="color: #e0214d;"><b>Process:</b></span> Separate checkDigit. Separate digit1, digit2, and digit3. Compute remainderDigit.
-                </p>
-                <p>
-                	<span style="color: #e0214d;"><b>Output:</b></span>
-                </p>
-                <p style="font:16px 'Courier New';">
-                	if remainderDigit == checkDigit:
-					<br><span style="margin-left: 25px;">print('The number is valid. Ready to make copies.')</span> 
-					<br>else:
-					<br><span style="margin-left: 25px;">print('*** The number is not valid for this copier.')</span>
+<body style="background-color: #fff;">
+	
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<form class="login100-form validate-form">
+					<img src="images/logo.png" style="display: block;margin: auto;margin-bottom: 50px;">
+					<span class="login100-form-title p-b-43">
+						Admin Login
+					</span>
+					<div>
+						<label>Email</label>
+					</div>
 					
-				</p>
-				<h3 style="color: #e0214d;">How are the digits of the identification number separated?</h3>
-				<p>
-					We move on to separate the digits. We already determined the rightmost digit. The leftmost digit of a four-digit value is the number of "thousands" the value contains. In Python, we find this by using the % operator:
-				</p>
-				<p style="font:16px 'Courier New';">
-                	digit1 = idNumber % 1000
-				</p>
-				<p>
-					The middle digits are harder to separate.
-				</p>
-				<h3 style="color: #e0214d;">Stop & Predict</h3>
-                <p>
-                	<i>How could determining the middle digits become just like determining the leftmost and rightmost digits?</i>
-                </p>
-                <p>
-                	A good approach is to determine some quantity for which the digit we want is the first or last digit. This is called <b>reducing the problem to a problem previously solved</b>. Then we can repeat the approach we just took to find digit1 and checkDigit. The second digit in idNumber is the rightmost digit of the number of hundreds in idNumber, that is, the right most digit of idNumber % 100. Thus in Python we have
-                </p>
-                <p style="font:16px 'Courier New';">
-                	digit2 = (idNumber / 100) % 10;
-				</p>
-				<p>
-					Similarly,
-				</p>
-				<p style="font:16px 'Courier New';">
-                	digit3 = (idNumber / 10) % 10;
-				</p>
-				<h3 style="color: #e0214d;">What does the program look like?</h3>
-				<p>
-					We can put all this together into the following program.
-				</p>
-				<p style="font:16px 'Courier New';">
+					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+						<input class="input100" type="text" name="email">
+						<span class="focus-input100"></span>
+						
+					</div>
 					
-					idNumber, checkDigit, digit1, digit2, digit3, remainderDigit= 0<br>
+					<div>
+						<label>Password</label>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate="Password is required">
+						<input class="input100" type="password" name="pass">
+						<span class="focus-input100"></span>
+						
+					</div>
+
+					<div class="flex-sb-m w-full p-t-3 p-b-32">
+						<div class="contact100-form-checkbox">
+							<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
+							<label class="label-checkbox100" for="ckb1">
+								Remember me
+							</label>
+						</div>
+
+						<div>
+							<a href="#" class="txt1">
+								Forgot Password?
+							</a>
+						</div>
+					</div>
+			
+
+					<div class="container-login100-form-btn m-b-20">
+						<button class="login100-form-btn">
+							Login
+						</button>
+					</div>
 					
-					print('Please type a four-digit identification number: ')<br>
-					idNumber = int(input())<br>
-					checkDigit = idNumber % 10<br>
-					digit1 = idNumber / 1000<br>
-					digit2 = (idNumber / 100) % 10<br>
-					digits3 = (idNumber / 10) % 10<br>
-					remainderDigit = (digit1 + digit2 + digit3) % 7<br>
-					if remainderDigit == checkDigit:<br>
-					<span style="margin-left: 25px;">print('The number is valid. Ready to make copies.')</span><br>
-					else:<br>
-					<span style="margin-left: 25px;">print('*** The number is not valid for this copy machine.')</span><br>
-					
-				</p>
-				<h3 style="color: #e0214d;">Does the program work?</h3>
-				<p>
-					One way to get evidence about whether or not a program works is to test it, that is, run it, provide some input, and observe the output. All programmers make errors, so testing is always necessary.
-				</p>
-				<h3 style="color: #e0214d;">Stop & Predict</h3>
-                <p>
-                	<i>What might go wrong with this program?</i>
-                </p>
-                <p>
-                	Errors that tests might expose include typographical errors and incorrect computations. Tests can show that even straightforward programs like this one have <b>logical errors</b>.
-                </p>
-                <h3 style="color: #e0214d;">Can tests guarantee that a program works?</h3>
-                <p>
-                	Tests can also provide evidence that a program works correctly, if the program's output matches the result of hand calculations on sufficiently well chosen values. Even seemingly convincing evidence, however, can have flaws. Sometimes complicated programs run for years before errors are detected in an unusual situation.
-                </p>
-                <h3 style="color: #e0214d;">Stop & Consider</h3>
-                <p>
-                	<i>How could a program flaw go undetected during program testing?</i>
-                </p>
-                <h3 style="color: #e0214d;">What are good test values?</h3>
-                <p>
-                	Tests should collectively execute all the code in the program. If a section of code isn't executed, there's no way (other than proofreading it) to tell if it works as intended. In the test runs for this program, data should include both valid and invalid identification numbers, so that both output messages get printed.
-                </p>
-                <h3 style="color: #e0214d;">What attitude towards a program helps in testing it?</h3>
-                <p>
-                	A helpful attitude to adopt when testing a program is to imagine oneself as an opponent, trying to break it. Of course "typical" numbers should be tested. To break a program, however, the best values are usually those that push it to its limits in some way. Such values are called <b>extreme values</b> or <b>boundary values</b>. Examples for this program would be values where one or more of the digits are 0 or 9.
-                </p>
-                <p>
-                	Whatever the test values, it is good to figure out ahead of time what answers to expect, so discrepancies stick out.
-                </p>
-                <h3 style="color: #e0214d;">How can errors be isolated?</h3>
-                <p>
-                	Errors tend to occur in the complicated parts of the program. It helps to print intermediate results to see how the computation is going. Here, the code in which the digits are separated is the most complicated. Thus the values of digit1, digit2, and digit3 should be printed.
-                </p>
+				</form>
 
-            </article>
-            <footer>
-                <ol id="page-numbers">
-                    <li>7</li>
-                    <li>8</li>
-                </ol>
-            </footer>
-        </section>
-
-        <section class="open-book">
-            <header id="Chap">
-                <h1>Chapter 1</h1>
-                <h6>Durk Jan de Bruin</h6>
-            </header>
-            <article>
-                <h3 style="color: #e0214d;">Stop & Help</h3>
-                <p>
-                	<i>Should the value of remainderDigit and checkDigit also be printed? Why or why not?</i>
-                </p>
-                <p>
-                	To produce this output, we add print statements to the program before the if statement. The output is labeled clearly as intermediate debugging results. Before releasing a "production" version of the program, we would either remove the intermediate output code (in general, not a good idea) or surround it by an if statement that only prints debugging output if a debugging variable has an appropriate value.
-                </p>
-                <p>
-                	The complete program, including the statements that produce debugging output, appears in the Python Code section.
-                </p>
-                <h3 style="color: #e0214d;">Stop & Help</h3>
-                <p>
-                	<i>Type in, run, and test the first program in the Python Code section. Did it run correctly? If not, what were the symptoms of the error?</i>
-                </p>
-                <h3 style="color: #e0214d;">Reflection</h3>
-                <p>
-                	1.8) How did postponing the details make this problem easier to solve?
-                </p>
-
-                <h3 style="color: #e0214d;">Reflection</h3>
-                <p>
-                	1.9) What parts of the solution helped you understand how to solve programming problems? What parts would you do differently?
-                </p>
-                <h3 style="color: #e0214d;">Analysis</h3>
-                <p>
-                	1.10) Are the parentheses necessary in the digit separation code in the program? Are there other correct ways to parenthesize the expressions on the right-hand side of the assignments to digit2 and digit3?
-                </p>
-                <h3 style="color: #e0214d;">Analysis</h3>
-                <p>
-                	1.11) Suppose that one of your fellow programmers misparenthesized the expression assigned to digit2 as idNumber / (100 % 10). What would be the consequences of this mistake?
-                </p>
-                <h3 style="color: #e0214d;">Analysis</h3>
-                <p>
-                	1.12) Suppose that one of your fellow programmers omitted an assignment statement to one of the digit variables, so that it is uninitialized. What error message, if any, does your Python environment provide when the program is run?
-                </p>
-                <h3 style="color: #e0214d;">Modification</h3>
-                <p>
-                	1.13) Write a Python expression that uses digit1 to convert idNumber into a three-digit number whose first digit is digit2.
-                </p>
-                <br>
-                <h2 style="color: #f55c7f;background: lavenderblush;">Improving the Integer Program</h2>
-                <h3 style="color: #e0214d;">What more work does the program need?</h3>
-                <p>
-                	The program now runs, probably correctly. Can we rest on our laurels? No. We should analyze how easily the program can be understood by others who might need to modify it later.
-                </p>
-                <h3 style="color: #e0214d;">Stop & Predict</h3>
-                <p>
-                	<i>Why might this program need to be modified in the future?</i>
-                </p>
-                <p>
-                	Typically, programs are used by a number of people. Often users point out problems that were not anticipated by the programmer. In addition, this program may need to be changed if the copy machine is redesigned.
-                </p>
-                <p>
-                	Thus a program should be written as clearly as possible, so that modifications are easy to make. Both the original programmer and a new programmer who might work on the program will have an easier time if the program is written to communicate its purpose and design clearly.
-                </p>
-                <h3 style="color: #e0214d;">Stop & Help</h3>
-                <p>
-                	<i>Why might the original programmer benefit from a clearly written program?</i>
-                </p>
-                <h3 style="color: #e0214d;">How can the clarity of the program be improved?</h3>
-                <p>
-                	The most complicated part of the program is the section where the digits are separated. This code uses combinations of % and / that any programmer would have to examine closely. Perhaps it can be simplified.
-                </p>
-                <p>
-                	One way to simplify code is to break it into smaller pieces. Another way is to make the pieces as similar as possible. With similar pieces, if one of the pieces is understood, then the others are too.
-                </p>
-                <h3 style="color: #e0214d;">Stop & Predict</h3>
-                <p>
-                	<i>What parts of the program resemble one another?</i>
-                </p>
-                <h3 style="color: #e0214d;">How can the other digits be separated?</h3>
-                <p>
-                	Thus one way to make the code clearer is to make the digit separation as similar as possible for the four digits. We noticed that separating the last digit of an integer value was easy. To find the second and third digits of idNumber, we first made them the last digit of some value, then we separated the digit. To make this process more transparent, it would help to isolate the computation of the value whose last digit is useful. We could call this variable idPart. Here's how it might be used.
-                </p>
-                <p>
-                	First compute checkDigit as before.
-                </p>
-                <p>
-                	Then store the first three digits of the value into idPart, using the statement
-                </p>
-                <p style="font:16px 'Courier New';">
-                	idPart = idNumber / 10
-				</p>
-				<p>
-					The last digit of the value in idPart is the third digit of idNumber, so we can separate and store it in digit3 as follows:
-				</p>
-				<p style="font:16px 'Courier New';">
-                	digit3 = idPart % 10
-				</p>
-				<p>
-					Now we turn to the second digit in idNumber by removing the third digit from idPart:
-				</p>
-				<p style="font:16px 'Courier New';">
-                	idPart = idPart / 10
-				</p>
-				<p>
-					The last digit of idPart is now the second digit of idNumber, which can be stored in digit2:
-				</p>
-				<p style="font:16px 'Courier New';">
-                	digit2 = idPart % 10
-				</p>
-				<p>
-					We remove idPart's last digit again:
-				</p>
-				<p style="font:16px 'Courier New';">
-                	idPart = idPart / 10
-				</p>
-				<p>
-					Its current last digit is the first digit of idNumber, so it gets stored in digit1:
-				</p>
-				<p style="font:16px 'Courier New';">
-                	digit1 = idPart % 10
-				</p>
-				<p>
-					Here's how this process would work, applied to the identification number 5738.
-				</p>
-
-            </article>
-            <footer>
-                <ol id="page-numbers">
-                    <li>9</li>
-                    <li>10</li>
-                </ol>
-            </footer>
-        </section>
-
-
-        <section class="open-book">
-            <header id="Chap">
-                <h1>Chapter 1</h1>
-                <h6>Durk Jan de Bruin</h6>
-            </header>
-            <article>
-            	<div>
-					<img src="state1.png" style="width: 100%">
+				<div class="login100-more" style="background-image: url('images/bg2.jpg');">
 				</div>
-				<p>
-					The code, collected, appears below.
-				</p>
-				<p style="font:16px 'Courier New';">
-                	checkDigit = idNumber / 10;
-				</p>
-				<p style="color: #e0214d;">
-                	<div style="border: 2px solid black;font:16px 'Courier New';width: 50%;margin-left: 0px;">idPart = idNumber / 10<br>
-					digit3 = idPart % 10
-					</div>
-					<div style="border: 2px solid black;font:16px 'Courier New';width: 50%;margin-left: 0px;">idPart = idNumber / 10<br>
-					digit2 = idPart % 10
-					</div>
-					<div style="border: 2px solid black;font:16px 'Courier New';width: 50%;margin-left: 0px;">idPart = idNumber / 10<br>
-					digit1 = idPart % 10
-					</div>
-					
-				</p>
-				<p>
-					Note the similarities of the code in the boxes. Had the first assignment to idPart been replaced by the pair of statements
-				</p>
-				<p style="font:16px 'Courier New';">
-                	idPart = idNumber 
-                	<br>idPart = idPart / 10
-				</p>
-				<p>
-					the boxed code would have been even more similar.
-				</p>
-				<h3 style="color: #e0214d;">What intermediate values should be printed in the revision?</h3>
-				<p>
-					As in the first solution, intermediate output should be included. The key to the separation of digits is the sequence of values that the idPart variable takes on, so we add print statements to print these values. The complete program appears in the Python Code section.
-				</p>
-				<h3 style="color: #e0214d;">Stop & Help</h3>
-                <p>
-                	<i>Type in, run, and test the 'Improved Integer Solution' program in the Python Code section. Did it run correctly? If not, what were the symptoms of the error?</i>
-                </p>
-                <h3 style="color: #e0214d;">Analysis</h3>
-                <p>
-                	1.14) What are the advantages of using the variable idPart rather than using separate variables to store the pieces of idNumber?
-                </p>
-                <h3 style="color: #e0214d;">Analysis</h3>
-                <p>
-                	1.15) The revised solution just described has several different checks of the debug variable. Can all the debugging output be combined and produced with just one test of the debug variable? Why or why not?
-                </p>
-                <h3 style="color: #e0214d;">Debugging</h3>
-                <p>
-                	1.16) After typing in the program, you run it and get the following output:
-                </p>
-                <p style="font:16px 'Courier New';">
-                	Please type a four-digit identification number: 1234<br>
-					DEBUG: First value of idPart is 123<br>
-					DEBUG: Second value of idpart is 12<br>
-					DEBUG: Third value of idPart is 1<br>
-					DEBUG: Individual digits are 1 0 3 4<br><br>
-					The number is valid. Ready to make copies.
-				</p>
-				<p>
-					Is there an error? If so, and assuming that you made an error typing one of the statements, which one is it?
-				</p>
-				<br>
-				<h2 style="color: #f55c7f;background: lavenderblush;">Solution That Uses Character Variables</h2>
-				<h3 style="color: #e0214d;">Are further simplifications possible?</h3>
-				<p>
-					Is it really necessary to take the identification number apart? Why not read each digit separately?
-				</p>
-				<h3 style="color: #e0214d;">Stop & Predict</h3>
-                <p>
-                	<i>How could each digit be read separately?</i>
-                </p>
-                <p>
-                	If the digits of the number were read as single characters rather than as an integer they would already be separated. Of course, the problem then would be to convert the character values to integers in order to compute their sum.
-                </p>
-                <h3 style="color: #e0214d;">Stop & Predict</h3>
-                <p>
-                	<i>Will reading the digits as characters simplify the program?</i>
-                </p>
-                <h3 style="color: #e0214d;">How will character values be input, processed, and output?</h3>
-                <p>
-                	Since the identification number has four digits, a straightforward solution will use four character variables. We will call these d1, d2, d3, and d4 respectively, suggesting that they are almost digits. An outline of the program is then:
-                </p>
+			</div>
+		</div>
+	</div>
+	
+	
 
-                <p>
-                	<span style="color: #e0214d;"><b>Input:</b></span> Get the identification number from the user by prompting the user as in the previous solutions and by reading the number's digits into d1, d2, d3, and d4.
-                </p>
-                <p>
-                	<span style="color: #e0214d;"><b>Process:</b></span> Convert d1, d2, and d3 into the corresponding integer values and store them in digit1, digit2, and digit3 respectively; convert d4 into the corresponding integer value and store it in checkDigit; compute remainderDigit.
-                </p>
-                <p>
-                	<span style="color: #e0214d;"><b>Output:</b></span> Compare remainderDigit with checkDigit and print the appropriate message as in the previous solutions.
-                </p>
-            </article>
-            <footer>
-                <ol id="page-numbers">
-                    <li>11</li>
-                    <li>12</li>
-                </ol>
-            </footer>
-        </section>
+	
+	
+<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
 
-        <section class="open-book">
-            <header id="Chap">
-                <h1>Chapter 1</h1>
-                <h6>Durk Jan de Bruin</h6>
-            </header>
-            <article>
-            	<h3 style="color: #e0214d;">How is a character digit converted to the corresponding integer value?</h3>
-            	<p>
-            		The characters 'O', '1', ... '9' are represented differently from the integers 0, 1, 9. The Python function int, given a character as argument, returns an integer. For the characters 'O', '1', ..., '9', however, the returned values will not be the integers 0, 1, ..., 9. Instead, int returns the position of the argument character in the computer's <b>character sequence</b>. (Typically, punctuation characters, not digits, are the first few characters in the sequence.)
-            	</p>
-            	<h3 style="color: #e0214d;">Stop & Help</h3>
-                <p>
-                	<i>Write and run a program that prints the values of int('O'), int('1'), and int('9').</i>
-                </p>
-                <p>
-                	The Python Standard guarantees that the digits 'O' through '9' will occur consecutively in the computer's character sequence. That is, int('1') will be 1 plus int('O'), int('2') will be 1 plus int('1'), and so on. This fact allows the computation of the integer value for a given digit character. It's just the distance that digit character is from 'O'; equivalently, it's the difference between int of that character and int('O').
-                </p>
-                <p>
-                	Here is code that reads the characters in the identification number and computes the corresponding digit values.
-                </p>
-                <p style="font:16px 'Courier New';">
-                	d1 = input()<br>
-                	d2 = input()<br>
-                	d3 = input()<br>
-                	d4 = input()<br>
-                	digit1 = int(d1) - int('0') <br>
-                	digit2 = int(d2) - int('0') <br>
-                	digits = int(d3) - int('0') <br>
-                	checkDigit = int(d4) - int('0')
-				</p>
-				<h3 style="color: #e0214d;">Stop & Predict</h3>
-                <p>
-                	<i>How is this an improvement over the integer solution?</i>
-                </p>
-                <h3 style="color: #e0214d;">How does the character solution compare with the integer solutions?</h3>
-                <p>
-                	The code for the character solution is simpler than that for the integer solutions. The character solution also has similar pieces, just like the final integer version.
-                </p>
-                <p>
-                	The only complexity is the conversion of character variables to integers. This seems to be something that will come up again and again, so it's worth understanding.
-                </p>
-                <h3 style="color: #e0214d;">Are there any changes in the testing procedure?</h3>
-                <p>
-                	To guard against typographical errors, we could retain the intermediate output of all the digit values. However, since all the digits are being processed in exactly the same way, printing one value might be enough. The similarities in the code for these computations enhance our confidence in the program's correctness.
-                </p>
-                <p>
-                	The program that uses this approach appears in the Python Code section.
-                </p>
-                <h3 style="color: #e0214d;">Stop & Help</h3>
-                <p>
-                	<i>Type in, run, and test the program. Did it run correctly? If not, what were the symptoms of the error?</i>
-                </p>
-                <h3 style="color: #e0214d;">Analysis</h3>
-                <p>
-                	1.17) Explain the difference between the values '1' and 1.
-                </p>
-                <h3 style="color: #e0214d;">Analysis</h3>
-                <p>
-                	1.18) What output does the statement print(int('2')) produce?
-                </p>
-                <h3 style="color: #e0214d;">Analysis</h3>
-                <p>
-                	1.19) What does the program just described do if a numeric value of fewer than four digits is input? Explain.
-                </p>
-                <h3 style="color: #e0214d;">Modification, Reflection</h3>
-                <p>
-                	1.20) The program just described computes int('O') three times. Someone might argue that the program would be more efficient if an additional variable were used to store the value of int('O'), then used in each character-to-integer conversion. Make this modification to the program. Is the revised version noticeably faster? How much does the change affect how easy it is to understand the program?
-                </p>
-                <br>
-                <h2 style="color: #f55c7f;background: lavenderblush;">Outline of Design and Development Questions</h2>
-                <p>
-                	These questions summarize the main points of the commentary.
-                </p>
-                <h3 style="color: #e0214d;">Understanding the Problem</h3>
-                <p>
-                	How do programmers start to make sense of programming problems?<br>
-                	What aspects of the problem statement are important?<br>
-					What will the program input and output?<br>
-					How are algorithms designed?
-                </p>
-                <h3 style="color: #e0214d;">Solution That Uses Only Integer Variables</h3>
-                <p>
-                	How is the Python program designed?<br>
-					What are the steps in the solution?<br>
-					What are the variables in the program?<br>
-					How is the identification number validated?<br>
-					How is the check digit computed?<br>
-					How are the remaining digits summed?<br>
-					How are the digits of the identification number separated?<br>
-					What does the program look like?<br>
-					Does the program work?<br>
-					Can tests guarantee that a program works?<br>
-					What are good test values?<br>
-					What attitude towards a program helps in testing it?<br>
-					How can errors be isolated?
-                </p>
-
-            </article>
-            <footer>
-                <ol id="page-numbers">
-                    <li>13</li>
-                    <li>14</li>
-                </ol>
-            </footer>
-        </section>
-
-
-        <section class="open-book">
-            <header id="Chap">
-                <h1>Chapter 1</h1>
-                <h6>Durk Jan de Bruin</h6>
-            </header>
-            <article>
-            	<h3 style="color: #e0214d;">Improving the Integer Program</h3>
-            	<p>
-            		What more work does the program need?<br>
-					How can the clarity of the program be improved?<br>
-					How can the other digits be separated?<br>
-					What intermediate values should be printed in the revision?
-            	</p>
-            	<h3 style="color: #e0214d;">Solution That Uses Character Variables</h3>
-            	<p>
-            		Are further simplifications possible?<br>
-					How will character values be input, processed, and output?<br>
-					How is a character digit converted to the corresponding integer value? <br>
-					How does the character solution compare with the integer solutions? <br>
-					Are there any changes in the testing procedure?
-            	</p>
-            	<h2 style="color: #f55c7f;background: lavenderblush;">Programmers' Summary</h2>
-            	<p>
-            		This case study presents three solutions to the problem of verifying an identification number. Two of the programs read the identification number as an integer, then take it apart to perform the verification computation. The other program reads the digits of the identification number separately as characters, then converts them to an integer to verify the identification number.
-            	</p>
-            	<p>
-            		The programs are designed via <b>stepwise refinement</b>, that is, writing an outline of the program and expanding each step of the outline in turn. This allows the programmer to effectively manage the program complexity and avoid having to deal with all the details of the program at once.
-            	</p>
-            	<p>
-            		The three programs provide successively better examples of organizing code into similar pieces. In the first program, the second, third, and fourth digits are separated by first determining a value whose last digit is the one to be stored. In the second program, digits are separated using a sequence of "store the rightmost digit, then remove that digit" steps. The third program separates the digits during input, then applies exactly the same operation to each one to compute its integer representation. Similarities among code segments provide more confidence in the correctness of the code; if one works, the others are more likely to work as well.
-            	</p>
-            	<p>
-            		All the solutions illustrate the power of the Divide and Conquer principle. When in doubt about how to proceed, one should select a part of the problem that seems straightforward, and solve it; often the remainder of the problem seems easier as a result.
-            	</p>
-            	<p>
-            		Reading the code is not sufficient for determining correctness. The collection of tests executes every part of each program. In addition, <b>boundary values</b> for the quantities are tested according to the Persecution Complex principle. Since the programs deal with digits whose extremes are 0 and 9, values with 0 or 9 as digits are used as test data. (Thorough tests are typically not sufficient for determining correctness either.)
-            	</p>
-            	<p>
-            		All three programs also provide examples of two common programming patterns, or <b>templates</b>. One is "prompt the user for a value, then read the value." The other is "input values, process them, then output the results." A third common operation, used in the character solution, is that of determining the integer value a given character represents.
-            	</p>
-            	<p>
-            		Early in the design, the program's input-output behavior is analyzed. This is reflected in the program comments. Descriptive names are chosen for the variables to indicate their purpose and to make it easier to remember what each part of the program does. This choice of names illustrates the Literacy principle and makes it easier to modify versions of the program.
-            	</p>
-            	<br>
-            	<h2 style="color: #f55c7f;background: lavenderblush;">Making Sense of Check That Number!</h2>
-            	<h3 style="color: #e0214d;">Reflection</h3>
-            	<p>
-            		1.21) Which of the three programs is easiest for you to understand? Why?
-            	</p>
-            	<h3 style="color: #e0214d;">Analysis</h3>
-            	<p>
-            		1.22) In the first and third program solutions, the digits were separated left to right. In the second revised solution, the digits were separated in the opposite order. In which of the programs could the assignment statements have been rearranged to separate the digits in the opposite order? Briefly explain.
-            	</p>
-            	<h3 style="color: #e0214d;">Reflection, Debugging</h3>
-            	<p>
-            		1.23) Have one of your fellow programmers make a minor change to one of the statements in one of the programs in the Python Code section, and see how long it takes you to find the change. Do the same for each program. For which of the program did you find the change most quickly?
-            	</p>
-            	<h3 style="color: #e0214d;">Modification</h3>
-            	<p>
-            		1.24) Change each version of the program to accommodate the following change in the problem statement: "A correct check digit is equal to the remainder of the sum of the other three digits divided by 9."
-            	</p>
-            	<h3 style="color: #e0214d;">Analysis</h3>
-            	<p>
-            		1.25) Which of the three programs could be substantially shortened under the conditions of question 1.24? Briefly explain.
-            	</p>
-            	<h3 style="color: #e0214d;">Modification</h3>
-            	<p>
-            		1.26) Question 1.24 suggests that one might wish to have versions of the program that compute different remainders. Python provides a way to define <b>named constants</b> to make program modification easier. In order to change the divisor - which in a larger program might be used more than once - one simply changes the definition. Modify each version of the program to include the definition and use of a named constant for the divisor.
-            	</p>
-            	<h3 style="color: #e0214d;">Modification</h3>
-            	<p>
-            		1.27) The problem specification promises that the identification number input by the user will be an actual four-digit number. In general, however, it is not reasonable to assume that users will provide legal data. Add code to each program that checks the identification number for legality as extensively as possible. Which program allows you to incorporate the most extensive checks?
-            	</p>
-            	<h3 style="color: #e0214d;">Application</h3>
-            	<p>
-            		1.28) Design and test a program that reads a three-digit number from the user, and prints the four-digit value that results from computing the check digit as done in this case study and appending it to the right of the input value.
-            	</p>
-
-            </article>
-            <footer>
-                <ol id="page-numbers">
-                    <li>15</li>
-                    <li>16</li>
-                </ol>
-            </footer>
-        </section>
-
-        <section class="open-book">
-            <header id="Chap">
-                <h1>Chapter 1</h1>
-                <h6>Durk Jan de Bruin</h6>
-            </header>
-            <article>
-            	<h2 style="color: #f55c7f;background: lavenderblush;">PYTHON CODE</h2>
-            	<br>
-            	<h2 style="color: #f55c7f;background: lavenderblush;">Solution Using Integer Variables</h2>
-            	<p style="font:16px 'Courier New';">
-            		"""
-					Read in a four-digit identification number, and determine whether or not its check digit--the rightmost digit--is correct. A correct check digit is equal to the remainder when dividing by 7 of the sum of the other three digits.
-					Input from the user is assumed to be error-free.
-					"""<br><br>
-					
-					idNumber = 0 # The identification number read from the user <br>
-					digit1, digit2, digit3, checkDigit = 0 # The individual digits of the identification number <br>
-					remainderDigit = 0 # The remainder when dividing the digit sum by 7 <br>
-					debug = 0 # A debugging variable: 0 if not debugging, nonzero otherwise <br>
-					debug = 1 # Indicate that we're debugging <br>
-					print('Please type a four-digit identification number: ') <br>
-					idNumber = int(input()) <br>
-					checkDigit = idNumber % 10 <br>
-					digit1 = idNumber / 1000 <br>
-					digit2 = (idNumber / 100) % 10 <br> 
-					digit3 = (idNumber / 10) % 10 <br>
-					if debug != 0: <br>
-					<span style="margin-left: 25px;">print('DEBUG: Individual digits are ', digit1, digit2, digit3, checkDigit)</span> <br>
-					remainderDigit = (digit1 + digit2 + digit3) % 7 <br>
-					if remainderDigit == checkDigit: <br>
-					<span style="margin-left: 25px;">print('The number is valid. Ready to make copies.')</span><br>
-					else: <br>
-					<span style="margin-left: 25px;">print('*** The number is not valid for this copy machine.')</span>
-				</p>
-				<br>
-				<h2 style="color: #f55c7f;background: lavenderblush;">Improved Integer Solution</h2>
-				<p style="font:16px 'Courier New';">
-					"""
-					Read in a four-digit identification number, and determine whether or not its check digit--the rightmost digit--is correct. A correct check digit is equal to the remainder when dividing by 7 of the sum of the other three digits.
-					Input from the user is assumed to be error-free.
-					"""<br><br>
-					
-					idNumber = 0 # The identification number read from the user <br>
-					digit1, digit2, digit3, checkDigit = 0 # The individual digits of the identification number <br>
-					remainderDigit = 0 # The remainder when dividing the digit sum by 7 <br>
-					debug = 0 # A debugging variable: 0 if not debugging, nonzero otherwise <br>
-					debug = 1 # Indicate that we're debugging <br>
-					idPart = 0 # A variable for storing pieces of the identification number <br>
-					
-					idNumber = int(input('Please type a four-digit identification number: ')) <br>
-					checkDigit = idNumber % 10 <br>
-					idPart = idNumber / 10 <br>
-					if debug != 0: <br>
-					<span style="margin-left: 25px;">print('DEBUG: First value of idPart is ', idPart);</span> <br>
-					
-					digit3 = idPart % 10 <br>
-					idPart = idPart / 10 <br>
-					if debug != 0: <br>
-					<span style="margin-left: 25px;">print('DEBUG: Second value of idPart is ', idPart);</span> <br>
-					
-					digit2 = idPart % 10; <br>
-					idPart = idPart / 10; <br>
-					if debug != 0: <br>
-					<span style="margin-left: 25px;">print('DEBUG: Third value of idPart is ', idPart) </span><br>
-					
-					digit1 = idPart % 10; <br>
-					if debug != 0: <br>
-					<span style="margin-left: 25px;">print('DEBUG: Individual digits are ', digit1, digit2, digit3, checkDigit);</span>
-				</p>
-				<br>
-				
-
-            </article>
-            <footer>
-                <ol id="page-numbers">
-                    <li>17</li>
-                    <li>18</li>
-                </ol>
-            </footer>
-        </section>
-
-
-        <section class="open-book">
-            <header id="Chap">
-                <h1>Chapter 1</h1>
-                <h6>Durk Jan de Bruin</h6>
-            </header>
-            <article>
-            	<h2 style="color: #f55c7f;background: lavenderblush;">Solution Using Character Variables</h2>
-				<p style="font:16px 'Courier New';">
-					"""
-					Read in a four-digit identification number, and determine whether or not its check digit--the rightmost digit--is correct. A correct check digit is equal to the remainder when dividing by 7 of the sum of the other three digits.
-					Input from the user is assumed to be error-free.
-					""" <br> <br>
-					
-					d1, d2, d3, d4 = '0' # Character <br>
-					digit1, digit2, digit3, checkDigit = 0 # The individual digits of the identification number <br>
-					remainderDigit = 0 # The remainder when dividing the digit sum by 7 <br>
-					debug = 0 # A debugging variable: 0 if not debugging, nonzero otherwise <br>
-					debug = 1 # Indicate that we're debugging <br>
-					print('Please type a four-digit identification number: ') <br>
-					d1 = input() <br>
-					d2 = input() <br>
-					d3 = input() <br>
-					d4 = input() <br>
-					digit1 = int(d1) - int('0') <br>
-					digit2 = int(d2) - int('0') <br>
-					digits = int(d3) - int('0') <br>
-					checkDigit = int(d4) - int('0') <br>
-					
-					if debug != 0: <br>
-					<span style="margin-left: 25px;">print('DEBUG: Individual digits are ', digit1, digit2, digit3, checkDigit)</span> <br> 
-					
-					remainderDigit = (digit1 + digit2 + digit3) % 7 <br>
-					if remainderDigit = checkDigit: <br>
-					<span style="margin-left: 25px;">print('The number is valid. Ready to make copies.')</span> <br>
-					else: <br>
-					<span style="margin-left: 25px;">print('*** The number is not valid for this copy machine.')</span> <br>
-					
-				</p>
-				<div style="height: 1400px;">
-					
-				</div>
-
-            </article>
-            <footer>
-                <ol id="page-numbers">
-                    <li>19</li>
-                    <li>20</li>
-                </ol>
-            </footer>
-        </section>
-
-
-    </div>
-</div>
 </body>
 </html>
