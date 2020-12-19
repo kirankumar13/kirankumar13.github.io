@@ -413,6 +413,7 @@ a:hover {
 
 .navbar-b.navbar-trans .nav-item,
 .navbar-b.navbar-reduce .nav-item {
+  align-self: center;
   position: relative;
   padding-right: 10px;
   padding-left: 0;
